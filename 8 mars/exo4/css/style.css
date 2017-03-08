@@ -1,6 +1,73 @@
+#idImportant{
+    color: red;
+}
+.importantClass{
+    color: green;
+}
+
+/*
+ Sélecteur logique : une balise html
+ */
+
+/* Faire en sorte que tous les textes de la page soient centrés */
+body{
+    text-align: center;
+}
+
 /* Sélectionner la balise h2 */
 
-h2{
+h2, h3{
     /* Changer la couleur de la font */
     color: red;
 }
+
+h3{
+    color: blue;
+}
+
+/* Sélectionner les balises a */
+
+a{
+    /* Supprimer le soulignement  */
+    text-decoration: none;
+}
+ul{
+    list-style-type: none;
+}
+
+/* Séletceurs imbriqués */
+
+h2 b{
+    color: green;
+}
+
+.redBackground h2, .redBackground h2 b{
+    color: white;
+}
+/* Sélecteurs par class */
+    
+    /* Sélectionner la class .redBackground */
+.redBackground{
+    /* Modifier la couleur de fond */
+    background-color: pink;
+}
+
+/* Séalecteurs par id*/
+
+#bigTitle{
+    /* Modifier la taille de la font */
+    font-size: 3rem;
+}
+
+/* Sélecteur d'interaction état */
+
+    /* Changer la couleur des balises a au survol */
+    a:hover{
+        color: red;
+    }
+    .redBackground:hover{
+        background-color: gray;
+    }
+    #bigTitle:hover{
+        color: red;
+    }
