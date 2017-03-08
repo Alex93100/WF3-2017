@@ -13,15 +13,22 @@
 html{
     font-size: 62.5%;
 }
+
 body{
     font-size: 1.5rem; /* 1.5 rem = 15 px */
 }
+
+section {
+    margin-bottom: 4rem;
+}
+
 
 /* em/rem */
 
 h1{
     font-size: 3rem;  /* 3 fois le font size de html (root)*/
 }
+
 h1 b{
     /* La taille de la font size soit toujours 2 fois plus petite que son parent direct*/
     font-size: .5em;
@@ -63,4 +70,65 @@ header, main, footer{
 
     /* Centrer une balise de type block réduite en largeur */
     margin: 2rem auto;
+    
+}
+
+            /* Mise en forme typographique*/
+
+.presentation{
+
+    /* Modifier la famille de caracteres de la font */
+    font-family: "Arial", sans-serif;
+
+    /* Modifier la taille de la font*/
+    font-size: 1.7rem;
+
+    /* Modifier l'interlignage */
+    line-height: 2em;
+
+    /* Modifier la graisse de la font */
+    font-weight: bold;
+
+    /* Ajouter une ombre portée à la font */
+    text-shadow: 0 0 .5rem cadetblue;
+
+    /* Modifier la casse de la font */
+    text-transform: uppercase;
+
+    /* Modifier le style de la font (italic) */
+    font-style: italic;
+
+    /* Modifier la décorartion de la font */
+    text-decoration: underline;
+
+    /* Modifier la couleur de la font */
+    color: white;
+
+    padding: 2rem;
+    background-color: pink;
+    margin: 4rem auto;
+}
+
+
+                /* Utilisation des couleurs */
+
+
+#portfolioAlexandreRodrigues{
+
+    background-color: #000000;      /* Référence hexadecimale */
+    color: white;                   /* Nom intelligible */
+    padding-bottom: 0.1rem;
+    text-align: center; /* Agit sur les textes et sur les balises inline (enfant) */
+
+}
+#portfolioAlexandreRodrigues article{
+
+    background-color: rgb(255, 255, 255); /* Utilisez RGBA pour modifier l'opacité de la couleur*/
+    color: #000;
+    padding: 2rem;
+    margin: 1rem;
+
+    /* Faire en sorte d'afficher les articles sur 3 colonnes */
+    display: inline-block; 
+
 }
