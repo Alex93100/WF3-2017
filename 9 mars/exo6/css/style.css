@@ -47,6 +47,23 @@ Style Reset
 
     }
 
+
+/*
+Style largeur maximum
+*/
+
+    nav ul, #portfolio, #apropos p, #contacts, footer section{
+
+        /* Définir une largeur maxmum */
+        max-width:95rem;
+
+        /* Centrer une balise de type block dans son parent */
+        margin: auto;
+
+    }
+
+
+
 /*
 Style header
 */
@@ -243,7 +260,7 @@ Style Footer
         /* Sélectionner une balise grace a son attribut et sa valeur */
         [href="http://google.com"]{
 
-            color: gray;
+            color: snow;
 
         }
 
@@ -253,9 +270,3 @@ Style Footer
             background: darkgrey;
 
         }
-    footer a{
-
-
-
-    }
- 
