@@ -90,7 +90,7 @@
 
                 <h2>A propos</h2>
                 <p>Freelancer is a free bootstrap theme created by Start Bootstrap. The download includes the complete source files including HTML, CSS, and JavaScript as well as optional LESS stylesheets for easy customization.Whether you're a student looking to showcase your work, a professional looking to attract clients, or a graphic artist looking to share your projects, this template is the perfect starting point!</p>
-
+                <a href="#">Download Theme</a>
             </section>
 
             <!-- 3eme section -->
@@ -98,20 +98,30 @@
             <section>
                 <h2>Contact</h2>
 
-            <!-- Ajout de formulaire avec redirection et implentation d'image -->
-                <form action="about.html" method="POST" >
-                    <fieldset>
+            <!-- Création d'un formulaire et implentation d'image -->
+                <form action="#" method="POST" >
+                    
+                    <!-- <fieldset> -->
+
+                        <!-- Ajouter un champs pour le nom -->
                         
-                        <p class="blanch" >Name:<br>
-                        <input type="text" name="name" value=""  /></p>
-                        <p class="blanch" >Email Adress:<br>
-                        <input type="text" name="emailadress" value=""  /></p>
-                        <p class="blanch" >Phone Number:<br>
-                        <input type="text" name="phonenumber" value=""  /></p>
-                        <p class="blanch" > Message:<br>
-                        <input type="text" name="message" value="" /></p>
-                        <p ><input type="submit" value="envoi"  />
-                    </fieldset>
+                        <!-- Placeholder permet d'afficher un message dans le input -->
+                        <input type="text" placeholder="Name" name="name"/></p>
+                        
+                        <!-- Ajouter un champs pour l'email -->
+                        <input type="email" placeholder="Email Adress" name="emailadress"/></p>
+                        
+                        <!-- Ajouter un champs pour le numéro de téléphone -->
+                        <input type="text" placeholder="Number" name="phonenumber"/></p>
+
+                        <!-- Ajouter un champs pour le message -->
+                        <textarea placeholder="Message"></textarea>
+
+                        <!-- Terminer le formulaire par un input de type submit pour pouvoir le valider. l'attribut value permet de modifier le text imput -->
+                        <p class="envoi"><input type="submit" value="Envoyer" /></p>
+
+                    <!-- </fieldset> -->
+
                 </form>
 
             </section>
