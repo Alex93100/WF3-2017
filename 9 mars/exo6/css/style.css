@@ -1,68 +1,96 @@
-            /* Style Reset */
+/* 
+Style Reset 
+*/
 
 
-/* Sélectionner TOUTES les balises du DOM */
-*{
-    /* Supprimer les marges intérieures */
-    padding: 0;
+    /* Sélectionner TOUTES les balises du DOM */
 
-    /*Supprimer les marge extérieures*/
-    margin: 0;
-}
+    /* Supprimer toutes les marges */
+    *{
+        padding: 0;
+        margin: 0;
+    }
+
+    /* Faire en sorte que la valeur de 1rem soit égal à 10px */
+    html{
+        font-size: 62.5%;
+        background-color: black;
+    }
+
+    body{
+        font-size: 1.5rem; /* 1.5 rem = 15 px */
+        /* Changer la famille de caracteres */
+        font-family: "Arial", sans-serif;
+    }
+
+    /* Supprimer la décoration d balises A */
+    a{
+
+        text-decoration: none;
+
+    }
+
+    /* faire en sorte que les image ne dépassent pas leurs parents */
+    img{
+
+        max-width: 100%;
+
+    }
 
 
-/* Ramener la valeur de 1rem à 10px */
-html{
-    font-size: 62.5%;
-}
+/*
+ Style header
+ */
 
-body{
-    font-size: 1.5rem; /* 1.5 rem = 15 px */
-}
+    header{
+        text-align: center;
+        color: snow;
+        /* Ajouter une bordure de 1px rouge */
+        border: .5rem solid black;
 
-section {
-    margin-bottom: 4rem;
-}
+        /* Ajouter une marge à l'intérieur de la balise */
+        padding: 2rem;
 
+        /* Ajouter une marge à l'exterieur de la balise */
+        margin: 2rem;
 
+    }
+    nav{
 
-header{
+        /* Mettre le texte en majuscule */
+        text-transform: uppercase;
+        background: snow;
+        text-align: left;
+    }
 
-     /* Ajouter une bordure de 1px rouge */
-    border: .5rem solid black;
+    nav a{
 
-    /* Ajouter une marge à l'intérieur de la balise */
-    padding: 2rem;
+        color: black;
+        /* Passer le texte en gras */
+        /* font-weight: bold; */
 
-    /* Ajouter une marge à l'exterieur de la balise */
-    margin: 2rem;
+    }
 
-    background-color: black
-
-}
-
-h1, h2, h3, p{
-
-    color: snow;
-
-}
-
-li{
+    li{
     
-    display: inline-block;
-    padding-left: 2rem;
+        display: inline-block;
 
-}
+        /* Ajouter une marge extérieur à droite */
+        margin-right: 5rem;
+        
 
- form{
 
-    background-image: url('http://cdn.static01.nicematin.com/media/npo/mobile_1440w/2015/08/chaton1.jpg'); 
-    background-size: 100% 100%;
-    
-    color:snow;
-}
+    }
 
-html{
+    form{
 
-    background-color: black;
-}
+        background-image: url('http://cdn.static01.nicematin.com/media/npo/mobile_1440w/2015/08/chaton1.jpg'); 
+        background-size: 100% 100%; 
+        color:snow;
+    }
+
+    h1, h2, h3, p{
+
+        color: snow;
+
+    }
