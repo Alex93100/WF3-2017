@@ -54,6 +54,7 @@ Style header
     header{
         text-align: center;
         color: snow;
+        background-color: gray;
         /* Ajout d'un marge vers le bas de 50px */
         margin-bottom: 5rem;
         
@@ -62,7 +63,7 @@ Style header
 
         /* Mettre le texte en majuscule */
         text-transform: uppercase;
-        background: snow;
+        background: darkgray;
         /* Aligner le texte a gauche */
         text-align: left;
         /* Ajoute une marge intérieur de 10px */
@@ -107,11 +108,6 @@ Style header
 
     }
 
-    h2, h3, p{
-
-        color: snow;
-
-    }
     section{
 
         padding: 6rem 0;
@@ -147,7 +143,10 @@ Style A propos
     #apropos{
         color:snow;
         /* Modifier la couleur de fond */
-        background-color: black;
+        background-color:gray;
+
+        /* Centrer le texte */
+        text-align: center;
 
     }
     #apropos p{ 
@@ -156,28 +155,107 @@ Style A propos
         -webkit-column-count: 2; /* Chrome, Safari, Opera */
         -moz-column-count: 2; /* Firefox */
         column-count: 2;
+
+        /* Justifier le texte */
+        text-align: justify;
+        margin-bottom: 3rem;
     
     }
     #apropos a{
+        
+        color:snow;
+        border: 0.3rem solid snow;
+        padding: 1rem 1.5rem;
+        font-weight: bold;
 
+        /* Créer un bord arrondi */
+        -webkit-column-radius: 1rem; /* Chrome, Safari, Opera */
+        -moz-column-radius: 1rem; /* Firefox */
+        border-radius: 1rem;
         
     }
     
-    
-
-
-
-
-
-
 
 /*
 Style Contacts
 */
 
-        form{
-        text-align: center;
-        background-image: url('http://cdn.static01.nicematin.com/media/npo/mobile_1440w/2015/08/chaton1.jpg');
-        background-size: 100% 100%;
+        h2{
+            color: snow; 
+        }
+        input, textarea{
+
+            display: block;
+            width: 90%;
+            margin: 0.5rem auto;
+            padding: 1rem;
+            font-size: 1rem;
+
+            /* Annuler le style du navigateur */
+            border: none;
+            /* redéfinir la bordure */
+            border-bottom: 0.2rem solid gray;
+
+        }
+
+        textarea{
+
+            /* Définir une hauteur minimum */
+            min-height: 10rem;
+
+        }
+
+        /* Sélectionner une balise grace a son attribut et sa valeur */
+        [type="submit"]{
+
+            width: 10rem;
+            display: inline-block;
+            font-weight: bold;
+            -webkit-column-radius: 1rem; /* Chrome, Safari, Opera */
+            -moz-column-radius: 1rem; /* Firefox */
+            border-radius: 1rem;
+            margin-left: 8rem;
+        
+        }
+
+
+/*
+Style Footer
+*/
+
+    footer{
+
         color:snow;
+        text-align: center;
+        background:gray;
     }
+
+    footer article{
+
+        display: inline-block;
+        width:30%;
+
+        /* Gérer l'laignement vertical */
+        vertical-align: top;
+
+    }
+
+        /* Sélectionner une balise grace a son attribut et sa valeur */
+        [href="http://google.com"]{
+
+            color: gray;
+
+        }
+
+        aside{
+
+            padding: 1.5rem;
+            background: darkgrey;
+
+        }
+    footer a{
+
+
+
+    }
+ 
