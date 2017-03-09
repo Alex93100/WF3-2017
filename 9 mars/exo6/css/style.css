@@ -1,0 +1,55 @@
+            /* Style Reset */
+
+
+/* Sélectionner TOUTES les balises du DOM */
+*{
+    /* Supprimer les marges intérieures */
+    padding: 0;
+
+    /*Supprimer les marge extérieures*/
+    margin: 0;
+}
+
+
+/* Ramener la valeur de 1rem à 10px */
+html{
+    font-size: 62.5%;
+}
+
+body{
+    font-size: 1.5rem; /* 1.5 rem = 15 px */
+}
+
+section {
+    margin-bottom: 4rem;
+}
+
+
+
+header{
+
+     /* Ajouter une bordure de 1px rouge */
+    border: .5rem solid black;
+
+    /* Ajouter une marge à l'intérieur de la balise */
+    padding: 2rem;
+
+    /* Ajouter une marge à l'exterieur de la balise */
+    margin: 2rem;
+
+    background-color: black
+
+}
+
+h1{
+
+    color: snow;
+
+}
+
+li{
+    
+    display: inline-block;
+    padding-left: 2rem;
+
+}
