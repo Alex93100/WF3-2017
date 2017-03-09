@@ -2,7 +2,6 @@
 Style Reset 
 */
 
-
     /* Sélectionner TOUTES les balises du DOM */
 
     /* Supprimer toutes les marges */
@@ -15,6 +14,7 @@ Style Reset
     html{
         font-size: 62.5%;
         background-color: black;
+      
     }
 
     body{
@@ -37,37 +37,46 @@ Style Reset
 
     }
 
+    h2{
+        /* Aligner le texte au centre */
+        text-align: center;
+        /* modifer la casse */
+        text-transform: uppercase;
+        /* Ajouter une marge extérieur en bas de 30px */
+        margin-bottom: 3rem;
+
+    }
 
 /*
- Style header
- */
+Style header
+*/
 
     header{
         text-align: center;
         color: snow;
-        /* Ajouter une bordure de 1px rouge */
-        border: .5rem solid black;
-
-        /* Ajouter une marge à l'intérieur de la balise */
-        padding: 2rem;
-
-        /* Ajouter une marge à l'exterieur de la balise */
-        margin: 2rem;
-
+        /* Ajout d'un marge vers le bas de 50px */
+        margin-bottom: 5rem;
+        
     }
     nav{
 
         /* Mettre le texte en majuscule */
         text-transform: uppercase;
         background: snow;
+        /* Aligner le texte a gauche */
         text-align: left;
+        /* Ajoute une marge intérieur de 10px */
+        padding: 1rem;
+        /* Ajout d'un marge vers le bas de 30px */
+        margin-bottom: 3rem;
+        
     }
 
     nav a{
 
         color: black;
         /* Passer le texte en gras */
-        /* font-weight: bold; */
+        font-weight: bold;
 
     }
 
@@ -78,19 +87,97 @@ Style Reset
         /* Ajouter une marge extérieur à droite */
         margin-right: 5rem;
         
+    }
 
+    h1{
+
+        /* Mettre le texte en majuscule */
+        text-transform: uppercase;
+        /* Augmenter la taille de la font 40px */
+        font-size: 4rem;
+        color: snow;
+        padding-top: 1rem;
 
     }
 
-    form{
+    header p{
 
-        background-image: url('http://cdn.static01.nicematin.com/media/npo/mobile_1440w/2015/08/chaton1.jpg'); 
-        background-size: 100% 100%; 
-        color:snow;
+        /* Augmenter la taille de la font 20px */
+        font-size: 2rem
+
     }
 
-    h1, h2, h3, p{
+    h2, h3, p{
 
         color: snow;
 
+    }
+    section{
+
+        padding: 6rem 0;
+    }
+
+/*
+Style portfolio
+*/
+    #portfolio{
+
+        text-align: center;
+    }
+
+    #portfolio a{
+
+        /* Masquer les balises */
+        display: none;
+    }
+
+    #portfolio article{
+
+        /* Créer 3 colonnes */
+        display: inline-block;
+        width: 30%;
+        /* Ajouter une marge extérieur de 20px */
+        margin:2rem;
+
+    }
+
+/*
+Style A propos
+*/
+    #apropos{
+        color:snow;
+        /* Modifier la couleur de fond */
+        background-color: black;
+
+    }
+    #apropos p{ 
+        
+        /* Afficher le texte sur 2 colones */
+        -webkit-column-count: 2; /* Chrome, Safari, Opera */
+        -moz-column-count: 2; /* Firefox */
+        column-count: 2;
+    
+    }
+    #apropos a{
+
+        
+    }
+    
+    
+
+
+
+
+
+
+
+/*
+Style Contacts
+*/
+
+        form{
+        text-align: center;
+        background-image: url('http://cdn.static01.nicematin.com/media/npo/mobile_1440w/2015/08/chaton1.jpg');
+        background-size: 100% 100%;
+        color:snow;
     }
