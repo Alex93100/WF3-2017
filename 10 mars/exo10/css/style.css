@@ -1,0 +1,119 @@
+/* Importer un fichier CSS */
+
+@import url('https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css');
+
+nav{
+
+    text-align: right;
+    position: relative;
+
+}
+
+nav li{
+
+    display: inline-block;
+
+}
+
+
+header{
+
+    text-align: center;
+
+}
+
+/* Sélectionner le premier enfant */
+nav li:first-child{
+
+    position: absolute;
+    left: 0;
+
+}
+
+/* Sélectionner le dernier enfant */
+
+nav li:last-child{
+
+    font-size: 3rem;
+
+}
+
+/* Sélectionner le deuxieme enfant*/
+nav li:nth-child(2){
+
+    background: lightgray;
+}
+
+/* Sélectionner la première balise rencontrée */
+header p:first-of-type{
+
+    font-size:4rem;
+
+}
+
+
+/* Sélectionner une balise par son attribut et sa valeur */
+header [alt="Photo de profil"]{
+
+    /*width: 1rem;*/
+
+}
+
+/* Extraire une balise de la sélection */
+textarea, input:not([type="submit"]){
+
+    display: block;
+    width: 100%;
+
+}
+
+/* Sélecteur d'élément adjacent */
+
+a + img{
+
+    width: 2rem;
+
+}
+
+/* Sélecteur d'enfant de premier niveau */
+main > a{
+
+    font-size: 3rem;
+
+}
+
+/* Ajouter un pseudo-élement à la fin de la balise h1*/
+
+h1:after{
+
+    /* Ajouter du contenue dans le pseudo-élément */
+    content: "";
+    display: block;
+    height: .2rem;
+    width: 10rem;
+    margin: 1rem auto;
+    background: gold;
+
+}
+
+/* Ajouter un pseudo-élement au début de la balise h1*/
+
+h1:before{
+
+    content: "\f005";
+    position: absolute;
+    top: 1.9rem;
+    left: 47.5%;
+    background: white;
+    padding: .5rem;
+    /* Font Awesom Like */
+    font-family: FontAwesome;
+    color: gold;
+}
+
+
+h1{
+    /* Bloquer les enfant dans le parent */
+    position: relative;
+
+}
