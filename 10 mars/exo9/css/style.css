@@ -165,6 +165,8 @@ Style portfolio
         width: 30%;
         /* Ajouter une marge extérieur de 20px */
         margin:2rem;
+
+        /* Bloquer les enfant dans leur parent */
         position: relative;
 
     }
