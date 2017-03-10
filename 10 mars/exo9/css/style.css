@@ -1,3 +1,7 @@
+/* Importer un fichier CSS */
+
+/*@import url('https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css');*/
+
 /* 
 Style Reset 
 */
@@ -72,9 +76,10 @@ Style header
         text-align: center;
         color: snow;
         background-color: gray;
+
         /* Ajout d'un marge vers le bas de 50px */
         margin-bottom: 5rem;
-        
+
     }
     nav{
 
@@ -147,7 +152,7 @@ Style header
 
     section{
 
-        padding: 6rem 0;
+        padding: 2rem 0;
     }
 
 /*
@@ -173,20 +178,35 @@ Style portfolio
 
     #portfolio a{
 
-    background: darkgray;
-    color: black;
+        font-size: 4rem;
+        background: rgba(169, 169, 169, 0.7);
+        color: black;
 
-    /* Sortir la balise du flux pour la positionner précisément */
-    position: absolute;
+        /* Sortir la balise du flux pour la positionner précisément */
+        position: absolute;
 
-    /* Placer la balise en haut à gauche */
-    top: 0;
-    left: 0;
+        /* Placer la balise en haut à gauche */
+        top: 0;
+        left: 0;
 
-    /* Faire en sorte que la balise soit a 100% de la taille de son parent */
-    width: 100%;
-    height: 100%;
-    
+        /* Faire en sorte que la balise soit a 100% de la taille de son parent */
+        width: 100%;
+        height: 100%;
+        
+        /* Réduire l'opacité de la balise */
+        opacity: 0;
+
+        /* gérer une transition entre les états de la balise */
+        -webkit-transition: all .5s;
+        transition: all .5s;
+
+    }
+
+    /* Modifier l'opacité de la balisse en hover */
+    #portfolio a:hover{
+
+        opacity: 1;
+
     }
 
 /*
@@ -269,7 +289,6 @@ Style Contacts
             margin-left: 8rem;
         
         }
-
 
 /*
 Style Footer
