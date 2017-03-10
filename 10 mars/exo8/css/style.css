@@ -43,3 +43,49 @@ Positionner la premiere li de la nav
         left: 0;
 
     }
+
+
+/*
+Positionner la dernière li de la nav
+*/
+
+    footer ul{
+
+        /* Bloquer les enfant LI*/
+        position: relative;
+
+    }
+
+    #lastLi{
+
+        position: absolute;
+        right:0;
+
+    }
+
+/*
+Figer une balise
+*/
+    header{
+
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+
+    }
+
+    Footer{
+
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+
+    }
+
+    main{
+
+        text-align: justify;
+        padding: 2rem 0;
+    }
