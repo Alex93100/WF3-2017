@@ -1,0 +1,272 @@
+/* 
+Style Reset 
+*/
+
+    /* Sélectionner TOUTES les balises du DOM */
+
+    /* Supprimer toutes les marges */
+    *{
+        padding: 0;
+        margin: 0;
+    }
+
+    /* Faire en sorte que la valeur de 1rem soit égal à 10px */
+    html{
+        font-size: 62.5%;
+        background-color: black;
+      
+    }
+
+    body{
+        font-size: 1.5rem; /* 1.5 rem = 15 px */
+        /* Changer la famille de caracteres */
+        font-family: "Arial", sans-serif;
+    }
+
+    /* Supprimer la décoration d balises A */
+    a{
+
+        text-decoration: none;
+
+    }
+
+    /* faire en sorte que les image ne dépassent pas leurs parents */
+    img{
+
+        max-width: 100%;
+
+    }
+
+    h2{
+        /* Aligner le texte au centre */
+        text-align: center;
+        /* modifer la casse */
+        text-transform: uppercase;
+        /* Ajouter une marge extérieur en bas de 30px */
+        margin-bottom: 3rem;
+
+    }
+
+
+/*
+Style largeur maximum
+*/
+
+    nav ul, #portfolio, #apropos p, #contacts, footer section{
+
+        /* Définir une largeur maxmum */
+        max-width:95rem;
+
+        /* Centrer une balise de type block dans son parent */
+        margin: auto;
+
+    }
+
+
+
+/*
+Style header
+*/
+
+    header{
+        text-align: center;
+        color: snow;
+        background-color: gray;
+        /* Ajout d'un marge vers le bas de 50px */
+        margin-bottom: 5rem;
+        
+    }
+    nav{
+
+        /* Mettre le texte en majuscule */
+        text-transform: uppercase;
+        background: darkgray;
+        /* Aligner le texte a gauche */
+        text-align: left;
+        /* Ajoute une marge intérieur de 10px */
+        padding: 1rem;
+        /* Ajout d'un marge vers le bas de 30px */
+        margin-bottom: 3rem;
+        
+    }
+
+    nav a{
+
+        color: black;
+        /* Passer le texte en gras */
+        font-weight: bold;
+
+    }
+
+    li{
+    
+        display: inline-block;
+
+        /* Ajouter une marge extérieur à droite */
+        margin-right: 5rem;
+        
+    }
+
+    h1{
+
+        /* Mettre le texte en majuscule */
+        text-transform: uppercase;
+        /* Augmenter la taille de la font 40px */
+        font-size: 4rem;
+        color: snow;
+        padding-top: 1rem;
+
+    }
+
+    header p{
+
+        /* Augmenter la taille de la font 20px */
+        font-size: 2rem
+
+    }
+
+    section{
+
+        padding: 6rem 0;
+    }
+
+/*
+Style portfolio
+*/
+    #portfolio{
+
+        text-align: center;
+    }
+
+    #portfolio a{
+
+        /* Masquer les balises */
+        display: none;
+    }
+
+    #portfolio article{
+
+        /* Créer 3 colonnes */
+        display: inline-block;
+        width: 30%;
+        /* Ajouter une marge extérieur de 20px */
+        margin:2rem;
+
+    }
+
+/*
+Style A propos
+*/
+    #apropos{
+        color:snow;
+        /* Modifier la couleur de fond */
+        background-color:gray;
+
+        /* Centrer le texte */
+        text-align: center;
+
+    }
+    #apropos p{ 
+        
+        /* Afficher le texte sur 2 colones */
+        -webkit-column-count: 2; /* Chrome, Safari, Opera */
+        -moz-column-count: 2; /* Firefox */
+        column-count: 2;
+
+        /* Justifier le texte */
+        text-align: justify;
+        margin-bottom: 3rem;
+    
+    }
+    #apropos a{
+        
+        color:snow;
+        border: 0.3rem solid snow;
+        padding: 1rem 1.5rem;
+        font-weight: bold;
+
+        /* Créer un bord arrondi */
+        -webkit-column-radius: 1rem; /* Chrome, Safari, Opera */
+        -moz-column-radius: 1rem; /* Firefox */
+        border-radius: 1rem;
+        
+    }
+    
+
+/*
+Style Contacts
+*/
+
+        h2{
+            color: snow; 
+        }
+        input, textarea{
+
+            display: block;
+            width: 90%;
+            margin: 0.5rem auto;
+            padding: 1rem;
+            font-size: 1rem;
+
+            /* Annuler le style du navigateur */
+            border: none;
+            /* redéfinir la bordure */
+            border-bottom: 0.2rem solid gray;
+
+        }
+
+        textarea{
+
+            /* Définir une hauteur minimum */
+            min-height: 10rem;
+
+        }
+
+        /* Sélectionner une balise grace a son attribut et sa valeur */
+        [type="submit"]{
+
+            width: 10rem;
+            display: inline-block;
+            font-weight: bold;
+            -webkit-column-radius: 1rem; /* Chrome, Safari, Opera */
+            -moz-column-radius: 1rem; /* Firefox */
+            border-radius: 1rem;
+            margin-left: 8rem;
+        
+        }
+
+
+/*
+Style Footer
+*/
+
+    footer{
+
+        color:snow;
+        text-align: center;
+        background:gray;
+    }
+
+    footer article{
+
+        display: inline-block;
+        width:30%;
+
+        /* Gérer l'laignement vertical */
+        vertical-align: top;
+
+    }
+
+        /* Sélectionner une balise grace a son attribut et sa valeur */
+        [href="http://google.com"]{
+
+            color: snow;
+
+        }
+
+        aside{
+
+            padding: 1.5rem;
+            background: darkgrey;
+
+        }

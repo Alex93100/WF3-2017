@@ -1,0 +1,67 @@
+p{
+
+    margin: 0;
+    padding: 0;
+
+}
+
+
+section{
+
+    border: .1rem solid darkgray;
+    height: 30rem;
+    width: 30rem;
+    margin: 10rem auto;
+    
+
+}
+
+article{
+
+    height: 5rem;
+    width: 5rem;
+    font-size: 3rem; 
+    font-weight: bold;
+
+    /* Changer la position pour placer précisement les articles */
+    position: absolute;
+
+}
+
+#first{
+
+background: rebeccapurple;
+
+/* Placer l'article en bas à droite */
+right: 0;
+bottom: 0;
+
+}
+
+#second{
+    
+background: lightblue;
+
+/* Placer l'article en bas à gauche */
+left: 0;
+bottom: 0;
+}
+
+#third{
+    
+background: purple;
+
+/* Placer l'article en haut a droite */
+right: 0;
+top: 0;
+
+}
+
+#fourth{
+    
+background: pink;
+
+/* Placer l'article en haut à gauche */
+left: 0;
+top: 0;
+}
