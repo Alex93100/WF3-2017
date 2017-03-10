@@ -122,6 +122,8 @@ Style header
         /* Placer la balise à gauche */
         left:0;
         
+        /* Modifier la taille de la font */
+        font-size: 1.2em;
 
     }
 
@@ -156,12 +158,6 @@ Style portfolio
         text-align: center;
     }
 
-    #portfolio a{
-
-        /* Masquer les balises */
-        display: none;
-    }
-
     #portfolio article{
 
         /* Créer 3 colonnes */
@@ -169,7 +165,26 @@ Style portfolio
         width: 30%;
         /* Ajouter une marge extérieur de 20px */
         margin:2rem;
+        position: relative;
 
+    }
+
+    #portfolio a{
+
+    background: darkgray;
+    color: black;
+
+    /* Sortir la balise du flux pour la positionner précisément */
+    position: absolute;
+
+    /* Placer la balise en haut à gauche */
+    top: 0;
+    left: 0;
+
+    /* Faire en sorte que la balise soit a 100% de la taille de son parent */
+    width: 100%;
+    height: 100%;
+    
     }
 
 /*
