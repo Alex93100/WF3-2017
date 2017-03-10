@@ -1,0 +1,45 @@
+li{
+
+    display: inline-block;
+}
+
+nav{
+
+    text-align: right;
+
+}
+
+ul, main{
+
+    padding: 0;
+    max-width: 45rem;
+    margin: auto;
+}
+
+
+header, footer{
+
+    background: black;
+    color: snow;
+    padding: 0.5rem 1rem;
+
+}
+
+/*
+Positionner la premiere li de la nav
+*/
+
+
+    nav ul{
+
+        /* Bloquer les enfant LI*/
+        position: relative;
+
+    }
+
+    #liOnleft{
+
+        position: absolute; 
+        left: 0;
+
+    }
