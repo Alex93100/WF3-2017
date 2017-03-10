@@ -12,7 +12,9 @@ section{
     height: 30rem;
     width: 30rem;
     margin: 10rem auto;
-    
+
+    /* Bloquer les enfants dans le parent */
+    position: relative;
 
 }
 
