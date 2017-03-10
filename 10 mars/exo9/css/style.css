@@ -81,8 +81,8 @@ Style header
         /* Mettre le texte en majuscule */
         text-transform: uppercase;
         background: darkgray;
-        /* Aligner le texte a gauche */
-        text-align: left;
+        /* Aligner le texte a droite */
+        text-align: right;
         /* Ajoute une marge intérieur de 10px */
         padding: 1rem;
         /* Ajout d'un marge vers le bas de 30px */
@@ -105,6 +105,24 @@ Style header
         /* Ajouter une marge extérieur à droite */
         margin-right: 5rem;
         
+    }
+
+    nav ul{
+        
+        /* Bloquer les enfants dans leur parent */
+        position: relative;
+
+    }
+
+    #firstNavLi{
+
+        /* Sortir la balise du flix pour la repositionner précisément */
+        position: absolute;
+
+        /* Placer la balise à gauche */
+        left:0;
+        
+
     }
 
     h1{
