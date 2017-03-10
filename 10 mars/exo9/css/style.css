@@ -1,6 +1,9 @@
 /* Importer un fichier CSS */
 
-/*@import url('https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css');*/
+@import url('https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css');
+
+/* Importer une police de caractere*/
+@import url('https://fonts.googleapis.com/css?family=Lobster|Playfair+Display:400,700,900');
 
 /* 
 Style Reset 
@@ -24,7 +27,7 @@ Style Reset
     body{
         font-size: 1.5rem; /* 1.5 rem = 15 px */
         /* Changer la famille de caracteres */
-        font-family: "Arial", sans-serif;
+        font-family: 'Playfair Display', serif;
     }
 
     /* Supprimer la décoration d balises A */
@@ -56,7 +59,7 @@ Style Reset
 Style largeur maximum
 */
 
-    nav ul, #portfolio, #apropos p, #contacts, footer section{
+    nav ul, main section:first-child, main section:nth-child(2) p, main section:last-child, footer section{
 
         /* Définir une largeur maxmum */
         max-width:95rem;
@@ -119,18 +122,14 @@ Style header
 
     }
 
-    #firstNavLi{
-
-        /* Sortir la balise du flix pour la repositionner précisément */
-        position: absolute;
-
-        /* Placer la balise à gauche */
-        left:0;
-        
-        /* Modifier la taille de la font */
-        font-size: 1.2em;
-
     }
+
+    h1, h2, h3{
+
+        font-family: 'Lobster', cursive;
+        font-weight: 400;
+    }
+
 
     h1{
 
@@ -141,6 +140,14 @@ Style header
         color: snow;
         padding-top: 1rem;
 
+    }
+
+
+    nav li:first-child{
+
+        position: absolute;
+        left: 0;
+        font-size: 1.5em;
     }
 
     header p{
@@ -158,12 +165,12 @@ Style header
 /*
 Style portfolio
 */
-    #portfolio{
+    main section:first-child{
 
         text-align: center;
     }
 
-    #portfolio article{
+    main section:first-child article{
 
         /* Créer 3 colonnes */
         display: inline-block;
@@ -176,7 +183,7 @@ Style portfolio
 
     }
 
-    #portfolio a{
+    main section:first-child a{
 
         font-size: 4rem;
         background: rgba(169, 169, 169, 0.7);
@@ -203,7 +210,7 @@ Style portfolio
     }
 
     /* Modifier l'opacité de la balisse en hover */
-    #portfolio a:hover{
+    main section:first-child a:hover{
 
         opacity: 1;
 
@@ -212,7 +219,9 @@ Style portfolio
 /*
 Style A propos
 */
-    #apropos{
+
+    /* Sélectionner le N-ème(nth)enfant */
+    main section:nth-child(2){
         color:snow;
         /* Modifier la couleur de fond */
         background-color:gray;
@@ -221,7 +230,7 @@ Style A propos
         text-align: center;
 
     }
-    #apropos p{ 
+    main section:nth-child(2) p{ 
         
         /* Afficher le texte sur 2 colones */
         -webkit-column-count: 2; /* Chrome, Safari, Opera */
@@ -233,7 +242,7 @@ Style A propos
         margin-bottom: 3rem;
     
     }
-    #apropos a{
+    main section:nth-child(2) a{
         
         color:snow;
         border: 0.3rem solid snow;
