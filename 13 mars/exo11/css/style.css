@@ -9,13 +9,81 @@ Style Reset
 
     /* Configurer la valeur 1rem = 10px */
     html{
+        /*Ne JAMAIS définir les propriétés width et height sur le html  */        
         font-size:62.5%;
     }
 
     body{
-     /*Ne JAMAIS définir les propriétés width et height sur le body  */
-    font-size: 1.5rem;  /* 1.5rem = 15px */
-    background: black;
-    color: snow;
+        /*Ne JAMAIS définir les propriétés width et height sur le body  */
+        font-size: 1.5rem;  /* 1.5rem = 15px */
+        text-align: center;
+        background: black;
+        color:seagreen;
     }
-    
+
+    header, main, footer{
+        /* limiter la largeur */
+        max-width: 50rem;
+        /* Center la balise dans la pgae HTML */
+        margin: 2rem auto;
+        padding: 2rem;
+    }
+
+/**************************************************/
+
+/*
+Style header
+*/
+
+    header{
+        background: #eee;
+        /* Bloquer les enfants dans leur parent */
+        position: relative;
+    }
+
+    /* Sélectionner la première li du header */
+    header li:first-child{
+        /* Sortir la balise du flux pour la repositionner à droite */
+        position: absolute;
+        right: 2rem;
+
+    }
+
+    header li:last-child{
+
+        position: absolute;
+        left: 2rem;
+    }
+
+    /* Aligner les balises li de la nav */
+    li{
+        display: inline-block
+    }
+
+/**********************************************/
+
+
+/*
+Style main
+*/
+
+    /* Exclure de la sélection les input de tpe submit */
+    label, textarea, input:not([type="submit"]){
+        display: block;
+        width: 100%;
+    }
+
+
+/*
+Style footer
+*/
+    /* Faire en sorte que le footer soit toujour collé en bas de la page */
+    footer{
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        max-width: 100%;
+        background: #eee;
+        
+    }
