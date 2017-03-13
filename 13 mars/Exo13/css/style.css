@@ -1,0 +1,65 @@
+a{
+    font-size: 4rem;
+    text-decoration: none;
+    color:snow;
+    background: black;
+    padding: 1rem;
+
+    /* Les transition s'ajoutent sur l'état de base des balises */
+    -webkit-transition: background 2s, color 4s, padding 6s;
+    transition: background 2s, color 4s, padding 6s;
+}
+
+/* Modifier l'aspect de la balise a au survol */
+
+a:hover{
+    color: red;
+    background: grey;
+    padding: 2rem;
+}
+
+section{
+    background: red;
+    width: 10rem;
+    height: 10rem;
+
+    /* Effectuer une transition sur toutes les propriétés */
+    -webkit-transition: all 2s;
+    transition: all 2s;
+
+    /* Modifier la courbe d'animlation */
+    -webkit-transition-timing-function: ease-in;
+    transition-timing-function: ease-in;
+
+    /* Ajouter un délai avant la transition */
+    -webkit-transition-delay: 4s;
+    transition-delay: 4s;
+
+    
+}
+
+section:hover{
+    background: pink;
+    -webkit-transform: rotateZ(360deg);
+    transform: rotateZ(360deg);
+}
+
+ul{
+    /* Supprimer le styke de la liste */
+    list-style-type: none;
+    padding: 0;
+}
+
+li{
+    border-left: 0 solid red;
+    display: inline-block;
+    -webkit-transition: all .5s;
+    transition: all .5s;
+}
+
+li:hover{
+
+    padding-left:.5rem;
+    color: red;
+    border-left: .5rem solid red;
+}
