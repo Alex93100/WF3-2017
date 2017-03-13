@@ -28,6 +28,10 @@ Style Reset
         margin: 2rem auto;
         padding: 2rem;
     }
+    img{
+
+        max-width: 100%;
+    }
 
 /**************************************************/
 
