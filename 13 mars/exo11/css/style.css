@@ -1,0 +1,21 @@
+/*
+Style Reset
+*/
+    /* Suppriler toutes les marges de toutes les balises */
+    *{
+        margin: 0;
+        padding: 0; 
+    }
+
+    /* Configurer la valeur 1rem = 10px */
+    html{
+        font-size:62.5%;
+    }
+
+    body{
+     /*Ne JAMAIS définir les propriétés width et height sur le body  */
+    font-size: 1.5rem;  /* 1.5rem = 15px */
+    background: black;
+    color: snow;
+    }
+    
