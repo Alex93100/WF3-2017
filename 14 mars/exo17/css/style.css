@@ -2,6 +2,21 @@
 @import url('https://fonts.googleapis.com/css?family=Roboto:400,700,900');
 
 /*
+Animation
+*/
+@-webkit-keyframes pictoHeaderAnim{
+    0% { transform: translateY(0); }
+    50% { transform: translateY(1rem); } 
+    100% { transform: translateY(0); }  
+}
+
+@keyframes pictoHeaderAnim{
+    0% { transform: translateY(0); }
+    50% { transform: translateY(1rem); } 
+    100% { transform: translateY(0); }  
+}
+
+/*
 Style Reset
 */
     *{
@@ -61,6 +76,10 @@ Style Reset
         padding: 2rem 0;
 
     }
+    img{
+        max-width: 100%;
+
+    }
 
 /**************************************/
 
@@ -108,6 +127,19 @@ Style Header
 
         /* Créer un rond avec une balise carrée */
         border-radius: 50%;
+
+        /* Appliquer l'animation */
+        -webkit-animation-name: pictoHeaderAnim;
+        animation-name: pictoHeaderAnim;
+
+        /* Définir la durée */
+        -webkit-animation-duration: 1s;
+        animation-duration: 1s;
+
+        /* Définir le nombre de boucle */
+        -webkit-animation-iteration-count: infinite;
+        animation-iteration-count: infinite;
+        
     }
 
     a img{
@@ -145,11 +177,42 @@ Style main
         border-color: pink;
     }
 
-    /* Solutions */
-    section:nth-child(3){
+    section:nth-child(2) a::before, section:nth-child(3) a::before, section:nth-child(4) a::before{
 
+        /* Afficher une image dans le contenue */
+        content: url(../img/puce-bas-blanche.png);
+        display: block;
+        height: 3rem;
+        width: 3rem;
+        
+        /* habiller la balise */        
+        float: left;
+        margin-right: 1.5rem;
+    }
+    section:nth-child(5) a::before{
+
+        /* Afficher une image dans le contenue */
+        content: url(../img/puce-droite-bleu.png);
+        display: block;
+        height: 3rem;
+        width: 3rem;
+
+        /* habiller la balise */
+        float: left;
+        margin-right: 1.5rem;
+    }
+
+    /* Solutions, Chiffres, Footer */
+    section:nth-child(3), section:nth-child(7), footer{
         color: snow;
         background: #1d4d51;
+    }
+
+    section:nth-child(7) figure{
+
+        display: inline-block;
+        width: 49%;
+        vertical-align: top;
     }
 
     /* Inscrivez-vous */
@@ -162,8 +225,11 @@ Style main
     section:nth-child(6){
         background-color: #1d4d51;
     
-    /* Bloquer les enfant dans le parent */
-    position: relative;
+        /* Bloquer les enfant dans le parent */
+        position: relative;
+
+        /* Masquer les balises enfant qui dépassent du parent */
+        overflow: hidden;
     }
     section:nth-child(6) h3{
         font-weight: 900;
@@ -189,3 +255,20 @@ Style main
         z-index: 100;
     }
     
+    /* Présentation */
+    article + img{
+        width: 15rem;
+        margin-bottom: 4rem;
+    }
+    iframe{
+        border: none;
+        width: 100%;
+        min-height: 30rem;
+    }
+
+/* Footer */
+
+Footer{
+    font-size: 1.2rem;
+    padding: 1rem;
+}
