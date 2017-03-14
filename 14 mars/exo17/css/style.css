@@ -1,5 +1,94 @@
-body{
+/* Polices des caracteres */
+@import url('https://fonts.googleapis.com/css?family=Roboto:400,700,900');
 
-    background: black;
-    color: snow;
-}
+/*
+Style Reset
+*/
+    *{
+        margin: 0;
+        padding: 0;
+    }
+
+    /* Configurer l'utilissation de 1rem )= 10px */
+    html{
+        font-size: 62.5%
+    }
+    body{
+        font-size: 1.5rem; /* 1.5rem = 15px */
+        background: black;
+        color: snow;
+        font-family: 'Roboto', sans-serif;
+        font-weight: 400;
+    }
+    a{
+        text-decoration: none;
+        color:pink;
+    }
+    /* appliquer deux design différents sur la balise h1 */
+    h1{
+        font-size: 1.5rem;
+        line-height: 1.8em;
+        font-weight: 400;
+        text-transform: uppercase;
+        margin-bottom: 4rem;
+    }
+    h1 b{
+        font-size: 2em;
+        display: block;
+    }
+    h1 span{
+        text-transform: lowercase;
+    }
+
+/**************************************/
+
+/*
+Style Header
+*/
+    header{
+        text-align: center;
+        color: snow;
+
+        /* Configurer l'image de fond en parallaxe */
+        background-image: url(../img/img-couverture-iphone.jpg);
+        
+        /* Positionner l'image de fond */
+        background-position: top;
+
+        /* Modifier la taille de l'image de fond */
+        background-size: 150%;
+
+        /* Bloquer l'image de fond */
+        background-attachment: fixed;
+    }
+    nav{
+        background: #1d4d51;
+        padding: 1rem;
+        margin-bottom: 4rem;
+    }
+    li{
+        display: inline-block;
+        width: 45%;
+    }
+    /* Séléctionner une balise grâce à son attribut */
+    [src="img/logo-GRT-gaz-blanc.png"]{
+        width: 15rem;
+        margin-bottom: 4rem;
+    }
+    /* Séléctionner une balise suivante */
+    h1 + a{
+        background: pink;
+
+        /* les  balises de type inline ne peuvent pas recevoir les propriétés width et height*/
+        display: inline-block;
+        width: 5rem;
+        height: 5rem;
+        margin-bottom: 8rem;
+
+        /* Créer un rond avec une balise carrée */
+        border-radius: 50%;
+    }
+
+    a img{
+        padding-top: .8rem;
+    }
