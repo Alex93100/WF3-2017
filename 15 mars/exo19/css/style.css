@@ -1,0 +1,274 @@
+/* Polices des caracteres */
+@import url('https://fonts.googleapis.com/css?family=Roboto:400,700,900');
+
+/*
+Animation
+*/
+@-webkit-keyframes pictoHeaderAnim{
+    0% { transform: translateY(0); }
+    50% { transform: translateY(1rem); } 
+    100% { transform: translateY(0); }  
+}
+
+@keyframes pictoHeaderAnim{
+    0% { transform: translateY(0); }
+    50% { transform: translateY(1rem); } 
+    100% { transform: translateY(0); }  
+}
+
+/*
+Style Reset
+*/
+    *{
+        margin: 0;
+        padding: 0;
+    }
+
+    /* Configurer l'utilissation de 1rem )= 10px */
+    html{
+        font-size: 62.5%
+    }
+    body{
+        font-size: 1.5rem; /* 1.5rem = 15px */
+        background: black;
+        color: snow;
+        font-family: 'Roboto', sans-serif;
+        font-weight: 400;
+        text-align: center;
+    }
+    a{
+        text-decoration: none;
+        color:pink;
+    }
+    /* appliquer deux design différents sur la balise h1 */
+    h1{
+        font-size: 1.5rem;
+        line-height: 1.8em;
+        font-weight: 400;
+        text-transform: uppercase;
+        margin-bottom: 4rem;
+    }
+
+    h1 b{
+        font-size: 2em;
+        display: block;
+    }
+
+    span{
+        text-transform: lowercase;
+    }
+
+    h2, h3{
+        text-transform: uppercase;
+        font-weight: 400;
+        font-size: 2.2rem;
+    }
+
+    section{
+        padding: 4rem 2rem;
+    }
+
+    p{
+        padding: 4rem 0;
+    }
+
+    figure{
+        padding: 2rem 0;
+
+    }
+    img{
+        max-width: 100%;
+
+    }
+
+/**************************************/
+
+/*
+Style Header
+*/
+    header{
+        color: snow;
+
+        /* Configurer l'image de fond en parallaxe */
+        background-image: url(../img/img-couverture-iphone.jpg);
+        
+        /* Positionner l'image de fond */
+        background-position: top;
+
+        /* Modifier la taille de l'image de fond */
+        background-size: 150%;
+
+        /* Bloquer l'image de fond */
+        background-attachment: fixed;
+    }
+    nav{
+        background: #1d4d51;
+        padding: 1rem;
+        margin-bottom: 4rem;
+    }
+    li{
+        display: inline-block;
+        width: 45%;
+    }
+    /* Séléctionner une balise grâce à son attribut */
+    [src="img/logo-GRT-gaz-blanc.png"]{
+        width: 15rem;
+        margin-bottom: 4rem;
+    }
+    /* Séléctionner une balise suivante */
+    h1 + a{
+        background: pink;
+
+        /* les  balises de type inline ne peuvent pas recevoir les propriétés width et height*/
+        display: inline-block;
+        width: 5rem;
+        height: 5rem;
+        margin-bottom: 8rem;
+
+        /* Créer un rond avec une balise carrée */
+        border-radius: 50%;
+
+        /* Appliquer l'animation */
+        -webkit-animation-name: pictoHeaderAnim;
+        animation-name: pictoHeaderAnim;
+
+        /* Définir la durée */
+        -webkit-animation-duration: 1s;
+        animation-duration: 1s;
+
+        /* Définir le nombre de boucle */
+        -webkit-animation-iteration-count: infinite;
+        animation-iteration-count: infinite;
+        
+    }
+
+    a img{
+        padding-top: .8rem;
+    }
+
+/*
+Style main
+*/
+
+    /* Programme / Réponse */
+    section:nth-child(2),section:nth-child(4){
+        color: snow;
+        /* Effet parallaxe CSS */
+        background-image: url(../img/img-foule.jpg);
+
+        /* Positionner l'image de fond */
+        background-position: center;
+
+        /* Modifier la taille de l'image de fond */
+        background-size: 150%;
+
+        /* Bloquer l'image de fond */
+        background-attachment: fixed;
+
+    }
+    /*Call To Action*/
+    section:nth-child(2) a, section:nth-child(3) a, section:nth-child(4) a, section:nth-child(5) a{
+        color: pink;
+        border: .1rem solid snow;
+        display: inline-block;
+        padding: 1rem;
+        border-radius: .5rem;
+        margin-top: 2rem;
+        border-color: pink;
+    }
+
+    section:nth-child(2) a::before, section:nth-child(3) a::before, section:nth-child(4) a::before{
+
+        /* Afficher une image dans le contenue */
+        content: url(../img/puce-bas-blanche.png);
+        display: block;
+        height: 3rem;
+        width: 3rem;
+        
+        /* habiller la balise */        
+        float: left;
+        margin-right: 1.5rem;
+    }
+    section:nth-child(5) a::before{
+
+        /* Afficher une image dans le contenue */
+        content: url(../img/puce-droite-bleu.png);
+        display: block;
+        height: 3rem;
+        width: 3rem;
+
+        /* habiller la balise */
+        float: left;
+        margin-right: 1.5rem;
+    }
+
+    /* Solutions, Chiffres, Footer */
+    section:nth-child(3), section:nth-child(7), footer{
+        color: snow;
+        background: #1d4d51;
+    }
+
+    section:nth-child(7) figure{
+
+        display: inline-block;
+        width: 49%;
+        vertical-align: top;
+    }
+
+    /* Inscrivez-vous */
+    [alt="Logo salon des maires"]{
+        width: 10rem;
+        margin-bottom: 2rem;
+    }
+
+    /* Vidéo */
+    section:nth-child(6){
+        background-color: #1d4d51;
+    
+        /* Bloquer les enfant dans le parent */
+        position: relative;
+
+        /* Masquer les balises enfant qui dépassent du parent */
+        overflow: hidden;
+    }
+    section:nth-child(6) h3{
+        font-weight: 900;
+        font-size: 1.7rem;
+        margin-bottom: 2rem;
+
+    }
+    video{
+        /* Placer la video en fond d'écran */
+        position:absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+
+    }
+    section:nth-child(6) article{
+        color: snow;
+        background: rgba(0, 0 , 0, .6);
+        padding: 4rem 2rem;
+
+        /* faire passer la balise sur la première couche */
+        position: relative;
+        z-index: 100;
+    }
+    
+    /* Présentation */
+    article + img{
+        width: 15rem;
+        margin-bottom: 4rem;
+    }
+    iframe{
+        border: none;
+        width: 100%;
+        min-height: 30rem;
+    }
+
+/* Footer */
+
+Footer{
+    font-size: 1.2rem;
+    padding: 1rem;
+}

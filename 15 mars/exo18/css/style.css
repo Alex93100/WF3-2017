@@ -1,0 +1,78 @@
+/* Importer une feuille de style */
+    @import url(https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css);
+
+body{
+    text-align: center;
+    background: black;
+    color: snow;
+}
+
+ul{
+    padding:0;
+}
+
+li{
+    padding: 1rem;
+}
+
+/*
+Masquer la nav pour les mobiles
+*/
+
+    nav{
+        display: none;
+    }
+
+    /* Gestion du menu burger en CSS */
+    .fa-bars{
+        font-size: 2rem;
+
+        /* Changer l'aspect du curseur */
+        cursor: pointer;
+    }
+
+    /* Afficher la nav lorsque le curseur est au-dessus du menu burger */
+    .fa-bars:hover + nav{
+        display: block;
+
+    }
+    article{
+        color: pink;
+    }
+
+/*
+Configurer les styles pour les ecran d'une taille minimale de 550px
+*/
+@media screen and (min-width:550px) {
+
+    /* Recréer les séleteur pour les modifier */
+    article{
+        display: inline-block;
+        width: 49%;
+    }
+}
+@media screen and (min-width:850px) {
+
+    /* Masquer le menu burger*/
+    .fa-bars{
+        display: none;
+    }
+
+    /* Afficher la nav */
+    nav{
+        display: block;
+    }
+
+    /* Aligner à gauche le text des articles */
+    article{
+        text-align: left;
+    }
+    nav, li{
+        display: inline-block;
+        padding: 0.5rem;
+    }
+    main{
+        max-width: 950px;
+        margin: auto;
+    }
+}
