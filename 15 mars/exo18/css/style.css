@@ -1,6 +1,12 @@
 /* Importer une feuille de style */
     @import url(https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css);
 
+*{
+    /* Inclure daqns les largeurs le padding et le border */
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
 body{
     text-align: center;
     background: black;
@@ -74,5 +80,12 @@ Configurer les styles pour les ecran d'une taille minimale de 550px
     main{
         max-width: 950px;
         margin: auto;
+    }
+    header{
+        width: 950px;
+        margin: auto;
+        background: pink;
+        padding: 20px;
+        border: 10px solid red;
     }
 }
