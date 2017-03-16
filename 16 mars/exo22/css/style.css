@@ -48,9 +48,9 @@ Style Reset
     }*/
 
     li{
-        padding-left: 2rem;
-
+        padding: .5rem;
     }
+
     p{
         font-size: 2rem;
     }
@@ -134,11 +134,11 @@ Style header
         left:0;
         width: 100%;
         padding: 2rem;
-        text-align: right;
+        text-align: center;
         z-index: 1;
     }
     nav > a{
-        position: absolute;
+        /*position: absolute;*/
         left: 2rem;
         
     }
@@ -260,7 +260,30 @@ Requêtes média
             h2, h3{
                 font-size: 2.7rem;
             }
-         
+
+            li{
+                padding-left: 2rem;
+            }
+
+            nav{
+                position: fixed;
+                background: pink;
+                top:0;
+                left:0;
+                width: 100%;
+                padding: 2rem;
+                text-align: left;
+                z-index: 1;
+            }
+            nav > a{
+                position: absolute;
+                left: 2rem;
+                top: 2.4rem;
+            }
+            nav ul{
+                text-align: right;
+            }
+
         /* Style Header */
             header{
                 padding-bottom: 13rem;
@@ -285,17 +308,51 @@ Requêtes média
         a{
             font-size: 2rem;
         }
+        li{
+           padding-left: 2rem;
+        }
+        nav{
+            position: fixed;
+            background: pink;
+            top:0;
+            left:0;
+            width: 100%;
+            padding: 2rem;
+            text-align: left;
+            z-index: 1;
+        }
+    nav > a{
+        position: absolute;
+        left: 2rem;
     }
       
     /* Ecran d'une taille minimale de 950px */
     @media screen and (min-width:950px) {
         
         /*Style reset*/
+        li{
+           padding-left: 2rem;
+        }
         p{
             max-width: 95rem;
             margin: auto;
         }
-        header{
+
+        nav{
+            position: fixed;
+            background: pink;
+            top:0;
+            left:0;
+            width: 100%;
+            padding: 2rem;
+            text-align: left;
+            z-index: 1;
+        }
+        nav > a{
+            position: absolute;
+            left: 2rem;
+        }
+            header{
             /* Configurer l'image de fond en parallaxe */
             background-image: url(../img/header.jpg);
             /* Positionner l'image de fond */
