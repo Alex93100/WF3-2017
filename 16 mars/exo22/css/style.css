@@ -71,9 +71,19 @@ Style Reset
 /*
 Style button
 */
-.first button{}
-.first button{}
-.first button{}
+.button{
+    border: pink solid;
+    border-radius: 30rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    background: pink;
+
+}
+.second{
+    border:snow solid;
+    background: snow;
+}
+
 
 
 
@@ -138,8 +148,49 @@ Style main
 */
  section:first-child{
      background: pink;
+     padding: 2rem;
 
  }
+
+/*
+Style Portfolio
+*/
+
+    section figure{
+
+        float: left;
+        position: relative;
+        width: 50%;
+        line-height: 0;
+
+    }
+    section figcaption{
+
+        font-size: 5.3rem;
+        background: rgba(169, 169, 169, 0.7);
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        opacity: 0;
+        -webkit-transition: all .5s;
+        transition: all .5s;
+    }
+     section figcaption:hover{
+
+        opacity: 1;
+    }
+
+    section figcaption:hover .fa{
+
+        top:50%;
+    }
+
+    section figcaption a{
+        color: black;
+        text-transform: uppercase;
+    }
 
 
 /*********************************************/
@@ -149,7 +200,7 @@ Style footer
 */
 
 footer {
-
+    clear: both;
 }
 
 aside{
@@ -159,9 +210,11 @@ aside{
     
 }
 
-footer a{
+footer article a{
 
     display: block;
+    padding-left: 2rem;
+    padding-right: 2rem;
 }
 
 /********************************************/
