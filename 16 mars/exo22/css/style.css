@@ -3,7 +3,7 @@
 
     /* Icones FontAwesome */
     .fa{
-        color: pink;
+        color: rgba(255, 192, 203, 0.7);
         font-size: 6rem;
     }
 
@@ -65,6 +65,29 @@ Style Reset
          font-family: 'Open Sans', sans-serif;
          font-weight: 400;
      }
+
+     h1::before, h2::before{
+        content: "";
+        display: block;
+        height: 4rem;
+        margin: auto;
+        position: absolute;
+        -webkit-transform: translate(-50%, -65%);
+        transform: translate(-50%, -65%);
+     }
+
+     h1::after, h2::after{
+        content: "";
+        display: block;
+        height: .3rem;
+        width: 5rem;
+        margin: 1rem auto;
+        background: black;
+     }
+
+     aside h2::after{
+         display: none;
+     }
     
 /*********************************************/
 
@@ -83,10 +106,6 @@ Style button
     border:snow solid;
     background: snow;
 }
-
-
-
-
 
 
 /*********************************************/
@@ -167,24 +186,17 @@ Style Portfolio
     section figcaption{
 
         font-size: 5.3rem;
-        background: rgba(169, 169, 169, 0.7);
+        background: rgba(255, 192, 203, 0.7);
         position: absolute;
         top: 0;
         left: 0;
         width: 100%;
         height: 100%;
         opacity: 0;
-        -webkit-transition: all .5s;
-        transition: all .5s;
     }
      section figcaption:hover{
 
         opacity: 1;
-    }
-
-    section figcaption:hover .fa{
-
-        top:50%;
     }
 
     section figcaption a{
@@ -228,15 +240,13 @@ Requêtes média
         /* Style Reset */
 
             h1{
-                font-size: 2rem;
+                font-size: 4rem;
                 padding: 0 2rem;
             }
             h2, h3{
                 font-size: 2.7rem;
             }
-            section{
-                padding: 8rem 4rem;
-            }
+         
         /* Style Header */
             header{
                 padding-bottom: 13rem;
@@ -245,16 +255,65 @@ Requêtes média
             a{
                 display: inline-block;
             }
-    } 
 
+        /*Style button*/
+            .button{
+                margin-top: 2rem;
+
+            }
+        
+    }
     /* Ecran d'une taille minimale de 750px */
     @media screen and (min-width:750px) {
+        article {
+            display: block;
+        }
     }
       
     /* Ecran d'une taille minimale de 950px */
     @media screen and (min-width:950px) {
-
+        header{
+            /* Configurer l'image de fond en parallaxe */
+            background-image: url(../img/header.jpg);
+            /* Positionner l'image de fond */
+            background-position: center;
+            /* Modifier la taille de l'image de fond */
+            background-size: cover;
+            padding: 30rem 5rem 20rem 5rem;
+        }
+        section:first-child {
+            background: pink;
+            padding: 8rem;
+        }
         h1{
-            font-size: 5rem;
+            font-size: 4rem;
+        }
+        article{
+            display: inline-block;
+            width: 49%;
+        }
+        
+    /*
+    Style Portfolio
+    */
+
+        section figure{
+
+            float: left;
+            position: relative;
+            width: 33.333%;
+            line-height: 0;
+
+        }
+        section figcaption{
+
+            font-size: 50rem;
+            background: rgba(255, 192, 203, 0.7);
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0;
         }
     }
