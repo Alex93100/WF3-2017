@@ -1,0 +1,207 @@
+/* Import FontAwesome */
+@import url(https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css);
+
+    /* Icones FontAwesome */
+    .fa{
+        color: pink;
+        font-size: 6rem;
+    }
+
+
+/* Import caracteres font */
+@import url('https://fonts.googleapis.com/css?family=Merriweather|Open+Sans:400,700');
+
+/*********************************************/
+
+/*
+Style Reset
+*/
+    *{
+        padding:0; 
+        margin:0;
+        -webkit-box-sizing: border-box;
+        box-sizing: border-box;
+    }
+    
+    html{
+        font-size: 62.5%
+    }
+
+    img{
+        max-width: 100%;
+    }
+
+    body{
+        font-size: 1.5rem;
+        text-align: center;
+        font-family: 'Merriweather', serif;
+    }
+
+    a{
+        text-decoration: none;
+        font-size: 1.5rem;
+        color:rgb(113, 113, 113);
+    }
+
+    article{
+        display: inline-block;
+    }
+
+    p{
+        font-size: 2rem;
+    }
+
+    h2{
+        font-size: 3rem;
+    }
+
+    h3{
+        font-size:2.2rem;
+     }
+     h1, h2, h3, p{
+        padding: 1rem;
+     }
+     h1, h2, h3{
+         font-family: 'Open Sans', sans-serif;
+         font-weight: 400;
+     }
+    
+/*********************************************/
+
+/*
+Style button
+*/
+.first button{}
+.first button{}
+.first button{}
+
+
+
+
+
+/*********************************************/
+
+/*
+Style header
+*/
+    header{
+        /* Configurer l'image de fond en parallaxe */
+        background-image: url(../img/header.jpg);
+        /* Positionner l'image de fond */
+        background-position: center;
+        /* Modifier la taille de l'image de fond */
+        background-size: cover;
+        padding: 15rem 2rem 10rem 2rem;
+        }
+
+    nav{
+        position: fixed;
+        background: pink;
+        top:0;
+        left:0;
+        width: 100%;
+        padding: 2rem;
+        text-align: right;
+    }
+    nav > a{
+        position: absolute;
+        left: 2rem;
+        
+    }
+    nav ul{
+        /*display: none;*/
+    }
+
+    nav li{
+        display: inline-block;
+    }
+
+    h1{
+        color: snow;
+        text-transform: uppercase;
+        font-size: 3.3rem;
+        display: inline-block;
+        font-weight: 700;
+        
+    }
+
+    header p{
+        color:rgba(255,255,255,.7);
+    }
+
+    
+
+/*********************************************/
+
+/*
+Style main
+*/
+ section:first-child{
+     background: pink;
+
+ }
+
+
+/*********************************************/
+
+/*
+Style footer
+*/
+
+footer {
+
+}
+
+aside{
+    color:snow;
+    background:rgba(34,34,34,1);
+    padding: 5rem 2rem 5rem 2rem;
+    
+}
+
+footer a{
+
+    display: block;
+}
+
+/********************************************/
+
+/*
+Requêtes média
+*/
+    /* Ecran d'une taille minimale de 550px */
+    @media screen and (min-width:550px) {
+        
+        /* Style Reset */
+
+            h1{
+                font-size: 2rem;
+                padding: 0 2rem;
+            }
+            h2, h3{
+                font-size: 2.7rem;
+            }
+            section{
+                padding: 8rem 4rem;
+            }
+        /* Style Header */
+            header{
+                padding-bottom: 13rem;
+                background-image: url(../img/header.jpg);
+            }
+            a{
+                display: inline-block;
+            }
+    } 
+
+    /* Ecran d'une taille minimale de 750px */
+    @media screen and (min-width:750px) {
+    }
+      
+    /* Ecran d'une taille minimale de 950px */
+    @media screen and (min-width:950px) {
+
+        h1{
+            font-size: 5rem;
+        }
+    }
