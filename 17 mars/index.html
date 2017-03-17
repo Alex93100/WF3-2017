@@ -14,7 +14,7 @@ Référencement naturel
  Générer des appels entrants.
 
 
- Taf du moteur de recherche:
+ <!--Taf du moteur de recherche:-->
 
  Crawl---->index
                 î
@@ -37,8 +37,48 @@ balise meta - site en devt
 
 En site en ligne balise meta ne dois plus etre present.
 
-site en devt:
+<!--fichier robots.txt site en devt:-->
 
 robots.Txt
     User-agent:*
     Disallow:/
+
+<!--Fichier robots.txt site en ligne-->
+a la racine du site
+
+robots.txt
+    User-agent:*
+    Disallow:/wp-login.php
+    Disallow:/intranet/
+
+Un fichier robots.txt par sous-domaine
+(actu.votre-site.com/robots.txt)
+
+
+<!--ne pas indexer les images-->
+    User-agent:*
+    Disallow:/wp-login.php
+    Disallow:/intranet/
+    
+    User-agent:Googlebot-Image
+    Disallow:/
+
+<!--Ne pas suivre un lien-->
+<a href="http://etc.fr" rel="nofollow">Marie-Aude</a>
+
+Utilisé par les réseaux sociaux
+
+Url canonique
+
+Une page avec deux urls:
+http://blabl.fr/bla/blabla
+http://blabl.fr/blabla/blabla
+
+<link rel="canonical" href="http://blabl.fr/blabla/blabla"/>
+
+(Seule présente dans les résultats)
+
+
+
+Plan du site
+
