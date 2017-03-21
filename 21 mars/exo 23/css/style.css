@@ -35,7 +35,7 @@ Style Reset
     }
 
     body{
-        background: black;
+        background: pink;
         color: snow;
         text-align: center;
         font-size: 2rem;
@@ -43,25 +43,44 @@ Style Reset
         font-family: 'Asap', sans-serif;        
     }
 
-    a{
+    ul{
+        list-style: none;
+    }
+
+    a, header li{
         color: pink;
         text-decoration: none;
+
+        -webkit-transition: all .5s;
+        transition: all .5s;
     }
 
     h1, h2, h3{
         font-weight: 400;
         font-family: 'Lobster', cursive;
         letter-spacing: 0.1rem;
-        padding-bottom:2rem; 
-        
+        padding-bottom:2rem;   
     }
+
+
     h1 span{
         font-weight: 400;
         font-family: 'Asap', sans-serif;
         font-size: .4em;                        
         display: block;
         letter-spacing: 0;
-        
+    }
+
+    p{
+        font-size: 1.5rem;
+    }
+
+    img{
+        max-width: 100%;
+    }
+
+    aside{
+        font-size: 1.5rem;
     }
 
 /************************************/
@@ -74,7 +93,6 @@ Style Header
         background: slategray;
         padding: 2rem;
         position: relative;
-        padding: 2rem 2rem 3rem 2rem;
     }
 
     nav{
@@ -104,10 +122,24 @@ Style Header
     /* Afficher la nav au survol de la balise a du header */
     header > a:hover + nav{
         display: block;
-
-
     }
 
+    header > a:hover{
+        background: rgb(156, 60, 150);
+        -webkit-transition: all 1s;
+        transition: all 1s;        
+    }
+
+    header li{
+        font-weight: 700;
+        background: rgba(156, 90, 150, .7);
+        padding: 1rem;
+        margin-bottom: 1rem;
+    }
+
+    header li:hover{
+        background: rgba(156, 60, 150, .7);
+    }
 
 /************************************/
 
@@ -117,8 +149,114 @@ Style Main
 
     main{
         background: pink;
+        color: black;
+        padding: 4rem 2rem 12rem 2rem;
     }
 
+    /* Style Portfolio */
+
+        section{
+            font-size: 1.5rem;
+        }
+
+        section a{
+            color: dimgray;
+        }
+
+        figure{
+            position: relative;
+            /*margin: 2rem auto;*/
+        }
+
+        figure::after {
+            content: "";
+            width: 100%;
+            height: 3.4rem;
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            /*background: rgb(156, 60, 150);*/
+            background: rgb(17, 15, 37);
+        }
+
+        figcaption{
+            position: absolute;
+            position: absolute;
+            z-index: 1;
+            bottom: 0;
+            left: 50%;
+            width: 70%;
+
+            background: rgb(156, 60, 150);
+            /*background: darkslategray;*/
+            padding: 0;
+            
+            -webkit-transform: translateX(-50%);
+            transform: translateX(-50%);
+        }
+        figcaption span {
+            font-weight: 400;
+            display: block;
+        }
+
+        .portfolioPage article{
+            position: relative;
+            margin: 2rem auto;
+
+            /* Masquer les éléments qui dépassent de la balise */
+            overflow: hidden;
+        }
+
+        .portfolioPage main a{
+            padding: .5rem 1rem;
+            color: rgb(180, 20, 180);
+            
+            position: absolute;
+            top: -13%;
+            left: 50%;
+            z-index: 1;
+
+            -webkit-transform: translateX(-50%);
+            transform: translateX(-50%);
+        }
+
+        /* Changer la propriété top de la balise A au survol de l'article */
+        .portfolioPage article:hover a{
+            top: 8%
+        }
+
+
+    /* Style Contacts */
+
+        form{
+            margin: 2rem auto;
+        }
+
+        textarea, input:not([type="submit"]){
+            display: block;
+            width: 100%;
+            border: none;
+            border-bottom: .1rem solid slategray;
+            padding: 1rem;
+            margin-bottom:2rem; 
+        }
+
+        textarea{
+            min-height: 15rem;
+        }
+
+        form :last-child{
+            background: slategray;
+            color: pink;
+            border: none;
+            padding: .5rem 1rem;
+        }
+
+        iframe{
+            width: 100%;
+            min-height: 20rem;
+            border: none;
+        }
 
 
 /************************************/
@@ -128,13 +266,98 @@ Style Footer
 */
 
     footer{
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        width: 100%;
         background: slategray;
- 
+        padding: 2rem;
+        z-index: 2;
     }
 
+    /* Toute les balises li du footer sauf la dernière */
+    footer li:not(:last-child){
+        display: inline-block;
+        margin-bottom:1rem; 
+    }
 
 /************************************/
 
 /*
-Style Media
+Requetes Media
 */
+
+    /* Ecran d'une tailleminimal de 400px */
+        @media screen and (min-width: 400px){
+
+            /* Style portfolio */
+                .portfolioPage article{
+
+                    /*passer en 2 colones*/
+                    display: inline-block;
+                    width: 49%;
+                    padding: 0 1rem 0 0;
+                }
+
+                .portfolioPage main a {
+                
+                    top: -5rem;
+                }
+        }
+
+    /* Ecran d'une tailleminimal de 750px */
+        @media screen and (min-width: 750px){
+
+            /* Style header */
+
+                /* Masquer le burger */
+                header > a{
+                    display: none;
+                }
+                /* afficher la nav */
+                nav{
+                    display: block
+                }
+
+                /* Aligner les item de la nav */
+                nav li{
+                    display: inline-block;
+                }
+        }
+
+    /* Ecran d'une tailleminimal de 750px */
+        @media screen and (min-width: 750px){
+
+            /* Style reset */
+                main, h1, nav{
+                    max-width: 85rem;
+                    margin: auto;
+                }
+                
+                h1 span{
+                    display: initial;
+                }
+
+            /* Style header */
+                header{
+                    text-align: left;
+                }
+
+                /* Masquer le burger */
+                header > a{
+                    display: none;
+                }
+                /* afficher la nav */
+                nav{
+                     display: block
+                }
+                        
+                /* Aligner les item de la nav */
+                nav li{
+                     display: inline-block;
+                }
+            /* Style main */
+                main{
+                    padding: 4rem 0 10rem 0;
+                }
+        }

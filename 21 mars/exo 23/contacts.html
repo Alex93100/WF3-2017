@@ -4,34 +4,55 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
-        <title>TP 21 mars Exo 23</title>
+        <title>TP 21 mars Exo 23 - Portfolio</title>
         <link rel="stylesheet" href="css/style.css">
-
     </head>
 
-    <body>
+    <body class="portfolioPage">
         <!-- Ouverture du site -->
         <header>
-            <h1>Brand new app</h1>
-            <p>Mode with love, HTML, CSS and JavaScript</p>
+            <h1>Brand new app <span>Mode with love, HTML, CSS and JavaScript</span></h1>
+            <a href="#"><i class="fa fa-bars" aria-hidden="true"></i></a>
+
+            <!-- Navigation principale -->
             <nav>
                 <ul>
-                    <li><a href="home.html">Accueil</a></li>
+                    <li><a href="index.html">Accueil</a></li>
+                    <li><a href="about.html">A propos</a></li>
                     <li><a href="portfolio.html">Portfolio</a></li>
                     <li><a href="contacts.html">Contacts</a></li>
-                    <!--<li><a href=""></a></li>
-                    <li><a href=""></a></li>-->
                 </ul>
             </nav>
         </header>
 
         <!-- Contenue principal -->
         <main>
+            <h2>Contacts</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Et in modi adipisci autem quibusdam nam aut assumenda.</p>
+
+            <form action="contact.php">
+                <input type="text" placeholder="Nom Complet">
+                <input type="email"placeholder="Email">
+                <input type="text"placeholder="Sujet">
+                <textarea placeholder="Message"></textarea>
+                <!-- Validation du formulaire -->
+                <input type="submit" value="Envoyer">
+            </form>
+
+            <!-- Google map -->
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2626.127496825882!2d2.332156615792875!3d48.83670671018704!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47e671c7785c4fdb%3A0xb118bc844f2f417a!2sLes+Grands+Voisins!5e0!3m2!1sfr!2sfr!4v1490107714360"allowfullscreen></iframe>
 
         </main>
 
         <!-- Fermeture du site -->
         <footer>
+            <!-- Liens RS + copyright -->
+            <ul>
+                <li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+                <li><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+                <li><a href="#"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
+                <li>&copy; Alexandre Rodrigues</li>
+            </ul>
 
             <aside>Under MIT licence</aside>
         </footer>
