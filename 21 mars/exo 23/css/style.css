@@ -366,4 +366,9 @@ Requetes Media
                 main{
                     padding: 4rem 0 10rem 0;
                 }
+            /* Style contacts */
+                iframe{
+                    padding: 2rem 2rem;
+                }
+            
         }
