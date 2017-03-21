@@ -334,6 +334,10 @@ Requetes Media
                     margin: auto;
                 }
                 
+                h1{
+                    font-size:4rem;
+                }
+
                 h1 span{
                     display: initial;
                 }
@@ -341,6 +345,7 @@ Requetes Media
             /* Style header */
                 header{
                     text-align: left;
+                    text-indent: 1rem;
                 }
 
                 /* Masquer le burger */
@@ -349,12 +354,13 @@ Requetes Media
                 }
                 /* afficher la nav */
                 nav{
-                     display: block
+                     display: block;
                 }
                         
                 /* Aligner les item de la nav */
                 nav li{
                      display: inline-block;
+                     text-indent: 0;
                 }
             /* Style main */
                 main{
