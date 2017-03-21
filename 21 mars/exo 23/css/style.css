@@ -1,0 +1,140 @@
+/*
+IMPORT
+*/
+    /*Font awesome*/
+    @import url(https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css);
+
+    /*style caracteres*/
+    @import url(https://fonts.googleapis.com/css?family=Asap:400,700|Lobster);
+
+/************************************/
+
+/*
+Style button
+*/
+
+
+
+
+
+/************************************/
+/*
+Style Reset
+*/
+
+    *{
+        margin: 0;
+        padding: 0;
+        -webkit-box-sizing: border-box;
+        box-sizing: border-box;
+    }
+
+    html{
+
+        font-size: 62.5%
+    }
+
+    body{
+        background: black;
+        color: snow;
+        text-align: center;
+        font-size: 2rem;
+        font-weight: 400;        
+        font-family: 'Asap', sans-serif;        
+    }
+
+    a{
+        color: pink;
+        text-decoration: none;
+    }
+
+    h1, h2, h3{
+        font-weight: 400;
+        font-family: 'Lobster', cursive;
+        letter-spacing: 0.1rem;
+        padding-bottom:2rem; 
+        
+    }
+    h1 span{
+        font-weight: 400;
+        font-family: 'Asap', sans-serif;
+        font-size: .4em;                        
+        display: block;
+        letter-spacing: 0;
+        
+    }
+
+/************************************/
+
+/*
+Style Header
+*/
+
+    header{
+        background: slategray;
+        padding: 2rem;
+        position: relative;
+        padding: 2rem 2rem 3rem 2rem;
+    }
+
+    nav{
+        display: none;
+    }
+
+    header > a{
+        /* La balise A qui est enfant direct du header */
+        background: snow;
+        width: 3.4rem;
+        height: 3.4rem;
+        border: .2rem solid pink;
+        padding-top: 0.3rem;        
+        display: inline-block;
+        
+        position: absolute;
+        left: 50%;
+        top: 100%;
+
+        -webkit-transform: translate(-50%, -50%);        
+        transform: translate(-50%, -50%);
+
+        -webkit-border-radius: 50%;
+        border-radius: 50%;
+    }
+
+    /* Afficher la nav au survol de la balise a du header */
+    header > a:hover + nav{
+        display: block;
+
+
+    }
+
+
+/************************************/
+
+/*
+Style Main
+*/
+
+    main{
+        background: pink;
+    }
+
+
+
+/************************************/
+
+/*
+Style Footer
+*/
+
+    footer{
+        background: slategray;
+ 
+    }
+
+
+/************************************/
+
+/*
+Style Media
+*/
