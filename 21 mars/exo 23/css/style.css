@@ -291,7 +291,7 @@ Requetes Media
         @media screen and (min-width: 400px){
 
             /* Style portfolio */
-                .portfolioPage article{
+                .imgSection article{
 
                     /*passer en 2 colones*/
                     display: inline-block;
@@ -299,7 +299,7 @@ Requetes Media
                     padding: 0 1rem 0 0;
                 }
 
-                .portfolioPage main a {
+                .imgSection main a {
                 
                     top: -5rem;
                 }

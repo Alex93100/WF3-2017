@@ -1,0 +1,295 @@
+/* Import */
+
+
+
+/**********************/
+
+/*
+Style Reset
+*/
+
+    *{
+        margin: 0;
+        padding: 0;
+        -webkit-box-sizing: border-box;
+        box-sizing: border-box;
+    }
+
+    html{
+        font-size:62.5%;
+    }
+
+    body{
+        font-size: 1.5rem;
+        color: snow;
+        background: black;
+    }
+
+    img{
+        max-width: 100%;
+    }
+    .img-Circle{
+        border-radius:50%;
+        max-width: 30%;
+        position: absolute;
+        left:0;
+        margin-top:1rem; 
+    }
+
+    ul{
+        list-style: none;
+    }
+    nav li{
+        display: inline-block;
+    }
+
+    p{
+        text-align: left;
+    }
+
+    h1{
+        background: pink;
+        color: black;
+        font-size: 2rem;
+    }
+    h2{
+        background: pink;
+        color: black;
+        margin:2rem 0 0 0;
+        padding: 2rem 0 2rem 0;
+    }
+    a{
+        text-decoration: none;
+        color: pink;
+    }
+
+    span{
+        font-size: 2rem
+    }
+/*
+Style Header
+*/
+    header nav{
+        padding: 2rem 0;
+        background-image: url(../img/back.jpg);
+        background-size:cover; 
+    }
+     header h1, p{
+         padding: 2rem;
+     }
+     
+     header p{
+         margin-left: 10rem;
+     }
+
+
+     header section{
+         display: inline-block;
+     }
+
+/*
+Style main
+*/
+
+    main p{
+        padding: 2rem 0;
+    }
+    section article{
+        margin: 2rem 0 0 0;
+    }
+    /* A Propos */
+        article p{
+            display: inline-block;
+            width: 49%;
+        }
+
+    /* Portfolio */
+        figure{
+            position: relative;
+        }
+
+        figcaption{
+            text-align: center;
+            position: absolute;
+            bottom: 0.45rem;
+            left: 50%;
+            width: 100%;
+
+
+            background: rgba(128, 128, 128, .7);
+            padding: 0;
+            
+            -webkit-transform: translateX(-50%);
+            transform: translateX(-50%);
+        }
+
+        /* Contacts */
+
+    form{
+            margin: 2rem auto;
+        }
+
+        textarea, input:not([type="submit"]){
+            display: block;
+            width: 100%;
+            border: none;
+            border-bottom: .1rem solid slategray;
+            padding: 1rem;
+            margin-bottom:2rem; 
+        }
+
+        textarea{
+            min-height: 15rem;
+        }
+
+        form :last-child{
+            border: none;
+        }
+
+        iframe{
+            width: 100%;
+            min-height: 20rem;
+            border: none;
+            margin-top: 1rem; 
+        }
+    
+    
+/*
+Style footer
+*/
+    
+
+        /* Nav end page */
+        aside{
+            background: slategray;            
+            padding: 2rem 0 2rem 0;
+        }
+
+/*
+Requetes Media
+*/
+
+    /* Ecran d'une tailleminimal de 400px */
+        @media screen and (min-width: 400px){
+
+            /* Header*/
+
+            header span{
+                position: absolute;
+                left: 0;
+            }
+
+            header:nth-child(2), header:nth-child(3), header:nth-child(4){
+                position: relative;
+                right: 0;
+            }
+            /*A propos*/
+            .img-Circle{
+                    border-radius: 50%;
+                    max-width: 16%;
+                    position: absolute;
+                    left: 0rem;
+                    margin-top: .5rem; 
+            }
+
+            /* Style portfolio */
+                .imgPortfolio{
+
+                    /*passer en 2 colones*/
+                    display: inline-block;
+                    width: 24%;
+                    padding: 0 .5rem 0 0;
+                }
+
+            /* Footer */
+            aside span{
+                position: absolute;
+                right: 0;
+            }
+
+            footer:nth-child(2), footer:nth-child(3), footer:nth-child(4){
+                right: 0;
+            }
+        }
+
+    /* Ecran d'une tailleminimal de 750px */
+        @media screen and (min-width: 750px){
+
+            /*A propos*/
+            .img-Circle{
+                    border-radius: 50%;
+                    max-width: 11%;
+                    position: absolute;
+                    left: 0rem;
+                    margin-top: .5rem;
+            }
+
+            /* Style header */
+
+                header section{
+                    display: inline-block;
+                    left:6rem;
+                }
+
+
+                header h1{
+                    color: snow;
+                    background: black;
+                }
+
+                /* Aligner les item de la nav */
+                nav li{
+                    display: inline-block;
+                }
+        }
+
+            /* Style footer*/
+
+            main section:nth-child(3) article{
+                display: inline-block;
+                width: 49%;
+            }
+
+            form{
+                margin: 2rem auto;
+            }
+
+            textarea, input:not([type="submit"]){
+                display: block;
+                width: 100%;
+                border: none;
+                border-bottom: .1rem solid slategray;
+                padding: 1rem;
+                margin-bottom:2rem; 
+            }
+
+            textarea{
+                min-height: 15rem;
+            }
+
+            form :last-child{
+                border: none;
+            }
+
+            iframe{
+                display: block;
+                width: 100%;
+                min-height: 25rem;
+                border: none;
+                height: 29.5rem;
+            }
+
+            /* Style reset */
+                main, h1, header section{
+                    max-width: 85rem;
+                    margin: auto;
+                    position: relative;
+                }
+                
+                h1{
+                    font-size:3rem;
+                }
+                h2{
+                    text-align: left;
+                    display: inline-block;
+                }
