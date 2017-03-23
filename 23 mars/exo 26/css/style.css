@@ -1,0 +1,179 @@
+/*
+Style Reset
+*/
+    /* J'ai besoin de supprimer toutes les marge et d'intégrer le paddding et les bordure dans la taille des boites et d'initialiser le REM */
+    *{
+        margin: 0;
+        padding: 0;
+        -webkit-box-sizing: border-box;
+        box-sizing: border-box;     
+    }
+
+    html{
+        font-size:62.5%
+    }
+
+    body {
+        font-size: 1.5rem;
+    }
+
+    a{
+        color: pink;
+        text-decoration: none;
+    }
+    img{
+        max-width: 100%;
+    }
+
+    h1, h2, h3{
+        color: pink;
+
+    }
+
+/*
+Style header
+*/
+    /*
+    - Ajouter une marge intéérieure de 20px
+    - La nav ne dépasse pas 850px
+    - Les liens de la nav sont centrés sauf le premier qui est à gauche et le dernier qui est a droite    
+    */
+
+    header{
+        padding: 2rem;
+        border: .1rem dashed black;
+        text-align: center;
+    }
+
+    nav{
+        max-width: 85rem;
+        margin: auto;
+        border: 1rem double red;
+        position: relative;
+    }
+
+    li{
+        display: inline-block;
+        padding: 1rem;
+    }
+
+    li:first-child{
+        position: absolute;
+        left: 0;
+    }
+
+    li:last-child{
+        position: absolute;
+        right:0; 
+    }
+
+
+/*
+Style main
+*/
+
+    /*
+    - Le main ne dépasse pas 850px
+    - Les différentes boites ont une marge en bas de 40px
+    */
+
+    main{
+        max-width: 85rem;
+        margin: 0 auto 4rem auto;
+
+        /* Pour le Controle */
+
+        /*
+        border: .2rem solid gray;
+        border-radius: 1%;
+        padding: 4rem;
+        box-shadow: 0rem .8rem 2rem gray;
+        */
+    }
+
+    section:not(:last-child){
+
+        margin-bottom: 4rem; 
+    }
+
+
+/*
+Style Portfolio
+*/
+
+    /*
+    - Le portfolio est sur 2 colonnes
+    - Les figcaption sont calés au-dessus de l'image avec un fond de couleur blanc à 50 d'opacité tout en haut à gauche etr sur toute la largeur
+    */
+
+    figure{
+        position: relative;
+        display: inline-block;
+        width: 100%;
+
+    }
+
+    figcaption{
+        position: absolute;
+        bottom: 0;
+        left:0;
+        width: 100%;
+        padding: 1rem;
+        background-color: rgba(1, 1, 1, .5);
+    }
+
+
+/*
+Style Formulaire
+*/
+
+    /*
+    - Le textearea et le input (sauf le type submit) font toute la largeur du formaulaire
+    - Le type submit à une couleur de fond et une couleur de police
+    */
+
+    form{
+        text-align: right;
+        width: 50%;
+        display: inline-block;        
+    }
+
+    input:not([type="submit"]), textarea{
+        width: 100%;
+        padding: 1rem;
+        margin-bottom: 1rem;
+    }
+
+    [type="submit"]{
+        background: red;
+        color: snow;
+        border: none;
+        padding: 1rem;
+    }
+
+    article{
+        display: inline-block;
+        vertical-align: top;
+        width: 47%
+    }
+
+
+/*
+Méthode Desktop Down
+*/
+
+    @media screen and (max-width:450px){
+
+        figure, form, article{
+            display: block;
+            width: 100%;
+        }
+
+        li:first-child, li:last-child{
+            position: initial;
+        }
+
+        li{
+            padding: 0;
+        }
+    }

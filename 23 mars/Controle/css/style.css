@@ -1,0 +1,331 @@
+/*
+Import
+*/
+
+    @import url(https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css);
+    @import url(https://fonts.googleapis.com/css?family=Courgette);
+
+/*****************************************************************/
+
+/*
+Style Reset
+*/
+    *{
+        margin: 0;
+        padding: 0;
+        -webkit-box-sizing: border-box;
+        box-sizing: border-box;     
+    }
+
+    html{
+        font-size:62.5%
+    }
+
+    body {
+        font-size: 1.5rem;
+        background-image: url(../img/background.png);      
+        font-family: Arial, sans-serif;
+    }
+
+    a{
+        text-decoration: none;
+        color: #FFF;
+        margin-right: 1rem;
+    }
+    a:hover{
+        background: #EB43A3;
+        padding-top: 2rem;
+        padding-bottom: 2rem;
+    }
+
+    img{
+        max-width: 100%;
+    }
+
+    h1{
+        color: #C55394;
+        font-family: 'Courgette', cursive;
+        text-align: center;
+        padding-bottom: 2rem;
+        padding-top: 2rem;
+    }
+
+     h2, h3{
+        padding-bottom: 2rem;         
+        color: #EB43A3;
+        font-family: 'Courgette', cursive;
+    }
+
+
+    p{
+        text-align: left;
+        margin-left:1rem;
+        margin-right: 1rem; 
+        color: #333
+    }
+
+    li:first-child {
+        font-size: 2.5rem;
+        display: block;
+        margin-bottom: 1rem;
+        font-family: 'Courgette', cursive;        
+    }
+
+
+/****************************************/
+
+    /*
+    Style Header
+    */
+        
+        header nav{
+            text-align: center;
+            background: #E577B5;
+            color: #FFF;
+            padding: 2rem;
+        }
+
+        header article{
+                background-image: url(../img/rainbow.png);
+                background-position: center;
+                background-repeat: no-repeat;
+                padding: 4rem 2rem;
+                width: 100%;
+        }
+
+        header li:not(:first-child){
+                right: 0;
+                text-transform: uppercase;
+                font-size: 1.2rem;
+        }
+
+        li{
+            display: inline-block;
+        }
+
+/****************************************/
+
+    /*
+    Style main
+    */
+        main{
+            max-width: 85rem;
+            margin: auto;
+            margin-bottom: 4rem;
+        }
+
+        /* Le Principe */
+
+        section p{
+            margin-bottom: 2rem;
+
+        }
+
+        section:not(:last-child){
+            margin-bottom: 4rem; 
+        }
+        /* Nos licornes */
+
+        figure{
+            position: relative;
+            display: inline-block;
+            width: 100%;
+            margin-bottom:1.5rem;
+            line-height: 0;
+        }
+
+        figcaption{
+            position: absolute;
+            text-align: center;
+            color: #FFF;
+            bottom: 0;
+            left: 0;
+            width: 30rem;
+            padding: 1.5rem;
+            background-color: rgba(0, 0, 0, .7)
+        }
+
+        /* Nous trouver */
+
+        form{
+            width: 100%;
+            display: inline-block;  
+        }
+
+        input:not([type="submit"]){
+            width: 100%;
+            padding: 1rem;
+            margin-bottom: 1rem;
+        }
+        article{
+                width: 100%
+            }
+
+        iframe{
+                border: none;
+                min-height: 25rem;
+                margin-top: 1rem;
+                width: 100%;
+            }
+
+/*************************************************/
+    /*
+    Style footer
+    */
+
+        footer{
+            background: #E577B5;
+            color: #FFF;
+            text-align: right;
+            padding: 1.5rem;
+        }
+
+/************************************************************/
+
+/*
+Requete media
+*/
+
+    /* Ecran d'une taille minimale de 700px */
+    @media screen and (min-width: 700px){
+
+        /*Style reset*/
+        a{
+        margin-right: 5rem;
+            
+        }
+        ul{
+            text-align: right;
+        }
+
+        /* Style main */
+
+        main{
+            max-width: 70rem;
+            border-radius: 1rem;
+            padding: 4rem;
+            box-shadow: 0rem 0rem 2rem gray;
+            background: #FFF;
+        }
+
+        /* Style header */
+
+         li:first-child{
+            position: absolute;
+            left: 0;
+            top: 1.5rem;
+        }
+
+        /* Nos licornes */
+
+        figure{           
+            position: relative;
+            display: inline-block;
+            max-width: 44%;
+            margin:1rem;
+        }
+
+        figcaption{
+            position: absolute;
+            text-align: center;
+            color: #FFF;
+            bottom: 0;
+            left: 0;
+            width: 27.3rem;
+            background-color: rgba(0, 0, 0, .7)
+        }
+
+
+    }
+
+    /*********************************************************/
+
+
+    /* Ecran d'une taille minimale de 950px */
+    @media screen and (min-width: 950px){
+        
+        
+        /* Style reset*/
+        p{
+            font-size: 1.3rem;
+            margin-right: 0;
+            margin-left: 0;
+        }
+
+        /* Style Header */
+        li:first-child{
+            position: absolute;
+            left: 0;
+            top: 1.5rem;
+        }
+
+        header li:not(:first-child){
+            right: 0;
+            text-transform: uppercase;
+        }
+
+        /* Style main */
+
+        main{
+            max-width: 95rem;
+            border-radius: 1rem;
+            padding: 4rem;
+            box-shadow: 0rem 0rem 2rem gray;
+            background: #FFF;
+        }
+
+        /* Nos licornes */
+
+        figure{
+            position: relative;
+            display: inline-block;
+            width: 22%;
+            margin:1rem;
+        }
+
+        figcaption{
+            position: absolute;
+            text-align: center;
+            color: #FFF;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            background-color: rgba(0, 0, 0, .7)
+        }
+    
+
+        /* Nous trouver */
+
+        form{
+            width: 50%;
+            display: inline-block;  
+        }
+
+        input:not([type="submit"]){
+            width: 100%;
+            padding: 1rem;
+            margin-bottom: 1rem;
+        }
+
+        [type="submit"]{
+            background: #C55394;;
+            color: #FFF;
+            border: none;
+            padding: 1rem;
+        }
+
+        article{
+            display: inline-block;
+            vertical-align: top;
+            width: 47%
+        }
+
+        iframe{
+            float: left;
+            min-height: 23rem;
+            border: none;
+            width: 40rem;
+            margin-right: 5rem;
+
+        }
+    }
