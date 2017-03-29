@@ -9,7 +9,8 @@
 
 // Faire une variable globale pour le choix de l'utilisateur
 var userBet = '';
-
+var userWin = 0;
+var computerWin = 0;
 /*
     1# L'utilisateur doit choisir entre pierre, feuille et ciseaux
     - Créer une fonction qui prend en paramètre le choix de l'utilisateur
@@ -33,14 +34,13 @@ function userChoice(paramChoice){
 
 function computerChoice(){
 
-    // Afficher dans la console la valeur de userBet
-    console.log('user : ' + userBet);
+
 
     var computerMemory = ['Chi', 'Fu', 'Mi'];
 
     // Choisir aléatoirement l'un des 3 index du tableau
     var computerBet = computerMemory[Math.floor(Math.random() * computerMemory.length)];
-    console.log('Computer : ' + computerBet);
+
 
 
     // Vérifier si userBet est vide
@@ -54,29 +54,48 @@ function computerChoice(){
 
         // Comparer les variables
         if(userBet == computerBet){
-            document.querySelector('p').textContent ='Egality Come Again'
+            document.querySelector('p').textContent ='Egality Come Again';
         }
 
 
         else if(userBet == 'Chi' && computerBet == 'Mi'){
             document.querySelector('p').textContent ='You Win! :)';
+
+            // Incrémenter la variable userWin de 1
+            userWin++;
         }
 
         else if(userBet == 'Fu' && computerBet == 'Chi'){
-            document.querySelector('p').textContent ='You Win! :)';      
+            document.querySelector('p').textContent ='You Win! :)';
+
+            // Incrémenter la variable userWin de 1
+            userWin++;      
         }
 
         else if (userBet == 'Mi' && computerBet == 'Fu'){
             document.querySelector('p').textContent ='You Win! :)';
+
+            // Incrémenter la variable userWin de 1
+            userWin++;
         }
 
         else{
             document.querySelector('p').textContent ='You Lose! :(';
+
+            // Incrémenter la variable computerWin de 1
+            computerWin++;
         };
     };
-};
 
-/*
-    3# nous comparond le choix de l'utilisateur et de l'ordinateur 
-    
-*/
+    // Vérifier les valeurs de userWin et computerWin
+    if(userWin == 3){
+        // Afficher le msg dans le body
+        document.querySelector('body').innerHTML = '<h1>The game is finish u Win</h1><a href="index.html">Rejouer</a>';
+    };
+
+    if(computerWin == 3){
+        // Afficher le msg dans le body
+        document.querySelector('body').innerHTML = '<h1>The game is finish u Lose</h1><a href="index.html">Rejouer</a>';
+    };
+
+};
