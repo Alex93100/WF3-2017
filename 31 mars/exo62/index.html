@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Exo 62 : Validation d'un formulaire en jQuery</title>
+        <link rel="stylesheet" href="css/style.css">
+    </head>
+    <body>
+        <header>
+            <h1>Exo 62 : Validation d'un formulaire en jQuery</h1>
+        </header>
+
+        <main>
+            <section>
+                <h2>Mon super projet</h2>
+                <img src="img/loup.jpg" alt="Mon super projet">
+
+                <h3>Ajouter un commentaire</h3>
+
+                <form action="addComment.php">
+                    
+                    <artcle>
+                        <label for="userName">Votre nom <b></b></label>
+                        <input type="text" id="userName">
+                    </artcle>
+                    
+                    <artcle>
+                        <label for="userMessage">Votre message <b></b></label>
+                        <textarea name="userMessage" id="userMessage" ></textarea>
+                    </artcle>
+
+                    <input type="submit" value="Commenter">
+
+                </form>
+            </section>
+        </main>
+
+        <footer>Under MIT Licence</footer>
+
+        <!-- Intégrer le CDN jQuery AVANT le script de la page -->
+        <script
+            src="https://code.jquery.com/jquery-2.2.4.min.js"
+            integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="
+            crossorigin="anonymous">
+        </script>
+
+        <!-- Intégrer le JS juste avant la fin du body  et APRES jQuery -->
+        <script src="js/script.js"></script>
+    </body>
+</html>
