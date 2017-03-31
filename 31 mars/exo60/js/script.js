@@ -30,7 +30,7 @@ $(document).ready(function(){
     myHeader.append('<h1>' + siteTitle + '</h1>');
 
     // Générer une balise nav + ul dans le header
-    myHeader.append('<nav><ul></ul></nav>');
+    myHeader.append('<nav><i class="fa fa-bars" aria-hidden="true"></i><ul></ul></nav>');
 
     // Faire une boucle for(){...} sur myNav pour générer les liens de la nav
     for(var i=0; i<myNav.length; i++){
@@ -50,10 +50,10 @@ $(document).ready(function(){
         evt.preventDefault();
 
         // Connaitre l'occurence de la balise a sur laquelle l'utilisateur à cliqué
-        console.log($(this));
+        // console.log($(this));
 
         // Récupérer la valeur de l'attribut href
-        console.log($(this).attr('href'));
+        // console.log($(this).attr('href'));
 
         // Vérifier la valeur de l'attribut href pour afficjer le bon titre
         if($(this).attr('href') == 'Accueil'){
@@ -76,10 +76,10 @@ $(document).ready(function(){
         else{
             // Sélectionner la balise h2 pour changer son contenu texte
             $('h2').text(myTitlesPage.Contacts);
-            
+
             // Sélectionner la balise section pour changer son contenu html
             $('section').html(myContent.Contacts);
-        }
+        };
 
     });
 
