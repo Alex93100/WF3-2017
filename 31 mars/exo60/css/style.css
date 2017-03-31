@@ -69,8 +69,17 @@ Style header
         -webkit-border-radius:50%; 
         border-radius: 50%;
 
+        -webkit-transition: all .8s;
+        transition: all .8s;
+
         -webkit-transform: translate(-50%, 100%);
         transform: translate(-50% , 100%);
+    }
+
+    .fa-bars:hover{
+        color: purple;
+        border: .3rem solid purple;
+        background: pink;
     }
 
     h1 span{
