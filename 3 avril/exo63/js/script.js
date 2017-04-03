@@ -14,7 +14,7 @@ $(document).ready(function(){
 
         // Désactiver avatarMan
             avatarMan.prop('checked', false);
-            
+
         // Vider le msg d'erreur
             $('.labelGender b').text('');             
 
@@ -39,7 +39,6 @@ $(document).ready(function(){
             $(this).prev().children('b').text('');
         });
 
-    
     // Capter la soumission du formulaire
         $('form').submit(function(evt){
         
