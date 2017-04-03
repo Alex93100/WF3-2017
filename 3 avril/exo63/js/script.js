@@ -16,10 +16,7 @@ $(document).ready(function(){
             avatarMan.prop('checked', false);
 
         // Vider le msg d'erreur
-            $('.labelGender b').text('');
-        
-        // Modifier l'attribut src de #avatarBody
-            console.log($('#avatarBody').attr('src', 'img/' + avatarGender + '.png'));         
+            $('.labelGender b').text('');             
 
         });
 
@@ -33,24 +30,14 @@ $(document).ready(function(){
                 avatarWoman.prop('checked', false);
 
             // Vider le msg d'erreur
-                $('.labelGender b').text('');
-
-            // Modifier l'attribut src de #avatarBody
-            console.log($('#avatarBody').attr('src', 'img/' + avatarGender + '.png'));         
+                $('.labelGender b').text(''); 
         });
 
-        // Supprimer les messages d'erreur
-            $('input, select').focus(function(){
-                // Sélectionner la balise précédent le input
-                $(this).prev().children('b').text('');
-            });
-
-        // Capter l'événement change()sur les selects
-        $('select').change(function(){
-            console.log($(this).attr('id'),'change: ' + $(this).val());
+    // Supprimer les messages d'erreur
+        $('input, select').focus(function(){
+            // Sélectionner la balise précédent le input
+            $(this).prev().children('b').text('');
         });
-
-
 
     // Capter la soumission du formulaire
         $('form').submit(function(evt){
