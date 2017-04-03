@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>MyTown</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <header>
+        <h1>Welcome in MyTown!</h1>
+    </header>
+
+    <main>
+        <section>
+
+            <article>
+                <h2>Ajouter un habitant</h2>
+
+                <form action="#">
+
+                    <fieldset>
+                        <legend>Personnalité</legend>
+
+                        <p>
+                            <label for="avatarName">Nom complet <b></b></label>
+                            <input type="text" id="avatarName" placeholder="Mini. 5 caractères">
+                        </p>
+
+                        <p>
+                            <label for="avatarAge">Âge <b></b></label>
+                            <input type="number" id="avatarAge" placeholder="Entre 1 et 100 ans">
+                        </p>
+
+                        <p class="labelGender">Genre <b></b></p>
+                        <p><input type="radio" id="avatarWoman" value="girl">Femme</p>
+                        <p><input type="radio" id="avatarMan" value="boy">Homme</p>
+
+                    </fieldset>
+
+                    <fieldset>
+                        <legend>Style</legend>
+
+                        <div>
+                            <label for="avatarStyleTop">En haut <b></b></label>
+                            <select id="avatarStyleTop">
+                                <option value="null" selected>--Sélectionner--</option>
+                                <option value="chemise">Chemise</option>
+                                <option value="hippie">Hippie</option>
+                                <option value="pullover">Pullover</option>
+                            </select>
+                        </div>
+                        
+                        <div>
+                            <label for="avatarStyleBottom">En bas <b></b></label>
+                            <select id="avatarStyleBottom">
+                                <option value="null" selected>--Sélectionner--</option>
+                                <option value="cuire">Cuire</option>
+                                <option value="jean">Jean</option>
+                                <option value="militaire">Militaire</option>
+                            </select>
+                        </div>
+
+                    </fieldset>
+
+                    <input type="submit" value="Ajouter">
+
+                </form>
+
+            </article>
+
+        </section>
+
+        <section id="avatar">
+            <article>
+                <img src="img/null.png" id="avatarBody">
+            </article>
+
+            <article>
+                <img src="img/top/null.png"  id="avatarTop">
+            </article>
+
+            <article>
+                <img src="img/bottom/null.png" id="avatarBottom">
+            </article>
+        </section>
+
+    </main>
+
+    <footer>
+        <section>
+            <h3>Statistique de votre ville</h3>
+            <article>
+                <h4>Population total</h4>
+                <span id="totalSims">0</span>
+            </article>
+            <article>
+                <h4>Nombre de femmes</h4>
+                <span id="simsWoman">0<b>/0</b></span>
+            </article>
+            <article>
+                <h4>Nombre d'hommes</h4>
+                <span id="simsMan">0<b>/0</b></span>
+            </article>
+            <article>
+                <h4>Âge moyen</h4>
+                <span id="simsAgeAmount">0<b> an</b></span>
+            </article>
+        </section>
+
+        <section>
+            <h4>Population de votre ville</h4>
+            <table id="populationTable">
+                <tr>
+                    <th>Nom</th>
+                    <th>Âge</th>
+                    <th>Genre</th>
+                    <th>Style</th>
+                </tr>
+            </table>
+        </section>
+
+        <aside>Under MIT Licence</aside>
+    </footer>
+
+    <!--
+        Intégrer jQuery Avant le script de la page
+    -->
+    <script
+        src="https://code.jquery.com/jquery-2.2.4.min.js"
+        integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="crossorigin="anonymous">
+    </script>
+
+    <!--
+        Intégrer le script de la page APRES jQuery
+    -->
+    <script src="js/script.js"></script>
+    
+</body>
+</html>
