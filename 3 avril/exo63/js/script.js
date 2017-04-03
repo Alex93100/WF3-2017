@@ -22,7 +22,6 @@ $(document).ready(function(){
         
         // Modifier l'attribut src de #avatarBody
             $('#avatarBody').attr('src', 'img/' + avatarGender + '.png');         
-
         });
 
     //  => avatarMan capter le click
@@ -60,8 +59,6 @@ $(document).ready(function(){
                 $('#avatarBottom').attr('src', 'img/bottom/' + $(this).val()+ '.png');
             };
         });
-
-
 
     // Capter la soumission du formulaire
         $('form').submit(function(evt){
@@ -125,7 +122,6 @@ $(document).ready(function(){
                         formScore++;
                     };
                     
-
                 // => avatarGender vérifier la valeur
                     if(avatarGender == undefined){
                         $('.labelGender b').text('Choix Obligatoire');
@@ -171,7 +167,7 @@ $(document).ready(function(){
                         $('#avatarBottom').attr('src', 'img/bottom/null.png');
                         
                         // afficher les données du tableau JS dans la console
-                        console.log(myTown.length);
+                        // console.log(myTown.length);
 
                         // Afficher la taille totale de la ville dans #totalSims
                         $('#totalSims').text(myTown.length);
@@ -182,10 +178,9 @@ $(document).ready(function(){
                         var totalBoys = 0;
                         var totalAge = 0;
 
-
                         // Faire une boucle for sur myTown pour connaitre les statistiques
                         for(var i = 0 ; i < myTown.length; i++){
-                            console.log(myTown[i].gender);
+                            // console.log(myTown[i].gender);
                         
                             // Condition pour le gender
                             if(myTown[i].gender == 'girl'){
@@ -197,7 +192,6 @@ $(document).ready(function(){
 
                             // Additioner les ages
                             totalAge += myTown[i].age;
-
 
                             // Afficher le tableau HTML le nombre de girls et le nombre de boys
                             $('#simsWoman').html(totalGirls + '<b>/' + myTown.length + '</b>');
