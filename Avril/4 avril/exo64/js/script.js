@@ -28,7 +28,22 @@ $(document).ready(function(){
             $('section:nth-child(3) article').animate({
                 width: 'toggle'
             });
+        });
+
+
+        // Fonction animate() avec durée et callBack
+        $('section:last button').click(function(){
+
+            $('section:last article').animate({
+                width: '20rem',
+                height: '20rem'
+
+            }, 2000, function(){
+                alert('Fin de l\'animation');
+                
+            });
 
         });
+
 
 }); // Fin de la demande du chargement du DOM
