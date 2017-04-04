@@ -1,0 +1,30 @@
+/*
+Import
+*/
+
+@import url(https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css);
+
+header, main, footer{
+    max-width: 50rem;
+    margin: 3rem auto;
+    padding: 2rem;
+}
+
+h3{
+    color: purple;
+    background: pink;
+    padding: 1rem;
+    margin-bottom: 0;
+    cursor: pointer;
+}
+
+p{
+    background: black;
+    color: pink;
+    padding: 1rem;
+    margin-top: 0;
+
+    /* Pour le slideToggle*/
+    display: none;
+}
+
