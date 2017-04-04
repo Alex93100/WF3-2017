@@ -39,8 +39,8 @@ $(document).ready(function(){
                 height: '20rem'
 
             }, 2000, function(){
-                alert('Fin de l\'animation');
-                
+                $(this).hide();
+
             });
 
         });

@@ -5,5 +5,9 @@ article{
     background: pink;
     position: relative;
     margin-bottom: 1rem;
-
 }
+
+section:nth-child(2) article, section:nth-child(5) article{
+    display: none;
+}
+
