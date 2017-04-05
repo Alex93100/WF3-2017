@@ -2,9 +2,27 @@
 $(document).ready(function(){
 
     // Créer une fonction pour l'animation des compétences
-    function mySkills(){
+    function mySkills(paramEq, paramWidth){
 
-        console.log($('h3 + ul'));
+        // Animation des balise p des skils
+        $('h3 + ul').children('li').eq(paramEq).find('p').animate({
+            width: paramWidth
+        });
+        
+    };
+
+    // Créer une fonction pour ouvrir la modal
+    function openModal(){
+
+        // Ouvrir la modal au click sur les boutons
+        $('button').click(function(){
+            $('#modal').fadeIn();    
+        });
+
+        // Fermer la modal au click sur .fa-times
+        $('.fa-times').click(function(){
+            $('#modal').fadeOut();
+        });
     };
 
     // Charger le contenu de home.html dans le main
@@ -17,6 +35,8 @@ $(document).ready(function(){
     /*
         Burger menu
     */ 
+
+        // Ouverture BurgerMenu
         $('h1 + a').click(function(evt){
 
             // Bloquer le comportement naturel de la balise A
@@ -28,6 +48,7 @@ $(document).ready(function(){
 
         // Burger Menu: navigation
         $('nav a').click(function(evt){
+
             // Bloquer le comportement naturel de la balise A
             evt.preventDefault();
 
@@ -48,7 +69,16 @@ $(document).ready(function(){
                         if(viewToLoad == 'about.html'){
                             
                             // Appler la fonction mySkills
-                            mySkills();
+                            mySkills(0, '85%');
+                            mySkills(1, '70%');
+                            mySkills(2, '50%');
+                        };
+
+                        // Vérifier si l'utilisateur est sur la page portfolio.html
+                        if(viewToLoad == 'portfolio.html'){
+
+                            // Appeler la fonction pour ouvrir la modal
+                            openModal();
                         };
                     });
                 });
