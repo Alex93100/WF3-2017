@@ -11,19 +11,25 @@ $(document).ready(function(){
         
     };
 
-    // Créer une fonction pour ouvrir la modal
-    function openModal(){
+    /*
+        Modal
+    */ 
+        // Créer une fonction pour ouvrir la modal
+        function openModal(){
 
-        // Ouvrir la modal au click sur les boutons
-        $('button').click(function(){
-            $('#modal').fadeIn();    
-        });
+            // Ouvrir la modal au click sur les boutons
+            $('button').click(function(){
 
-        // Fermer la modal au click sur .fa-times
-        $('.fa-times').click(function(){
-            $('#modal').fadeOut();
-        });
-    };
+                console.log($(this).prev().text());
+                
+                $('#modal').fadeIn();    
+            });
+
+            // Fermer la modal au click sur .fa-times
+            $('.fa-times').click(function(){
+                $('#modal').fadeOut();
+            });
+        };
 
     // Charger le contenu de home.html dans le main
     $('main').load('views/home.html');
@@ -55,6 +61,7 @@ $(document).ready(function(){
             // Masquer le main
             $('main').fadeOut();
             
+            // Créer une variable pour récupéré la valeur de l'attribut href
             var viewToLoad = $(this).attr('href');
             
             // Fermer le burger menu
