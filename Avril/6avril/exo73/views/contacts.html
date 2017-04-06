@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Document</title>
+    </head>
+
+    <body>
+        <h2>Contactez-moi</h2>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Natus laudantium possimus ipsum tenetur ex libero, nobis nihil perferendis architecto nemo aperiam eum numquam ea voluptas aliquid laboriosam, consequatur magni voluptate.</p>
+
+        <form action="php/sendMessage.php">
+            <article>
+                <label for="userName">Votre nom</label>
+                <input type="text" id="userName" name="name">
+            </article>
+
+            <article>
+                <label for="userEmail">Votre Email</label>
+                <input type="email" id="userEmail" name="email">
+            </article>
+
+            <article>
+                <label for="userSubject">Choisir un sujet</label>
+
+                <select id="userSubject" name="subject">
+                    <option value="null">- Selectioner -</option>
+                    <option value="contact">Prise de contact</option>
+                    <option value="rdv">Prise de rendez-vous</option>
+                    <option value="devis">Demande de devis</option>
+                </select>
+
+            </article>
+
+            <article>
+                <label for="userMessage">Votre Message</label>
+                <textarea  id="userMessage" name="message"></textarea>
+
+                <p><input type="checkbox">Accepter le CG</p>
+            </article>
+
+                <input type="submit" value="Envoyer">
+        </form>
+    </body>
+</html>

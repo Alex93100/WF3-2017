@@ -81,7 +81,7 @@ Style Header
 */
 
     header{
-        background: slategray;
+        background: #272525;
         padding: 2rem;
         position: relative;
     }
@@ -216,8 +216,8 @@ Style Main
             figcaption{
                 position: absolute;
                 width: 20rem;
-                background: rgba(255, 192, 203, .7);
-                padding: 2rem;
+                background: rgba(255, 192, 203, .6);
+                padding: 1.5rem;
                 top: 50%;
                 left: 50%;
 
@@ -265,7 +265,60 @@ Style Main
 
         /* Style Contacts */
 
+            form{
+                text-align: left;
+                margin: 2rem auto;
+            }
 
+            select{
+                margin: 1rem auto 2rem auto;
+            }
+
+            textarea{
+                min-height: 20rem;
+            }
+
+            [type="checkbox"]{
+                display: inline-block;
+                width: auto;
+            }
+
+            textarea, input, label{
+                display: block;
+                width: 100%;
+                border: none;
+                padding: 1rem;
+            }
+
+            textarea, input:not([type="submit"]){
+                border-bottom: .1rem solid #272525;
+                margin-bottom: 2rem;         
+            }
+
+            form article{
+                position: relative;
+            }
+            label{
+                padding: 0;
+                font-weight: 700;
+                transition: all .5s;              
+            }
+
+            label:not([for="userSubject"]){
+                position: absolute;
+                top: .5rem;
+            }
+            
+            label.openedLabel{
+                top: -1.5rem;
+                font-size: 1.2rem;
+                color: grey;
+            }
+
+            [type="submit"]{
+                color: pink;
+                background: #272525;
+            }
 
 /*************************************************************************/
 
@@ -278,7 +331,7 @@ Style Footer
         bottom: 0;
         left: 0;
         width: 100%;
-        background: slategray;
+        background: #272525;
         padding: 2rem;
         z-index: 2;
     }
