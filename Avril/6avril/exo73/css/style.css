@@ -301,6 +301,7 @@ Style Main
             label{
                 padding: 0;
                 font-weight: 700;
+                -webkit-transition: all .5s;              
                 transition: all .5s;              
             }
 
@@ -318,7 +319,12 @@ Style Main
                 font-size: 1rem;
                 text-transform: uppercase;
                 color: red;
+                -webkit-transition: all .5s;
+                transition: all .5s;
+            }
 
+            .hideError b{
+                opacity: 0;
             }
 
             [type="submit"]{

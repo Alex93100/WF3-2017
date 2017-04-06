@@ -12,7 +12,7 @@ $(document).ready(function(){
     };
 
     /*
-        Modal
+        Modal Page Portfolio
     */ 
         // Créer une fonction pour ouvrir la modal
         function openModal(){
@@ -38,16 +38,16 @@ $(document).ready(function(){
         };
 
     /*
-        Formulaire
+        Formulaire Page Contacts
     */ 
         // Créer une fonction pour la gestion du formulaire
         function contactForm(){
             
             // Capter le focus sur les inputs et le textarea
-            $('input, textarea').focus(function(){
+            $('input:not([type="submit"]), textarea').focus(function(){
 
                 // Sélectioner la balise précédente pour y ajouter la class openedLabel
-                $(this).prev().addClass('openedLabel');
+                $(this).prev().addClass('openedLabel hideError');
 
             });
 
@@ -60,6 +60,26 @@ $(document).ready(function(){
                     // Sélectioner la balise précédente pour supprimer la class openedLabel
                     $(this).prev().removeClass();
                 };
+            });
+
+            // Supprimer le message d'erreur du select
+            $('select').focus(function(){
+
+                $(this).prev().removeClass();
+
+            });
+
+            // Supprimer le msg d'erreur de la checkbox
+            $('[type="checkbox"]').focus(function(){
+
+                if($(this).checked == false){
+                    $('form p').addClass('hideError');
+                };
+            });
+
+            // Fermer la modal
+            $('.fa-times').click(function(){
+                $('#modal').fadeOut();
             });
 
             //Capter la soumission de mon formulaire
@@ -139,8 +159,17 @@ $(document).ready(function(){
                     // Envoi des données dans le fichier de traitement PHP
                     // Php répond true => continuer le traitement du formulaire
 
+                        // Ajouter la valeur de userName dans la balise h2 span de la modal
+                        $('#modal span').text(userName.val());
+
+                        // Afficher la modal
+                        $('#modal').fadeIn();
+
                         // Vider les champs du formulaire
                         $('form')[0].reset();
+                        
+                        // Supprimer les msg d'erreur
+                        $('form b').text('');
 
                         // Replacer les label
                         $('label').removeClass();
