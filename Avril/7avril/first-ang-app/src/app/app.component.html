@@ -1,0 +1,23 @@
+<header class="animated fadeInDown">
+  <h1>Alexandre Rodrigues <span>Etudiant WebForce3</span> </h1>
+
+  <!-- Appeler une fonction au click sur la balise -->
+  <a (click)="openBurger()"> <i class="fa fa-bars"></i> </a>
+  
+  <!-- Ajouter une class conditionnelle -->
+  <nav [ngClass]="{'openedNav': burgerIsOpen}">
+    <ul>
+      <li><a (click)="closeBurger('/')">Accueil</a></li>
+      <li><a (click)="closeBurger('/about')">A porpos</a></li>
+      <li><a (click)="closeBurger('/portfolio')">Portfolio</a></li>
+      <li><a (click)="closeBurger('/contacts')">Contacts</a></li>
+    </ul>
+  </nav>
+
+</header>
+<main class="animated flipInY">
+  <!-- Ajouter la directive pour afficher le contenu des routes -->
+  <router-outlet></router-outlet>
+</main>
+
+<footer class="animated fadeInUp">Under MIT Licence</footer>
