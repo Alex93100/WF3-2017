@@ -54,26 +54,37 @@
 
             <!-- Contacts -->
             <section>
-                <h2>Contact us</h2>
-                <p>Lorem ipsum dolor sit amet consectuer</p>
+                <form action="#">
+                    <h2>Contact us</h2>
+                    <p>Lorem ipsum dolor sit amet consectuer</p>
+                    
+                    <article>
+                        <input type="text" placeholder="Your name*">
+                        <input type="email" placeholder="Your email*">
+                        <select>
+                            <option value="null">- Select* -</option>
+                            <option value="contact">Contact us</option>
+                            <option value="hire">Hire me</option>
+                        </select>
+                    </article>
+
+                    <article>
+                        <textarea placeholder="Your message"></textarea>
+                    </article>
                 
-                <article>
-                    <input type="text" placeholder="Your name*">
-                    <input type="email" placeholder="Your email*">
-                    <select>
-                        <option value="null">- Select* -</option>
-                        <option value="contact">Contact us</option>
-                        <option value="hire">Hire me</option>
-                    </select>
-                </article>
-
-                <article>
-                    <textarea placeholder="Your message"></textarea>
-                </article>
-            
-                <input type="submit" value="Send Message">
-
+                    <input type="submit" value="Send Message">  
+                </form>
             </section>
+
+            <!-- Modal -->
+            <div>
+                <section>
+                    <h2>Merci pour votre msg <span>userName</span> <i class="fa fa-times"></i></h2>
+                    <p>Récapitulatif de votre message :</p>
+                    <p><b>userSubject</b></p>
+                    <p>userMessage</p>
+                </section>
+            </div>
 
         </main>
 
@@ -85,5 +96,19 @@
             <p><a href="#">Privacy Policy</a><a href="#">Terms of Use</a></p>
 
         </footer>
+
+        <!--
+        Intégrer jQuery Avant le script de la page
+        -->
+        <script
+            src="https://code.jquery.com/jquery-2.2.4.min.js"
+            integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="crossorigin="anonymous">
+        </script>
+
+        <!--
+            Intégrer le script de la page APRES jQuery
+        -->
+        <script src="js/script.js"></script>
+
     </body>
 </html>
