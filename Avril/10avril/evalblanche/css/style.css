@@ -1,0 +1,282 @@
+/*
+IMPORT
+*/
+    /*Font awesome*/
+    @import url(https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css);
+
+    /*style caracteres*/
+    @import url(https://fonts.googleapis.com/css?family=Asap:400,700|Lobster);
+
+/************************************************************************/
+
+
+/*
+Style Reset
+*/
+
+    *{
+        margin: 0;
+        padding: 0;
+
+        -webkit-box-sizing: border-box;
+        box-sizing: border-box;
+    }
+
+    html{
+
+        font-size: 62.5%
+    }
+
+    body{
+        /*background: pink;*/
+        color: black;
+        text-align: center;
+        font-size: 2rem;
+        font-weight: 400;        
+        font-family: 'Asap', sans-serif;        
+    }
+
+    ul{
+        list-style: none;
+    }
+
+    li{
+
+        display: inline-block;
+    }
+    ul:first-child{
+        color: #FFCB17;
+    }
+    nav{
+        text-align: center;
+    }
+    a{
+        color: pink;
+        text-decoration: none;
+        font-size: 1.5rem;
+    }
+
+    h1, h2, h3{
+        font-weight: 400;
+        font-family: 'Lobster', cursive;
+        letter-spacing: 0.1rem;
+        padding-bottom:2rem;   
+    }
+
+    header ul > li{
+        font-size:1.8rem;
+    }
+
+    h1 span{
+        font-weight: 400;
+        font-family: 'Asap', sans-serif;
+        font-size: 1.5em;                        
+        display: block;
+        letter-spacing: 0;
+        text-transform: uppercase;
+        
+    }
+
+    p{
+        font-size: 1.5rem;
+    }
+
+    img{
+        max-width: 100%;
+    }
+
+
+
+/*
+Style Header
+*/
+    header{
+        background-image:url(../img/header-bg.jpg);
+        background-position: center;
+    }
+    header img{
+        max-width: 49%
+    }
+    header button{
+            margin: 2rem;
+            padding: 1.5rem 5rem;
+            color: snow;
+            background: #FFCB17;
+            border: none;
+            border-radius: .5rem;
+            font-size: 3rem;
+        }
+    header h1 {
+
+        color: snow;
+    }
+
+
+/*********************************************************/
+
+
+
+
+/*
+Style main
+*/
+    main{
+        padding: 4rem 0rem 0rem 0rem;
+        background: lightgrey
+    }
+
+
+/*****************************************************/
+        /*Style Portfolio*/
+
+        figure{
+            margin: 2rem;
+            position: relative;
+            margin-bottom: 4rem;
+        }
+
+        figcaption{
+            position: absolute;
+            font-size: 1.5rem;
+            width: 100%;
+            background: snow;
+            top: 96%;
+            height: 4rem;
+            background: snow;
+        }
+
+        figcaption span{
+            display: block;
+            font-size: 1.3rem;
+        }
+
+/*****************************************************/
+
+        /* Style Contacts */
+
+            form{
+                text-align: left;
+                margin: 2rem auto;
+            }
+
+            select{
+                margin: 1rem auto 2rem auto;
+            }
+
+            textarea{
+                min-height: 20rem;
+            }
+
+            [type="checkbox"]{
+                display: inline-block;
+                width: auto;
+            }
+
+            textarea, input, label{
+                display: block;
+                width: 100%;
+                border: none;
+                padding: 1rem;
+            }
+
+            textarea, input:not([type="submit"]){
+                border-bottom: .1rem solid #272525;
+                margin-bottom: 2rem;         
+            }
+
+            form article{
+                position: relative;
+            }
+            label{
+                padding: 0;
+                font-weight: 700;
+                -webkit-transition: all .5s;              
+                transition: all .5s;              
+            }
+            
+            label.openedLabel{
+                top: -1.5rem;
+                font-size: 1.2rem;
+                color: grey;
+            }
+            form b{
+                font-size: 1rem;
+                text-transform: uppercase;
+                color: red;
+                -webkit-transition: all .5s;
+                transition: all .5s;
+            }
+
+            label:not([for="userSubject"]){
+                position: absolute;
+            }
+
+            .hideError b{
+                opacity: 0;
+            }
+
+            [for="userSubject"]{
+                color: snow
+            }
+
+            [type="submit"]{
+                color: snow;
+                background: #FFCB17;
+            }
+
+            .backgroundMap h2{
+                color: snow;
+            }
+
+            .backgroundMap p{
+                color: snow;
+            }
+            
+            .backgroundMap{
+                background: #272525;
+                background-image: url(../img/map-image.png);
+                background-position: center;
+            }
+
+/*********************************************************/
+
+/*
+Style footer
+*/
+    footer ul{
+        text-align: center;
+    }
+    footer a{
+        color: #FFCB17;
+    }
+    aside{
+        font-size: 1.5rem;
+    }
+
+
+
+@media screen and (min-width:900px) {
+    /*portfolio*/
+
+        figure {
+            max-width: 24%;
+            margin: 2rem;
+            position: relative;
+            margin-bottom: 5rem;
+            display: inline-block;
+        }
+
+        form:nth-child(2){
+            float: right;
+        }
+
+        textarea, input, label{
+            max-width: 45%;
+        }
+        
+        form input, form textarea{
+            border-radius: .5rem;
+            border:none;
+        }
+}
+

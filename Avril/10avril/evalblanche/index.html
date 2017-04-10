@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Eval blanche</title>
+        <link rel="stylesheet" href="css/style.css">
+    </head>
+
+    <body>
+        <header>
+            <nav>
+                <ul>
+                    <li>bootstrap</li>                    
+                    <li><a href="index.html">Service</a></li>
+                    <li><a href="#">Portfolio</a></li>                                      
+                    <li><a href="#">About</a></li>                   
+                    <li><a href="#">Team</a></li>                   
+                    <li><a href="#">Contacts</a></li>
+                </ul>
+            </nav>
+
+            <h1>Welcome to our studio <span><b>it's nice to meet you</b></span></h1>
+            <button>Tell me more</button>      
+        </header>
+
+        <main>
+
+            <h2>Portfolio</h2>
+            <p>Lorem ipsum dolor sit amet</p>
+            
+
+            <figure>
+                <img src="img/projet1.png" alt="Projet 1">
+                <figcaption> <b>Round Icons</b> <span>Graphic Disgne</span></figcaption>
+            </figure>
+
+            <figure>
+                <img src="img/projet2.png" alt="Projet 2">
+                <figcaption> <b>Startup Framework</b> <span>Website Disgne</span></figcaption>
+            </figure>
+
+            <figure>
+                <img src="img/projet3.png" alt="Projet 3">
+                <figcaption> <b>Treehouse</b> <span>Website Disgne</span></figcaption>
+            </figure>
+
+
+        <section class="backgroundMap">
+            <h2>Contact us</h2>
+            <p>Lorem ipsum dolor sit amet</p>
+
+            <form action="#">
+                <section>
+                    <article>
+                        <label for="userName">Votre nom <b></b> </label>
+                        <input type="text" id="userName" name="name">
+                    </article>
+
+                    <article>
+                        <label for="userEmail">Votre Email <b></b> </label>
+                        <input type="email" id="userEmail" name="email">
+                    </article>
+
+                    <article>
+                        <label for="userSubject">Choisir un sujet <b></b> </label>
+
+                        <select id="userSubject" name="subject">
+                            <option value="null">- Selectioner -</option>
+                            <option value="contact">Prise de contact</option>
+                            <option value="rdv">Prise de rendez-vous</option>
+                            <option value="devis">Demande de devis</option>
+                        </select>
+                    </article>
+                </section>
+
+                <section>
+                    <article>
+                        <label for="userMessage">Votre Message <b></b> </label>
+                        <textarea  id="userMessage" name="message"></textarea>
+                    </article>
+                </section>
+
+                <input type="submit" value="Envoyer">
+            </form>
+        </section>
+        </main>
+        
+        <footer>
+            <nav>
+                <ul>                    
+                    <li><a href="#">Privacy policy</a></li>
+                    <li><a href="#">Terms of Use</a></li>
+                </ul>
+            </nav>
+            <aside>Copyrigth &copy;Your web site 2017</aside>
+        </footer>
+        
+
+        <!--
+        Intégrer jQuery Avant le script de la page
+        -->
+        <script
+            src="https://code.jquery.com/jquery-2.2.4.min.js"
+            integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="crossorigin="anonymous">
+        </script>
+
+        <!--
+            Intégrer le script de la page APRES jQuery
+        -->
+        <script src="js/script.js"></script>
+    </body>
+
+</html>
