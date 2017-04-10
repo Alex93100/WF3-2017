@@ -1,0 +1,207 @@
+/*
+IMPORT
+*/
+    /*Font awesome*/
+    @import url(https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css);
+
+    /*style caracteres*/
+    @import url(https://fonts.googleapis.com/css?family=Asap:400,700|Lobster);
+
+/************************************************************************/
+
+
+/*
+Style Reset
+*/
+
+    *{
+        margin: 0;
+        padding: 0;
+
+        -webkit-box-sizing: border-box;
+        box-sizing: border-box;
+    }
+
+    html{
+        font-size: 62.5%
+    }
+
+    body{
+        font-size: 1.5rem;
+        text-align: center;
+   
+    }
+
+    h2{
+        text-transform: uppercase;
+        margin-bottom: 1rem;
+    }
+
+    h2 + p{
+        margin-bottom: 4rem;
+        color: grey;
+    }
+
+    a{
+        text-decoration: none;
+    }
+
+    ul{
+        list-style: none;
+    }
+
+    img{
+        max-width: 100%;
+    }
+
+/*
+Style heander
+*/
+
+    header{
+        padding: 2rem 2rem 6rem 2rem;
+        background-image: url(../img/header-bg.jpg);
+        background-size: cover;
+        color: white;
+    }
+    nav{
+        margin-bottom: 4rem; 
+    }
+
+    li:not(:first-child){
+        display: inline-block;
+        margin: 0 .5rem;
+
+    }
+
+    li:first-child a{
+        font-size: 2.5rem;
+        text-transform: none;
+        color: #f9ce4b;
+    }
+
+    nav a {
+
+        color: white;
+        text-transform: uppercase;
+    }
+
+    h1{
+        font-size: 2.5rem;
+        margin-bottom: 2rem;
+    }
+
+    h1 span{
+        display: block;
+        text-transform: uppercase;
+        font-size: 1.5em;
+    }
+    h1 + a, [type="submit"]{
+        font-size: 1rem;
+        color: white;
+        text-transform: uppercase;
+        padding: 1rem 2rem;
+        background-color: #f9ce4b;
+        border: none;
+        
+        -webkit-border-radius:  .3rem;
+        border-radius:  .3rem;
+    }
+
+/*
+Style main
+*/
+
+    /* Style Protfolio */
+
+    section:first-child{
+        background-color: #eee;
+        padding: 4rem 2rem;
+    }
+    
+    figure{
+        background-color: white;
+        margin-bottom: 2rem;
+    }
+
+    figure aside{
+        max-height: 27rem;
+        overflow: hidden;
+    }
+
+    figcaption{
+        padding: 2rem;
+        font-weight: 500;
+    }
+
+    figcaption i{
+        color: grey;
+        display: block;
+    }
+
+    /*********************************************************/
+
+    /* Style contacts */
+
+    section:last-child{
+        color: white;
+        padding: 4rem 2rem;
+        background-image: url(../img/map-image.png);
+        background-size: cover;
+        background-color: #222;
+    }
+
+    input:not([type="submit"]), textarea,select{
+        display: block;
+        width: 100%;
+        border: none;
+        padding:  1rem;
+        margin-bottom: 1rem;
+
+        -webkit-border-radius: .3rem;
+        border-radius: .3rem;
+    }
+
+    textarea{
+        min-height: 20rem;
+    }
+
+/*************************************************************************/
+
+/*
+Style footer
+*/
+
+    footer{
+        font-size: 1.2rem;
+        padding: 2rem;
+    }
+
+    footer p:not(:last-child){
+        margin-bottom: 1rem;
+    }
+
+    footer p:last-child a{
+        color: #f9ce4b
+    }
+
+    footer p:nth-child(2) a{
+        color: white;
+        width: 3rem;
+        height: 3rem;
+        background-color: black;
+        position: relative;
+        display: inline-block;
+
+        -webkit-border-radius: 50%;
+        border-radius: 50%;
+    }
+
+    footer .fa{
+        position: absolute;
+        top: 50%;
+        left: 50%;
+
+        -webkit-transform: translate(-50%,-50%);
+        transform: translate(-50%,-50%);
+    }
