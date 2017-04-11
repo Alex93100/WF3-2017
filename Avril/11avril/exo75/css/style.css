@@ -1,0 +1,58 @@
+/*
+IMPORT
+*/
+    /*Font awesome*/
+    @import url(https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css);
+
+    /*style caracteres*/
+    @import url(https://fonts.googleapis.com/css?family=Asap:400,700|Lobster);
+
+/************************************************************************/
+
+
+/*
+Style Reset
+*/
+
+    *{
+        margin: 0;
+        padding: 0;
+
+        -webkit-box-sizing: border-box;
+        box-sizing: border-box;
+    }
+
+    html{
+        font-size: 62.5%
+    }
+
+    body{
+        font-size: 1.5rem;
+        text-align: center;
+   
+    }
+
+    h2{
+        text-transform: uppercase;
+        margin-bottom: 1rem;
+    }
+
+    p{
+        margin-top: 3rem;
+        margin-bottom: 1rem;
+        color: grey;
+    }
+
+    /*
+        a{
+            text-decoration: none;
+        }
+
+        ul{
+            list-style: none;
+        }
+    */
+    
+    img{
+        max-width: 100%;
+    }

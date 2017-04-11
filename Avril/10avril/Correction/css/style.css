@@ -264,7 +264,7 @@ Style footer
             max-width: 45%;
             margin: 1rem auto;
             margin-right: 0rem;
-
+            vertical-align: top;
         }
 
         input, select{
@@ -272,7 +272,8 @@ Style footer
             max-width: 45%;
             margin: 1rem auto;
             margin-left: 0rem;
-            display: inline;
+            display: block;
+            
         }
         
         form input, form textarea{
