@@ -20,4 +20,35 @@ SGBDR et SGBD NoSQL :
 
 On distingue deux principaux SGBD, à savoir : 
     - les SGBDR pour Système de gestion de base de données Relationnelles : par exemple MySQL.
-    -
+    Il consiste à stocker l'information dans des tables définies apr des colonnes, des clés primaire et des clés étrangères.
+    Cela permet de ne pas stocker l'information plusisuers fois, mais que dans une seule table.
+
+    - Les NoSQL : Not only SQL : Cela ressemble fortement à) un grand tableau unidimensionnel avec des millions de données. Il n'y a plus de colonnes, on parle de base de données clé-valeur.
+
+
+    => exemples de SGBDR :
+        MySQL
+        Oracle
+        Microsoft SQL Server
+        PostgreSQL
+        ...
+
+    => exemples de SGBD NoSQL : 
+        MongoDB
+        Redis
+        CouchDB
+        Cassandra
+
+*********************************************
+
+Deux exemples d'utilisation des BDD et du SQL dans des site dynamiques :
+    => inscription / connexion d'un membre du site
+    => site e-commerce avec une page boutique et une page d"taillé du produit.
+
+Un site dynamique, par opposiion à un site statique, est caractérisé par la présencee d'un Front-ofice (partie visible par l'internaute),
+d'un back-office (partie dédiée à l'administrateur du site) et d'une base de données.
+
+
+*********************************************
+
+
