@@ -59,7 +59,7 @@ $(document).ready(function(){
         };
 
         // Vérifier que l'utilisateur a bien saisi un msg avec au min 10 caracteres
-        if(userMessage.val() < 10){
+        if(userMessage.val().length < 10){
 
             // Ajouter la class error sur l'input
             userMessage.addClass('error');

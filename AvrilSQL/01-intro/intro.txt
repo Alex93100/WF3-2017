@@ -1,0 +1,23 @@
+Introduction au SQL
+
+
+********************************
+Quelques Definitions :
+
+Une base de données: il s'agit d'un emplacement de données sauvegardées.
+La BDD inclut des tables qui sont composées de champs (colonnes) et qui contiennent des enregistrement (lignes).
+
+
+SGBD: Système de Gestion de Base de Données : c'est un logiciel qui sert d'interface entre utilisateur et BDD permettant : d'introduire des données, de les mettre à jour et d'y accéder.
+
+SQL : Structured Query Langage : il s'agit d'un langage de requêtes qui permet d'interroger une de données.
+
+
+********************************************
+
+
+SGBDR et SGBD NoSQL :
+
+On distingue deux principaux SGBD, à savoir : 
+    - les SGBDR pour Système de gestion de base de données Relationnelles : par exemple MySQL.
+    -
