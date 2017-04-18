@@ -62,4 +62,8 @@ USE bibliotheque;
     SELECT titre FROM livre WHERE id_livre IN (SELECT id_livre FROM emprunt WHERE date_rendu IS NULL);
 
     -- Afficher le n° de slivres que Chloé a emprunté :
-    SELECT id_livre FROM emprunt WHERE id_abonne = (SELECT id_abonne FROM abonne WHERE prenom = 'chloe');
+    SELECT id_livre FROM emprunt WHERE id_abonne = (SELECT id_abonne FROM abonne WHERE prenom = 'chloe'); -- Quand il n'y a qu'un seul résultat dans la requête imbriquée, on met un signe "="
+
+    -- Exercices : Afficher le prénom des abonnés ayant emprunté un livre le 19-12-2011
+
+    SELECT prenom FROM abonne WHERE id_abonne IN (SELECT id_abonne FROM emprunt WHERE date_sortie = '2011-12-19');
