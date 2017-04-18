@@ -27,4 +27,4 @@
         -- ou bien :
         ROLLBACK; -- pour annuler toute la transaction => on garde "Julien" en base
         -- ou bien :
-        COMMIT; -- pour valider les opérations de la transaction
+        COMMIT; -- pour valider les opérations de la transaction => on obtient "Julein B" en base
