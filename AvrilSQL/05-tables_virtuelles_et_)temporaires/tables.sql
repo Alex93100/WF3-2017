@@ -1,5 +1,5 @@
 --***********************************
--- tables virtuelles : vues
+-- Tables virtuelles : vues
 --***********************************
 
     -- Les vues(ou tables virtuelles) sont des objets de la base de données, constitué d'un nom, et d'une requête de sélection.
@@ -25,3 +25,16 @@
     --  Supprimer une vue :
 
     DROP VIEW vue_homme;
+
+
+--***********************************
+-- Tables temporaires
+--***********************************
+
+    -- Créer une table temporaire : 
+    CREATE TEMPORARY TABLE temp SELECT * FROM employes WHERE sexe = 'f'; --crée une table temporaire avec les données du SELECT précisé. Cette table s'efface quand on quitte la session, elle n'st pas visible dans la liste des tables avec SHOW TABLES.
+
+    -- Utiliser une table temporaire :
+    SELECT prenom FROM temp; --Afficher les prénoms de la table temporaire temp
+
+    -- Contrairement aux tables virtuelles, s'il y a un changement dans la table d'orrigine, il n'est pas impacté dans la table temporaire car celle-ci est une COPIE à un INSTANT T : les données sont dupliquées.
