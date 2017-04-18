@@ -67,3 +67,36 @@ USE bibliotheque;
     -- Exercices : Afficher le prénom des abonnés ayant emprunté un livre le 19-12-2011
 
     SELECT prenom FROM abonne WHERE id_abonne IN (SELECT id_abonne FROM emprunt WHERE date_sortie = '2011-12-19');
+
+    -- Exercices : Afficher le prénom des abonnés ayant emprunté un livre d'Alphonse Daudet : 
+
+    SELECT prenom FROM abonne WHERE id_abonne IN (SELECT id_abonne FROM emprunt WHERE id_livre IN (SELECT id_livre FROM livre WHERE auteur = 'Alphonse Daudet' ));
+    
+    -- Exercices : Afficher le ou les titres de livres que Chloé a emprunté(s) : 
+
+    SELECT titre from livre WHERE id_livre IN (SELECT id_livre FROM emprunt WHERE id_abonne IN (SELECT id_abonne FROM abonne WHERE prenom = 'chloe'));
+
+    -- Exercices : Afficher le ou les titres de livres que Chloé n'a pas encore rendu(s) : 
+    
+    SELECT titre from livre WHERE id_livre IN (SELECT id_livre FROM emprunt WHERE date_rendu IS NULL AND id_abonne IN (SELECT id_abonne FROM abonne WHERE prenom = 'chloe'));
+    
+    -- Exercices : Combien de livres Benoit a empruntés ? : 
+
+    SELECT COUNT(id_livre) FROM emprunt WHERE id_abonne IN (SELECT id_abonne FROM abonne WHERE prenom = 'Benoit');
+
+    -- Exercices : Qui (prénom) a emprunté le plus de livres ? : 
+
+    SELECT prenom FROM abonne WHERE id_abonne = (SELECT id_abonne FROM emprunt GROUP BY id_abonne ORDER BY COUNT(id_emprunt) DESC LIMIT 1 );
+    -- remarque : on ne peut pas utiliser LIMIT dans IN mais obligatoirement un '='
+
+
+    
+-- **************************************
+-- Jointures internes
+-- **************************************
+
+-- Différence entre une jointure et une requête imbriquée : une requête imbriquée est possible seulement dans le cas ou les champs affichés (ceux qui sont dans le SELECT) sont issus de la même table.
+
+-- Avec une requête de jointure, les champs sélectionnées peuvent être issus de tables difféerentes. Une jointure est une requête premettant de faire des relations entre les différentes tables afin d'avoir des colonnes ASSOCIEES qui ne forme qu'UN SEUL résultat.
+
+-- Afficher les dates de sortue et e rendu pour l'abonné Guillaume :
