@@ -199,4 +199,15 @@ USE bibliotheque;
 -- UNION
 -- **************************************
 
-    -- Union permet de fusionner le résultat
+    -- Union permet de fusionner le résultat de deux requêtes dans la même liste de résultat.
+
+    -- Exemple : si on désinscrit Guillaume (suppression du profil de la table abonne), on peut afficher à la fois tous les livres empruntés, y compris ceux par des lecteurs désinscrits (on affiche NULL à la place de Guillaume), et tous les abonnés, y compris ceux qui n'ont rien emprunté (on affiche NULL dans id_livre pour l'abonné 'Alexandre').
+
+    -- Sppression du profil de Guillaume :
+    DELETE FROM abonne WHERE id_abonne = 1;
+
+    -- Requête sur les livres empruntés avec UNION :
+    (SELECT abonne.prenom, emprunt.id_livre FROM abonne LEFT JOIN emprunt on abonne.id_abonne = emprunt.id_abonne)
+    UNION
+    (SELECT abonne.prenom, emprunt.id_livre FROM abonne RIGHT JOIN emprunt on abonne.id_abonne = emprunt.id_abonne)
+    
