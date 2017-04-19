@@ -20,5 +20,10 @@
 
 
     -- Requête préparée avec un marqueur "?" :
+        
         -- 1° Préparation :
-        PREPARE req2 FROM "SELECT * FROM employes WHERE prenom = ?";  -- déclarer une requête préparée
+        PREPARE req2 FROM "SELECT * FROM employes WHERE prenom = ?";  -- le "?" est un marqueur qui attend une valeur
+
+        -- 2° Exécution :
+        SET @prenom = 'Emilie'; -- déclare et affecte la bariable prenom
+        EXECUTE req2 USING @prenom; -- on exécute la requête en utilisant la variable prenom
