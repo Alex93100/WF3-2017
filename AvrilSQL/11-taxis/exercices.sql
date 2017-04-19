@@ -34,7 +34,7 @@ INSERT INTO vehicule(marque, modele, couleur, immatriculation) VALUES ('Renault'
 -- Puis afficher tous les modèles de vehicule, y compris ceux qui n'ont pas de chauffeur affecté, et le prénom des conducteurs.
 SELECT c.prenom, v.modele
 FROM conducteur c
-LEFT JOIN association_vehicule_conducteur a
+RIGHT JOIN association_vehicule_conducteur a
 ON c.id_conducteur = a.id_conducteur
 RIGHT JOIN vehicule v
 ON a.id_vehicule = v.id_vehicule;
