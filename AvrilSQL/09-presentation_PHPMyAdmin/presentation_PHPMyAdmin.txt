@@ -32,4 +32,24 @@ Définition des attributs :
     - Binary : pour rendre le champ sensible à la casse
     - Unsigned : pas de chiffre négatif
     - Unsigned Zerofill: pas de chiffre négatif + complète avec des 0 (exemple "12" en INT(4) donnera en base "0012")
+
+-----------------------------------
+IMPORT / EXPORT de base de données
+
+    - Via PHPMyAdmin : avec les onglets "import" ou "export" correspondants.
+
+    - En ligne de commande : Demarrer > Exécuter > cmd
+
+    Puis :
+
+        - Pour faire une export de BDD :
+            cd c:\xampp\mysql\bin
+            mysqldump -u root entreprise > monFichier.sql
+
+    => le fichier d'export appelé monFichier.sql se trouve par défaut dans le dossier cd c:\xampp\mysql\bin.
     
+        - Pour faire un import en BDD :
+            1° Créer une base de données d'accueil : import_entreprise2
+            2° Mettre le fichier di'mport dans le dossier par dafaut cd c:\xampp\mysql\bin
+            3° Saisir dans l'invite de commandes : mysql -u root import_entreprise2 < monFichier.sql
+
