@@ -1,0 +1,10 @@
+********************************
+Les contraintes d'intégrité
+********************************
+
+Sous PMA :
+
+    1° Créer la base de données et la remplir
+    2° Lors de la création des tables, bien vérifier que le moteur est InnoDB qui est celui qui permet de gérer les FK et les contraintes, contrairement au moteur MyISAM.
+    3° Déclarer un INDEX sur les champs que l'on souhaite passer en clé étrangère (FK) : dans notre cas le champ id_fourn de la table article.
+       Pour cela cliquer sur INDEX du champ correspondant dans l'onglet STRUCTURE. 
