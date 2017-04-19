@@ -12,3 +12,24 @@ Il permet d'administrer les éléments suivants :
     - les index, les clés primaires et étrangères
     - les utilisateurs de la base et leur permissions
     - exporter / importer les données dans divers formats
+
+Vous pourriez remplacer PMA par d'autre interfaces d'administration de BDD : DbNinja, SQL Buddy, MyWebSQL, phpMiniAdmin...
+
+-----------------------------------
+
+Définition des TYPES de champ :
+    
+    - INT pour nombre entier (taille maxi de 11 caractère pour une valeur entre - 2 147 483 648 et  2 147 483 648)
+    - VARCHAR pour chaîne de caractère de longueur variable (taille maxi 255 caractères)
+    - TEXT pour chaîne de caractère de longueur variable (taille maxi 65535 caractères)
+    - DATE au format YYYY-MM-DD
+    - DATETIME au format YYYY-MM-DD HH:ii:permissions
+    - FLOAT pour les nombres décimaux
+    - ENUM pour donner une liste de valeur selon la syntaxe 'm','f'
+
+Définition des attributs :
+
+    - Binary : pour rendre le champ sensible à la casse
+    - Unsigned : pas de chiffre négatif
+    - Unsigned Zerofill: pas de chiffre négatif + complète avec des 0 (exemple "12" en INT(4) donnera en base "0012")
+    
