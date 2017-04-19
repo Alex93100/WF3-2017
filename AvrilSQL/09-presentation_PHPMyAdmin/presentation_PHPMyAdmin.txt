@@ -1,0 +1,14 @@
+********************************************
+Présentation de PHPMyAdmin (PMA)
+********************************************
+
+Qu'est-ce que PHPMyAdmin :
+
+PMA est une interface d'administration pour le SGBD MySQL. Il est ecrit en PHP et s'appuie sur le serveur HTTP Apache (serveur Web).
+
+Il permet d'administrer les éléments suivants : 
+    - les BDD
+    - les tables et leurs champs
+    - les index, les clés primaires et étrangères
+    - les utilisateurs de la base et leur permissions
+    - exporter / importer les données dans divers formats
