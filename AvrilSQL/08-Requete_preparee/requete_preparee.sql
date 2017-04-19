@@ -27,3 +27,8 @@
         -- 2° Exécution :
         SET @prenom = 'Emilie'; -- déclare et affecte la bariable prenom
         EXECUTE req2 USING @prenom; -- on exécute la requête en utilisant la variable prenom
+
+    -- Supprimer une requête préparée :
+        DROP PREPARE req2;
+
+    -- Les requêtes préparées ont une durée de vue courte : elles sont supprimées dès que l'on quitte la session.
