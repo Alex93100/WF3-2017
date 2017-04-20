@@ -275,7 +275,7 @@
             $var2 = $maVar ?? 'valeur par défaut'; // On fait exactement la même chose mais en plus court : le "??" signifie "soit l'un soit l'autre", "prend la première valeur qui existe"
             echo $var2 . '<br>';
 
-            $var3 = $_GET ['pays'] ?? $_GET['ville'] ?? 'pas d\'info';
+            $var3 = $_GET ['pays'] ?? $_GET['ville'] ?? 'pas d\'info'; // soit on prend le pays s'il existe, sinon on prend la ville si elle exciste, sinon on prend 'pas d'info' par défaut
             echo $var3 . '<br>';
 
 
