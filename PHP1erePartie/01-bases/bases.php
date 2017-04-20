@@ -263,7 +263,17 @@
             // empty sera utilisé pour vérifier, par exemple, que les champs d'un formulaire sont remplis.
             // isset permettra par exemple de vérifier l'existence d'un indice dans un array avant de l'utiliser. 
 
-    // phpinfo();
+            // phpinfo();
+
+            // ********************************************************************************************
+
+            // Entrer une valeur dans une variable sous condition (PHP7) :
+            $var1 = isset ($maVar) ? $maVar : 'valeur par défaut'; // dans cette ternaire, on affecte la valeur de $maVar à $var1 si elle existe. Celle-ci n'existant pas, on lui affecte 'valeur par défaut'
+            echo $var1 . '<br>'; // Affiche 'valeur par défaut'
+
+            // En version PHP7 :
+            $var2 = $maVar ?? 'valeur par défaut'; // On fait exactement la même chose mais en plus court : le "??" signifie "soit l'un soit l'autre", "prend la première valeur qui existe"
+            echo $var2 . '<br>';
 
 
         //--------------------------------------
@@ -376,10 +386,6 @@
             // On construit un objet "date" avec le mot new, en indiquant la date qui nous intéresse entre parenthèses. $date est donc un objet date.
             // Cet objet bénéficie de méthode (= fonction) offertes par la classe : il y a entre autres, la méthode format() qui permet de modifier le format d'une date.
             //  Pour appeler cette méthode sur l'objet $date, on utilise la flèche "->".
-
-
-
-
 
 
 
