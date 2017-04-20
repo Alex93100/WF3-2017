@@ -16,41 +16,43 @@
     // Pour fermer un passage en PHP, on utilise la balise suivante :
 ?>
 
+
 <strong>Bonjour</strong> <!-- En dehors des balise d'ouverture et de fermeture du PHP, nous pouvons écrire du HTML -->
+
 
 <?php
         //------------------------------------
         echo '<h2> Ecriture et affichage </h2>';
         //------------------------------------  
 
-        echo 'Bonjour'; // echo est une instruction qui nous permet d'effectuer un affichage. Notez que les instructions se terminent par un ";'
+            echo 'Bonjour'; // echo est une instruction qui nous permet d'effectuer un affichage. Notez que les instructions se terminent par un ";'
 
-        echo '<br>'; // On peut mettre des balises HTML dans un echo, elle sont interprétées comme telles.
+            echo '<br>'; // On peut mettre des balises HTML dans un echo, elle sont interprétées comme telles.
 
-        print 'Nous sommes jeudi'; // print est une autres instruction d'affichage.
+            print 'Nous sommes jeudi'; // print est une autres instruction d'affichage.
 
-        // Pour info, il existe d'autres instructions d'affichage (cf plus loin) :
-        // print_r();
-        // var_dump();
+            // Pour info, il existe d'autres instructions d'affichage (cf plus loin) :
+            // print_r();
+            // var_dump();
 
 
         //------------------------------------
         echo '<h2> Variable : types / déclaration / affectation </h2>';
         //------------------------------------
 
-        // Définition : une variable est un espace mémoire nommé qui permet de conserver une valeur.
-        // En PHP, on déclare une variable avec le signe $
+            // Définition : une variable est un espace mémoire nommé qui permet de conserver une valeur.
+            // En PHP, on déclare une variable avec le signe $
 
-        $a = 127; // Je déclare la variable a, et je lui affecte la valeur 127
-        // Le type de la variable a est integer (entier)
-        
-        $b = 1.5; // Un type double pour nombre à virgule
+            $a = 127; // Je déclare la variable a, et je lui affecte la valeur 127
+            // Le type de la variable a est integer (entier)
+            
+            $b = 1.5; // Un type double pour nombre à virgule
 
-        $a = 'une chaîne de caractère'; // Type string pour une chaîne de caractères
-        $b = '127'; // Il s'agit aussi d'un string car il y a des quotes
+            $a = 'une chaîne de caractère'; // Type string pour une chaîne de caractères
+            $b = '127'; // Il s'agit aussi d'un string car il y a des quotes
 
 
-        $a = true; // Type boolean qui prend que 2 valeurs possibles : true ou false
+            $a = true; // Type boolean qui prend que 2 valeurs possibles : true ou false
 
 
         //------------------------------------
@@ -260,4 +262,77 @@
             
             // empty sera utilisé pour vérifier, par exemple, que les champs d'un formulaire sont remplis.
             // isset permettra par exemple de vérifier l'existence d'un indice dans un array avant de l'utiliser. 
+
+    // phpinfo();
+
+
+        //--------------------------------------
+        echo '<h2> Condition switch </h2>';
+        //--------------------------------------
+
+            // Dans le switch ci-dessous, les "case" représentent les cas différents dans lesquels on peut potentiellement tomber.
+            $couleur = 'jaune';
+
+            switch($couleur){
+                case 'bleu' : echo 'vous aimez le bleu'; break;
+                case 'rouge' : echo 'vous aimez le rouge'; break;
+                case 'vert' : echo 'vous aimez le vert'; break;
+                default : echo 'Vous n\'aimez ni le bleu, ni le rouge, ni le vert <br>';
+            };
+
+            // Le switch compare la valeur de la variable entre parenthèses à chaque case.
+            // Lorsqu'une valeur correspond, on exxécute l'instruction en regard du case, puis le break qui indique qu'il faut sortir de la condition.
+            // Le default correspond à un else : on l'exécute par défaut quand aucun case ne correspond.
+
+            if ($couleur == 'bleu'){
+                echo 'vous aimez le bleu';
+            }
+            else if ($couleur == 'rouge'){
+                echo 'vous aimez le rouge';
+            }
+            else if ($couleur == 'vert'){
+                echo 'vous aimez le vert';
+            }
+            else{
+                echo 'Vous n\'aimez ni le bleu, ni le rouge, ni le vert <br>';
+            };
+
+
+        //--------------------------------------
+        echo '<h2> Fonctions prédéfinies </h2>';
+        //--------------------------------------
+            // Une fonction prédéfinie permet de réaliser un traitement spécifique qui est prévu dans le langage.
+
+            echo '<h2>Traitement des chaînes de caractères (strlen, strpos, substr)</h2>';
+            $email1 = 'prenom@site.fr';
+
+            echo strpos($email1, '@') . '<br>'; // strpos() indique la position 6 du caractère "@" dans la chaîne $email1
+            echo strpos('Bonjour', '@');
+            var_dump(strpos('Bonjour', '@'));
+            // Quand j'utilise une fonction prédéfinie, il faut se demander quels sont les argument a lui furnir pour qu'elle s'exécute normalement, et ce qu'elle peut retourner comme résultat.
+            // Dans l'exemple de strpos() : succès => integer, échec => bolléen false
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 ?>
