@@ -311,22 +311,71 @@
             var_dump(strpos('Bonjour', '@'));
             // Quand j'utilise une fonction prédéfinie, il faut se demander quels sont les argument a lui furnir pour qu'elle s'exécute normalement, et ce qu'elle peut retourner comme résultat.
             // Dans l'exemple de strpos() : succès => integer, échec => bolléen false
+            
+            // **************************************************************************************************
+            
+            $phrase = 'Mettez une phrase à cet endroit';
+            echo '<br>' . strlen($phrase) . '<br>'; // Affiche la longueur du string : succès => integer, échec => false
+
+            $texte = 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsam odit repellendus molestiae quae suscipit provident, dolor repudiandae, asperiores atque! Voluptatum possimus temporibus vero impedit nostrum aspernatur magnam, illo neque blanditiis.';
+
+            echo substr($texte, 0, 20) . '...<a href="">Lire la suite</a><br>';
+            // On découpe une partie du texte et on lui concatène un lien. Succès => string, échec => false.
+
+            // **************************************************************************************************
+
+            echo str_replace('site', 'gamil', $email1) . '<br>'; // Remplace 'site' par 'gmail' dans le string contenu dans $email1           
+
+            // **************************************************************************************************
+            
+            $message = '             Hello world               ';
+            echo strtolower($message) . '<br>'; // passe le string en minuscules
+            echo strtoupper($message) . '<br>'; // passe le string en majuscules
+
+            echo strlen($message) . '<br>';
+            echo strlen(trim($message)) . '<br>'; // trim() permet de supprimer les esapce au début et à la fin d'un string
 
 
+        //--------------------------------------
+        echo '<h2> PHP Manuel </h2>';
+        //--------------------------------------
+            // Le manuel PHP en ligne :
+            // http://php.net/manual/fr/
+        //--------------------------------------
+        echo '<h2> Gestion des dates </h2>';
+        //--------------------------------------
+
+            echo date('d/m/Y H:i:s') . '<br>'; 
+            // Affiche la date et heure de l'instant selon le format indiqué : d = day m = month, Y = year sur 4 chiffres, y = year sur 2 chiffre, H = heures sur 24h, i = minutes, s= seconds
+            // On peut choisir les séparateurs
+
+            echo time() . '<br>'; // Retourne le timestamp actuel = nombre de secondes écoulées depuis le 01/01/1970 à 00:00:00 (création théorique de UNIX).
+
+            // La fonction prédéfinie strtotime() :
+            $dateJour = strtotime('10-01-2016'); // retourne le timestamp de la date indiquée
+
+            echo $dateJour . '<br>';
+
+            // La fonction strftime() :
+            $dateFormat = strftime('%Y-%m-%d', $dateJour); // transforme le timestamp donnée en date selon le format indiqué, ici YYYY-MM-DD
+            echo $dateFormat . '<br>'; // Affiche 2016-01-10
+
+            // Exemple de conversion de format de date :
+            // Transformer 23-05-2105 en 2015-05-23
+
+            echo strftime ('%Y-%m-%d', strtotime ('23-05-2015'));
+            echo '<br>';
+            echo strftime ('%d-%m-%Y', strtotime ('2015-05-23')) . '<br>';
 
 
-
-
-
-
-
-
-
-
-
-
-
-
+            // Cette méthode de transformation est limitée dans le temps (2038)... On peut donc utiliser une aure méthode avec la classe DateTime :
+            $date = new DateTime('11-04-2017');
+            echo $date->format('Y-m-d');
+            
+            // DateTime est une classe que l'on peut comparer à un plan ou un modèle qui  sert à construire des objet "date".
+            // On construit un objet "date" avec le mot new, en indiquant la date qui nous intéresse entre parenthèses. $date est donc un objet date.
+            // Cet objet bénéficie de méthode (= fonction) offertes par la classe : il y a entre autres, la méthode format() qui permet de modifier le format d'une date.
+            //  Pour appeler cette méthode sur l'objet $date, on utilise la flèche "->".
 
 
 
