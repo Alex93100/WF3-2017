@@ -226,13 +226,38 @@
             $vara = 1; // integer
             $varb = '1'; // string
             
-            if($vara == $varb){}
-                echo 'Il y a égalité entre les 2 variables';
-            }
             if($vara == $varb){
-                echo 'Il y a égalité en valeur ET en type entre les 2 variables';
-            }
+                echo 'Il y a égalité entre les 2 variables <br>';
+            };
 
+            if($vara === $varb){
+                echo 'Il y a égalité en valeur ET en type entre les 2 variables <br>';
+            }; 
+            // Avec la présence du triple =, la comparaison ne fonctionne pas car les variavles ne sont pas du même type : ici on compare un integer avec un string.
+            // Avec le double égal, on ne compare que la valeur : ic la comparaison est donc juste.
 
+            /*
 
+            =       signe d'affectation
+            ==      comparaison en valeur
+            ===     comparaison en valeur et en type
+            
+            */ 
+
+            // **************************************************************************************************
+            // empty() et isset() :
+            // empty() : teste si c'est vide (cad 0, '', NULL, false ou non défini)
+            // isset() : teste si c'est défini et a une valeur non NULL
+
+            $var1 = 0;
+            $var2 = ''; // Chaîne vide sans espace
+
+            if(empty($var1)) echo 'on a 0, vide, ou non définie <br>';
+            if(isset($var2)) echo 'var2 existe bien <br>';
+
+            // différence entre empty et isset :  si on met les ligne 252 et 253 en commmentaire (pour les neutraliser).
+            // empty reste vrai car $var1 n'est pas définie, alors que isset est faux car $var2 n'est pas définie.
+            
+            // empty sera utilisé pour vérifier, par exemple, que les champs d'un formulaire sont remplis.
+            // isset permettra par exemple de vérifier l'existence d'un indice dans un array avant de l'utiliser. 
 ?>
