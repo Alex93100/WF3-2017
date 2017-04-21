@@ -539,38 +539,38 @@
 
             // Exercice : à l'aide d'une boucle while, afficher dans un  sélecteur les années depuis l'année en cours moins 100 ans et jusqu'a l'année en cours : 1917 => 2017' 
   
-?>
+            ?>
 
 
 
             <h3>Choisi ton année :</h3>
             <select>
-                
-                <?php
-                    $a = 1917;
-                
-                    while ($a <= 2017) {
-                        echo "<option>$a</option>";
-                        $a++;
-                    }
-                ?>
-            </select>
+                    
+                    <?php
+                        $a = 1917;
+                    
+                        while ($a <= 2017) {
+                            echo "<option>$a</option>";
+                            $a++;
+                        }
+                    ?>
+                </select>
 
 
-<select>
+            <select>
 
-<?php
+            <?php
 
             
-            
-            $a2 = date('Y') - 100; // équivaut à 1917
-        
-            while ($a2 <= date('Y')) { // équivaut à $a <= 2017
-                echo "<option>$a2</option>";
-                $a2++;
-            }
                 
-            echo '</select>';
+                $a2 = date('Y') - 100; // équivaut à 1917
+            
+                while ($a2 <= date('Y')) { // équivaut à $a <= 2017
+                    echo "<option>$a2</option>";
+                    $a2++;
+                }
+                    
+                echo '</select>';
 
 
 
@@ -600,13 +600,24 @@
             // ********************************************************************************************
             // Exercice :
             // 1- faire une boucle qui affoche 0 à 9 sur la meme ligne
-            // 2- faites la m$eme chose mais dans un tableau HTML
 
 
             for ($p = 0; $p <= 9; $p++) { 
                 print " $p";
             }
+
+            // 2- faites la m$eme chose mais dans un tableau HTML
             
+            echo '<table border = "1">';
+                echo '<tr>';
+                    for ($p = 0; $p <= 9; $p++){ 
+                        print "<td>$p</td>";
+                    }
+                echo '</tr>';
+            echo '</table>';
+
+            separation();
+
 
             echo '<table border = "1"><tr>';
 
@@ -618,19 +629,95 @@
 
             separation();
 
-
-
+            // Exercice : faire un tableau HTML de 10 colonnes sur 10  ligne à partir du code précédent :
 
             echo '<table border = "1">';
                 for( $t = 0; $t <= 9; $t++){
-                echo '<tr>';
-                    for ($p = 0; $p <= 9; $p++){ 
-                        print "<td>$p</td>";
-                    }
+                    echo '<tr>';
+                        for ($p = 0; $p <= 9; $p++){ 
+                            print "<td>$p</td>";
+                        }
+                    echo '</tr>';
                 }
-                echo '</tr>';
             echo '</table>';
 
-                
+            separation();
+            
+
+            // Version en while :
+
+            echo '<table border = "1">';
+                $t = 0; 
+                while($t < 10){
+                    echo '<tr>';
+                        for ($p = 0; $p <= 9; $p++){ 
+                            print "<td>$p</td>";
+                        }
+                    $t++;
+                    echo '</tr>';
+                }
+            echo '</table>';
+
+
+        //--------------------------------------
+        echo '<h2> Les array ou tableaux </h2>';
+        //--------------------------------------
+            // On peut stocker dans un array une multitude de valeurs, quelque soit leur type
+
+            $liste = array('grégoire', 'nathalie', 'émilie', 'françois', 'georges'); // Déclaration d'un array appelé $liste contenant des prénoms
+
+            // echo $liste; // erreur car on ne peut pas afficher dirrectement le contenu d'un array
+
+            echo '<pre>'; var_dump($liste); echo '</pre>';
+            echo '<pre>'; print_r($liste); echo '</pre>';
+
+            // Ces deux instructions d'affichage permettent d'indiquer le type de l'élément mis en argument, ainsi que son contenu.
+            // Les balises <pre> servent à faire une mise en forme. Notez que ces 2 instruction ne sont utilisées qu'en phase de développement.
+
+            // Autre moyen d'affecter des valeurs dans un tableau :
+            $tab[] = 'France'; // permet d'ajouter la valeur 'France' dans le tableau $tab
+            $tab[] = 'Italie'; 
+            $tab[] = 'Espagne'; 
+            $tab[] = 'Portugal'; 
+
+            echo '<pre>'; print_r($tab); // pour voir le contenu du tableau
+
+            // Pour afficher la valeur Italie qui se situe à l'indice 1 : 
+            echo $tab[1] . '<br>'; // Affiche Italie
+
+            // Tableau associatif : tableau dont les indices sont littéraux :
+            $couleur = array("j" => "jaune", "b" => "bleu", "v" => "vert"); // On peut choisir le nom des indices
+
+            // Pour accéder à un élément du tableau associatif :
+
+            echo 'La seconde couleur de notre tableau est le ', $couleur['b'], '<br>'; // Affiche bleu
+            echo "La seconde couleur de notre tableau est le $couleur[b]<br>"; // Affiche bleu. Un array écrit dans des guillemets perd ses quotes autour de son indice
+
+            // ********************************************************************************************
+
+            // Mesurer la taille d'un array :
+            echo 'Taille du tableau : ' . count($couleur) . '<br>'; // compte le nombre d'éléments dans l'array $couleur, ici 3
+            echo 'Taille du tableau : ' . sizeof($couleur) . '<br>'; // compte le nombre d'éléments dans l'array $couleur, ici 3
+
+            // ********************************************************************************************
+
+            // Transformer un array en string :
+            $chaine = implode('-', $couleur); // implode() rassemble les éléements d'un array en une chaîne séparés par le séparateur '-' ici
+            echo $chaine . '<br>';
+
+            $couleur2 = explode ('-', $chaine); // Transforme une chaîne en array en séparant les éléments grâce au séparateur indiqué (ici un "-")
+            print_r($couleur2);
+
+            // ********************************************************************************************
+
+            echo '<h2>La boucle foreacj pour parcourir les arrays</h2>';
+            // La boucle foreach est un moyen simple de passer en revue un tableau. 
+            // Elle fonctionne uniquement sur les arrays et les objets. Et elle a l'avantage d'être "automatique", s'arrêtant il n'y a plus d'éléments.
+
+            foreach ($tab as $valeur){
+                echo $valeur . '<br>';
+            }
+            
+
 
 ?>
