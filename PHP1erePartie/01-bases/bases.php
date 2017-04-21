@@ -482,6 +482,27 @@
             meteo3('Ete', 12);
             meteo3('Automne', 12);
 
+            separation();
+
+            // ********************************************************************************************
+            
+            // Exercice :
+            function prixLitre(){
+                return rand(1000, 2000)/1000; // détermine un prix aléatoire entre 1 et 2€
+            }
+
+
+            // Ecrivez la fonction factureEssence() qui calcule le prix total de votre facture d'essence en fonction du nombre de litre que vous lui donnez.
+            // Cette fonction retourne la phrase "Votre facture est de X euros pour Y litres d'essence" (X et Y sont variables).
+            // Dans cette fonction, utilisez la fonction prixLitre() qui vous retourne le prix du litre d'essence.
+
+            function factureEssence($nbLitre){
+                 $totalFacture = $nbLitre * prixLitre();
+                echo "Votre facture est de $totalFacture pour $nbLitre litres d'essence <br>";
+                 
+            }
+
+            factureEssence(50);
 
         //--------------------------------------
         echo '<h2> Les variables locales et globales </h2>';
@@ -713,9 +734,15 @@
             echo '<h2>La boucle foreacj pour parcourir les arrays</h2>';
             // La boucle foreach est un moyen simple de passer en revue un tableau. 
             // Elle fonctionne uniquement sur les arrays et les objets. Et elle a l'avantage d'être "automatique", s'arrêtant il n'y a plus d'éléments.
+            echo '<pre>'; print_r($tab);
 
-            foreach ($tab as $valeur){
+            foreach ($tab as $valeur){ // La variable $valeur (que l'on appelle comme on veut) récupère à chaque tour de boucle les valeurs qui sont parcourues dans l'array $tab.
+            // ["parcourt l'array $tab par ses valeurs"]
                 echo $valeur . '<br>';
+            }
+
+            foreach ($tab as $indice => $valeur){ // On parcourt l'array $tab par ses indices auxquels on associe les valeurs'
+                echo $indice . ' correspond à ' . $valeur . '<br>';
             }
             
 
