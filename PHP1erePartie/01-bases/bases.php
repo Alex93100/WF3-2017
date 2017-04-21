@@ -3,6 +3,9 @@
         font-size:1.5rem;
         color: red;
     }
+    td{
+        padding : 0.5rem;
+    }
 </style>
 
 <?php
@@ -479,7 +482,155 @@
             meteo3('Ete', 12);
             meteo3('Automne', 12);
 
-   
 
+        //--------------------------------------
+        echo '<h2> Les variables locales et globales </h2>';
+        //--------------------------------------
+
+            function jourSemaine(){
+                $jour = 'vendredi'; // Ici dans la fonction nous somme dans un espace LOCAL. La ariable $jour est donc LOCALE.
+                return $jour;
+            }
+
+            // A l'extérieur de la fonction, je suis dans l'espace GLOBAL.
+
+            // echo $jour; // je ne peux pas utiliser une variable locale dans l'espace global
+            echo jourSemaine() . '<br>'; // On peut cependant récupérer la valeur de $jour grâce au return qui est au sein de la fonction et à l'appel de cette fonction
+
+            // ********************************************************************************************
+
+            $pays = 'France'; // variable globale
+            function affichagePays(){
+                global $pays; // Le mot clé global permet de récupérer une variable provenant de l'epace global au sein de l'espace local de la fonction 
+                echo $pays; // On peut donc utiliser cette variable $pays
+            }
+
+            affichagePays();
+
+        //--------------------------------------
+        echo '<h2> Les structures itératives : boucles </h2>';
+        //--------------------------------------
+            // boucle while       
+
+            $i = 0; //Valeur de départ de la boucle
+            while ($i < 3) { // Tant que $i est inférieur à 3, j'exécute les accolades qui suivent
+                echo "$i...";
+                $i++; // On n'oublie pas d'incrémenter $i pour que la boucle ne soit pas infinie (il faut que la condition puisse devenir false à un moment donnée)
+            }
+
+            echo '<br>';
+
+            // ********************************************************************************************
+
+            $j = 0;
+            while ($j < 3) {
+                if ($j == 2){
+                    echo $j;
+                }
+                else{
+                    echo "$j...";
+                }
+                $j++;
+            }
+
+            echo '<br>';
+
+            // ********************************************************************************************
+
+            // Exercice : à l'aide d'une boucle while, afficher dans un  sélecteur les années depuis l'année en cours moins 100 ans et jusqu'a l'année en cours : 1917 => 2017' 
+  
+?>
+
+
+
+            <h3>Choisi ton année :</h3>
+            <select>
+                
+                <?php
+                    $a = 1917;
+                
+                    while ($a <= 2017) {
+                        echo "<option>$a</option>";
+                        $a++;
+                    }
+                ?>
+            </select>
+
+
+<select>
+
+<?php
+
+            
+            
+            $a2 = date('Y') - 100; // équivaut à 1917
         
+            while ($a2 <= date('Y')) { // équivaut à $a <= 2017
+                echo "<option>$a2</option>";
+                $a2++;
+            }
+                
+            echo '</select>';
+
+
+
+            // ********************************************************************************************
+
+            // Boucle do while :
+            // La boucle do while a la particularité de s'exécuter au moins UNE fois, puis tant que la condition de fin est vraie.
+            echo '<br> Boucle do while <br>';
+            
+            do{
+                echo 'un tour de boucle';
+    
+            }while (false); 
+            // On met la condition pour exécuter les tours de boucle ici à la place de false.Dans ce cas précis, on vois que l'on effectue un tour de boucle bien que la condition soit fausse.
+            // Notez la présence du ";" à la fin de la boucle do While (contrairement aux autres structures itératives).
+
+
+            // ********************************************************************************************
+                
+            // Boucle for :
+            echo '<br>';
+            for ($j = 0; $j < 16; $j++) { // Iniialissation de la valeur de départ; condition d'entrée dans la boucle ; incrémentation (ou décrémentation)
+                print $j . '<br>';
+            }
+
+
+            // ********************************************************************************************
+            // Exercice :
+            // 1- faire une boucle qui affoche 0 à 9 sur la meme ligne
+            // 2- faites la m$eme chose mais dans un tableau HTML
+
+
+            for ($p = 0; $p <= 9; $p++) { 
+                print " $p";
+            }
+            
+
+            echo '<table border = "1"><tr>';
+
+                for ($p = 0; $p <= 9; $p++) { 
+                    print "<td>$p</td>";
+                }
+
+            echo '</tr></table>';
+
+            separation();
+
+
+
+
+            echo '<table border = "1">';
+                for( $t = 0; $t <= 9; $t++){
+                echo '<tr>';
+                    for ($p = 0; $p <= 9; $p++){ 
+                        print "<td>$p</td>";
+                    }
+                }
+                echo '</tr>';
+            echo '</table>';
+
+                
+
 ?>
