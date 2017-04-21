@@ -391,6 +391,95 @@
             //  Pour appeler cette méthode sur l'objet $date, on utilise la flèche "->".
 
 
+        //--------------------------------------
+        echo '<h2> Les fonctions utilisateurs </h2>';
+        //--------------------------------------
+            // Les fonctions qui ne sont pas prédéfinies dans le langage sont déclarées puis exécutées par l'utilisateur
+
+            //  Déclaration d'une fonction :
+            function separation(){
+                echo '<hr>'; // Simple fonction permettant de tirer un trait dans la page web
+            }
+
+            // Appel de la fonction par son nom :
+            separation(); // Ici on exécute la fonction
+
+            // ********************************************************************************************
+
+            // Fonction avec arguments : les arguments sont des paramètres fournis à la fonction et lui permettenet de compléter ou modifier son comportement initialement prévu.
+            function bonjour($qui){ // $qui apparaît ici pour la premère fois : il s'agit d'une variable de réception qui reçoit la valeur d'un arguement
+                return 'Bonjour ' . $qui . '<br>'; // return permet de renvoyez ce qui suit le return à l'endroit ou la fonction est appelée
+            }
+
+            // Appel de la fonction :
+            echo bonjour('Pierre'); // On appelle la fonction en lui donnant le string 'Pierre' en argument => affiche 'Bonjour Pierre'
+
+            $prenom = 'Etienne';
+            echo bonjour($prenom); //l'argument peut être une variable : affiche 'Bonjour Etienne'.
 
 
+            // ********************************************************************************************
+
+            // Exercice :
+            function appliqueTva($nombre){
+                return $nombre * 1.2;
+            }
+
+            // Ecrivez une fonction appliqueTva2 sur la base de la précédente, mais en donnant la possibilité de calculer un nombre avec le taux de notre choix.
+
+            function appliqueTva2($nombre, $taux){ // On ne peut pas redéclarer une fonction avec le même nom
+                    return $nombre * $taux;
+            }
+
+            $nombre = rand(1, 30);
+            echo appliqueTva2($nombre, 2) . '<br>'; // Lorsqu'une fonction atten des arguments, il faut obligatoirement les lui donner et dans le meme ordre
+            separation();
+            
+
+            // ********************************************************************************************
+            
+            //Exercicce :
+            function meteo($saison, $temperature){
+                echo "Nous sommes en $saison et il fait $temperature °C <br>";
+            } 
+
+            meteo('Hiver', 2);
+            meteo('Printemps', 2);
+
+            // Créer une fonction meteo2 qui permet d'afficher "au printemps" quand il s'agit du printemps.
+            separation();
+
+
+            function meteo2($saison, $temperature){
+                if($saison == 'Printemps'){
+                    $article = 'au';
+                }
+                else{
+                    $article = 'en';
+                };
+                    echo "Nous sommes $article $saison et il fait $temperature °C <br>";
+                
+            }
+
+            meteo2('Hiver', 2);
+            meteo2('Printemps', 2);
+            meteo2('Ete', 12);
+            meteo2('Automne', 12);
+
+          
+            separation();
+
+            function meteo3($saison, $temperature){
+                $article = ($saison == 'Printemps') ? 'au' : 'en';
+                echo "Nous sommes $article $saison et il fait $temperature °C <br>";
+            }
+
+            meteo3('Hiver', 2);
+            meteo3('Printemps', 2);
+            meteo3('Ete', 12);
+            meteo3('Automne', 12);
+
+   
+
+        
 ?>
