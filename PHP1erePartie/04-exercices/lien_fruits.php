@@ -9,7 +9,6 @@
         include('fonction.inc.php');
         if(isset($_GET['fruit'])){
                 echo calcul($_GET['fruit'] , 1000);
-
         }
         else{
                 echo 'Aucun produit sélectionné';
