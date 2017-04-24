@@ -1,7 +1,7 @@
 <?php
 // Voici une fonction qui permet de retoruner le prix d'un fruit en fonction d'un poids
 
-function calcul ($fruit, $poids){
+function calcul($fruit, $poids){
     switch($fruit){
         case 'cerises' : $prix_kg = 5.76; break;
         case 'bananes' : $prix_kg = 1.09; break;
@@ -11,4 +11,7 @@ function calcul ($fruit, $poids){
     }
 
     $resultat = $poids * $prix_kg / 1000; // calcule le prix en total selon un poids donnée en grammes
+
+    return 'Les ' . $fruit . ' coûtent ' . $resultat . ' euros pour ' . $poids . ' grammes';
 }
+
