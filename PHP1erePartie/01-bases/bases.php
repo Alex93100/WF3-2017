@@ -772,8 +772,22 @@
             // Parcourir le tableau multidimensionnel avec une boucle for :
             for ($i = 0; $i < count($tab_multi); $i++){
                 echo $tab_multi[$i]['prenom'] . '<br>';
+            };
+
+            // Exercice : afficher les prénoms avec une boucle foreach
+            
+            // Première version en passant par l'indice : 
+            foreach ($tab_multi as $i => $value) {
+                echo $tab_multi[$i]['prenom'] .'<br>';
+                
+            }
+
+            // Seconde version en passant par la valeur : 
+            foreach ($tab_multi as $i => $value) {
+                echo $value['prenom'] .'<br>';
+                
             }
 
 
-
+    
 ?>
