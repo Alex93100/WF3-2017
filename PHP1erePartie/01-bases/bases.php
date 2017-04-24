@@ -741,10 +741,39 @@
                 echo $valeur . '<br>';
             }
 
-            foreach ($tab as $indice => $valeur){ // On parcourt l'array $tab par ses indices auxquels on associe les valeurs'
+            foreach ($tab as $indice => $valeur){ // On parcourt l'array $tab par ses indices auxquels on associe les valeurs.
+            // Quand il y a 2 variable la 1ere parcourt la colonne des indices, et la seconde la colonne des valeurs. Ces variables peuvent avoir n'importe quel nom.
                 echo $indice . ' correspond à ' . $valeur . '<br>';
             }
+
+
+        //--------------------------------------
+        echo '<h2> Les array multidimensionnels </h2>';
+        //--------------------------------------
             
+            // Nous parlons de tableaux multidimensionnels quand un tableau est contenu dans una utre tableau.
+            // Chaque tableau représente une dimension.
+
+            // Création d'un tableau multidimensionnel :
+            $tab_multi = array(
+                0 => array('prenom' => 'Julien', 'nom' => 'Dupon', 'telephone' => '06 00 00 00 00'),
+                1 => array('prenom' => 'Jul', 'nom' => 'Dup', 'telephone' => '06 00 00 00 10'),
+                2 => array('prenom' => 'Julia', 'nom' => 'Dupona')
+            );
+
+            echo '<pre>'; print_r($tab_multi); echo '</pre>';
+
+
+            //  Accéder à la valeur Julien :
+            echo $tab_multi[0]['prenom'] . '<br>'; 
+            // Affiche Julien : nous entrons d'bords à l'indice 0 pour aaller ensuite dans l'autre tableau à l'indice 'prenom'. Notez que 'prenom' est un string.
+
+
+            // Parcourir le tableau multidimensionnel avec une boucle for :
+            for ($i = 0; $i < count($tab_multi); $i++){
+                echo $tab_multi[$i]['prenom'] . '<br>';
+            }
+
 
 
 ?>
