@@ -791,5 +791,18 @@
         //--------------------------------------
         echo '<h2> Les inclusions de fichiers </h2>';
         //--------------------------------------
+            echo 'Première inclusion';
+            include('exemple.inc.php'); // on inclut le fichier dont le chemin est spécifié ici
+
+            echo '<br>Deuxième inclusion';
+            include_once('exemple.inc.php'); 
+            // Avec le once, on vérifie d'abord si le fichier n'est pas deja inclus, avant de faire l'inclusion (évite par exemple de redéclarer des fonctions en incluant 2 fois le meme fchier)
             
+            echo '<br>Troisième inclusion';
+            require('exemple.inc.php'); 
+
+
+
+
+
 ?>
