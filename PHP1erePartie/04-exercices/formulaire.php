@@ -11,7 +11,7 @@
     
     include('fonction.inc.php');
         if(isset($_POST['fruit'])){
-                echo calcul($_POST['fruit'], $_POST['poidsgramme'] );
+                echo calcul($_POST['fruit'], $_POST['poids']) . '';
         }
         else{
                 echo 'Aucun produit sélectionné';
@@ -30,16 +30,24 @@
 
     <label for="fruit">Fruit</label><br>
     <select name="fruit" id="fruit">
-        <option value="NULL">-- Selectionné --</option>    
-        <option value="bananes">bananes</option>
-        <option value="cerises">cerises</option>
-        <option value="peches">peches</option>
-        <option value="pommes">pommes</option>
+
+         <option value="NULL"<?php if (isset($_POST['fruit']) && $_POST['fruit'] == 'NULL') echo 'selected'; ?>> -- Selectionné -- </option>    
+
+        <option value="bananes"<?php if (isset($_POST['fruit']) && $_POST['fruit'] == 'bananes') echo 'selected'; ?>>bananes</option>
+
+        <option value="cerises"<?php if (isset($_POST['fruit']) && $_POST['fruit'] == 'cerises') echo 'selected'; ?>>cerises</option>
+
+        <option value="peches"<?php if (isset($_POST['fruit']) && $_POST['fruit'] == 'peches') echo 'selected'; ?>>peches</option>
+
+        <option value="pommes"<?php if (isset($_POST['fruit']) && $_POST['fruit'] == 'pommes') echo 'selected'; ?>>pommes</option>
     
     </select>
+
     <br>
+
     <label for="poidsgramme">Poids gramme</label><br>
-    <input type="number" name="poidsgramme" id="poidsgramme"></textarea><br>
+
+    <input type="text" name="poids" placeholder="poids en grammes" value="<?php  echo $_POST['poids'] ?? ''; ?>"><br>
 
     <input type="submit" name="validation" value="envoyer">
 
