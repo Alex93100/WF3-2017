@@ -35,7 +35,7 @@
         // En complément :
         $_POST['message'] = strip_tags($_POST['message']);// permet de supprimer toutes les balises HTML contenu
         
-        // htmlentities() permet lui aussi de convertir les balises HTML en entités HTML
+        // htmlentities() permet lui aussi de convertir les balises HTML en entités HTML+*-
 
 
         // 1- Nous allons faire une première requête qui n'est pas protégée contre les injections et qui n'accepte pas les apostrophes :
