@@ -5,7 +5,11 @@
         //-------------------- TRAITEMENT ---------------------- 
             
             //Déconnexion demandée par l'internaute :
-            //.........
+                if(isset($_GET['action']) && $_GET['action'] == 'deconnexion'){
+                    // Si l'internaute demande la déconnexion, on détruit la session :
+                    session_destroy();
+
+                }
 
             // Internaute déjà connecté :
                 if(internauteEstConnecte()){ // Si l'internaute est déjà connecté, il n'a rien à faire ici, on le redirige donc vers son profil
@@ -31,12 +35,22 @@
 
                         if($resultat->rowCount() != 0){ // Si il y a un enregistrement dasn le resultat, c'est que pseudo et mdp correspondent.
                             $membre = $resultat->fetch(PDO::FETCH_ASSOC); // Pas de while car il y a unicité du pseudo
-                            echo '<pre>';print_r($membre); echo '</pre>';
+                            // echo '<pre>';print_r($membre); echo '</pre>';
+
+                            $_SESSION['membre'] = $membre; // Nous remplissons la session avec les éléments provennant de la BDD.
+                            // Cette session permet de conserver les infos du membre dans l'ensemble du site
+                            
+                            header('location:profil.php'); // Le membre étant connecté, on l'envoie vers son profil
+                            exit();
+                       
+                        }
+                        else{
+                            // Si les identifiants ne correspondent pas, on affiche un message d'erreur :
+                            $contenu .= '<div class="bg-danger">Erreur sur les identifiants</div>';
+                           
+
                         }
                     }// Fin de if(empty($contenu))
-
-
-
                 } // Fin de if(!empty($_POST))
 
         //-------------------- AFFICHAGE ---------------------- 
@@ -50,6 +64,8 @@
     echo $contenu;
 
 ?>
+
+
 <h3>Veuillez renseigner vos identifiants pour vous connecter</h3>
 <form method="post" action="">
     <label for="pseudo">Pseudo :</label><br>
