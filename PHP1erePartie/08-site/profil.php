@@ -8,6 +8,10 @@
                 exit();
             }
 
+            
+            // echo '<pre>';print_r($_SESSION); echo '</pre>';
+            $contenu .= '<h2>Bonjour ' . $_SESSION['membre']['pseudo']. ' ! </h2>';
+            
             // On affiche le statut du membre :
             if($_SESSION['membre']['statut'] == 1){
                 $contenu .= '<p>Vous êtes un administrateur</p>';
@@ -15,9 +19,8 @@
             else{
                 $contenu .= '<p>Vous êtes un membre</p>';                
             }
-            // echo '<pre>';print_r($_SESSION); echo '</pre>';
-            $contenu .= '<h2>Bonjour ' . $_SESSION['membre']['pseudo']. ' ! </h2>';
-            
+
+
             $contenu .= '<div><h3>Voici vos information de profile</h3>';            
                 $contenu .= '<p> Votre email :' . $_SESSION['membre']['email'] . '</p>';
                 $contenu .= '<p>Votre adresse :' . $_SESSION['membre']['adresse'] . '</p>';
