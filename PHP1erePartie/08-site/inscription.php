@@ -39,11 +39,40 @@
                     }
 
                     // Validation du Code postal avec une expression régulière :
-                    if(!preg_match('#^[0-9]{5}$#',$_POST['code_postal']))
+                    if(!preg_match('#^[0-9]{5}$#',$_POST['code_postal'])){ // preg_match retourne true si le string en deuxième argument correspond à l'expression régulière
+                        $contenu .= '<div class="bg-danger">Le code postal n\'est pas valide</div>';
+                    }
+                    /*
+                        Explication de l'expression régulière:
+                        Elle est délimitée par des # au début et à la fin
+                        Le ^ signifie que l'expression débute par tout ce qui suit
+                        Le $ signifie que l'expression termine par tout ce qui précède
+                        [0-9] définit l'interval des caractères autorisés, ici de 0 à 9
+                        {5} est un quantificateur qui indique qu'il faut 5 caractères autorisés (pas plus pas moins)
+                    */ 
 
                     if(strlen($_POST['adresse']) < 4 || strlen($_POST['adresse']) > 50){
                         $contenu .= '<div class="bg-danger">L\'adresse doit contenir au moins 4 caractères</div>';
                     }
+
+                    // Si aucune erreur sur le formuaire, on vérifie l'unicité du pseudo avant inscription en BDD :
+                    if(empty($contenu)){ // Si $contenu est vide,c'est qu'il n'y a pas d'erreur
+                        $membre = executeRequete("SELECT id_membre FROM membre WHERE pseudo = :pseudo", array(':pseudo' => $_POST['pseudo']));
+                        // On vérifie l'existence du pseudo
+                        if($membre->rowCount() > 0){ // Si il y a des lignes dans le résultat de la requête
+                            $contenu .= '<div class="bg-danger">Le pseudo est indisponible</div>';
+                        }
+                        else{
+                            // Si le pseudo est unique, on peut faire l'inscription en BDD:
+
+                            $_POST['mdp'] = md5($_POST['mdp']);// permet d'encrypter le mot de passe selon l'algorithme md5. Il faudra le faire aussi sur la page de connexion pour comparer 2mots cryptés
+                            executeRequete("INSERT INTO membre(pseudo, mdp, nom, prenom, email, civilite, ville, code_postal, adresse, statut) VALUES(:pseudo, :mdp, :nom, :prenom, :email, :civilite, :ville, :code_postal, :adresse, 0)", array(':pseudo'=> $_POST['pseudo'],':mdp'=> $_POST['mdp'],':nom'=> $_POST['nom'],':prenom'=> $_POST['prenom'],':email'=> $_POST['email'],':civilite'=> $_POST['civilite'],':ville'=> $_POST['ville'],':code_postal'=> $_POST['code_postal'],':adresse'=> $_POST['adresse']));
+
+                            $contenu .= '<div class="bg-danger">Vous avez bien été inscrit.<a href="connexion.php">Cliquez ici pour vous connecter</a></div>';
+                            $inscription = true; //Pour ne plus afficher le formulaire d'inscription
+                        } // fin du else de if($membre->rowCount() > 0)
+
+                    }// fin du if(empty($contenu))
 
             }
 
