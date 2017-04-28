@@ -27,7 +27,7 @@
                     </button>
                     <a class="navbar-brand" href="<?php echo RACINE_SITE . 'boutique.php'; ?>">Ma Boutique</a>
                 </div>
-                <div class="collapse navbar-collapse" id="#bs-example-navbar-collapse-1">
+                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                     <ul class="nav navbar-nav">
                         <?php 
                             echo '<li><a href="'. RACINE_SITE .'boutique.php">Boutique</a></li>';
@@ -56,17 +56,4 @@
         
         <div class="container" style="min-height: 80vh;">
             <!-- ici il y a le contenu spécifique de chaque page -->
-        </div>
-
-        <div class="container">
-            <hr>
-            <footer>
-                <div class="row">
-                    <div class="col-lg-12">
-                        <p>copyright &copy; Ma Boutique - 2017</p>
-                    </div>                
-                </div>
-            </footer>
-        </div>
-    </body>
-</html>
+        

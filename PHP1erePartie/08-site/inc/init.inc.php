@@ -15,7 +15,7 @@
         session_start();
 
     // Chemin du site
-        define('RACINE_SITE', '/PHP/08-site/'); // indique le dossier dans lequel se situe le site dans 'localhost'
+        define('RACINE_SITE', '/PHP1erePartie/08-site/'); // indique le dossier dans lequel se situe le site dans 'localhost'
 
     // Déclaration des variables d'affichage du site :
         $contenu ='';
