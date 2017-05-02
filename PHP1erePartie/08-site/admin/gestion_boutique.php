@@ -19,7 +19,10 @@
             $photo_bdd=''; // La photo subit un traitement spécifique en BDD. Cette variable contiendra son chemin d'accès
             
             // 4- Suite de l'enregistrement en BDD :
-            executeRequete("REPLACE INTO produit (id_produit, reference, categorie, titre, description, couleur, taille, public, photo, prix, stock)VALUES(:id_produit, :reference, :categorie, :titre, :description, :couleur, :taille, :public, :photo_bdd, :prix, :stock)", array('id_produit' => $_POST['id_produit'], 'reference' => $_POST['reference'], 'categorie' => $_POST['categorie'], 'titre' => $_POST['titre'], 'description' => $_POST['description'], 'couleur' => $_POST['couleur'], 'taille' => $_POST['taille'], 'public' => $_POST['public'], 'photo' => $photo_bdd, 'prix' => $_POST['prix'], 'stock' => $_POST['stock'])
+            executeRequete("REPLACE INTO produit (id_produit, reference, categorie, titre, description, couleur, taille, public, photo, prix, stock)VALUES(:id_produit, :reference, :categorie, :titre, :description, :couleur, :taille, :public, :photo_bdd, :prix, :stock)", array('id_produit' => $_POST['id_produit'], 'reference' => $_POST['reference'], 'categorie' => $_POST['categorie'], 'titre' => $_POST['titre'], 'description' => $_POST['description'], 'couleur' => $_POST['couleur'], 'taille' => $_POST['taille'], 'public' => $_POST['public'], ':photo_bdd' => $photo_bdd, 'prix' => $_POST['prix'], 'stock' => $_POST['stock']));
+
+            $contenu .='<div class="bg-success">Le produit a été enregistré</div>';
+            $_GET['action'] = 'affichage'; // On met la valeur 'affichage' dans $_GET['action'] pour affcher automatiquement la table HTML des produits plus loin dans le script (point 6)
 
         } 
 
@@ -85,7 +88,7 @@
     <label for="photo">Photo</label><br><br>
     
 
-    <label for="prix">Couleur</label><br>
+    <label for="prix">Prix</label><br>
     <input type="text" id="prix" name="prix" value=""><br><br>
 
     <label for="stock">Stock</label><br>
