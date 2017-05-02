@@ -35,7 +35,7 @@
             $photo_bdd=''; // La photo subit un traitement spécifique en BDD. Cette variable contiendra son chemin d'accès
 
             // 5- tratement de la photo :
-            echo '<pre>'; print_r($_FILES) ; echo '</pre>';
+            // echo '<pre>'; print_r($_FILES) ; echo '</pre>';
             if(!empty($_FILES['photo']['name'])){ // Si une image a été uploadée, $_FILES est remplie
 
                 // On constitue un nom unique pour le fichier photo :
@@ -165,7 +165,19 @@
 
     <label for="photo">Photo</label><br><br>
     <input type="file" id="photo" name="photo"><br><br> <!-- Coupler avec l'attribut enctype="multipart/form-data" de la balise <form>, le type 'file' permet d'uploader un fichier (ici une photo) -->
-    
+
+    <!-- 9- Modification de la photo  -->
+    <?php 
+        if(isset($produit_actuel['photo'])){
+            echo '<i>Vous pouvez uploader une nouvelle photo</i><br>';
+            // Afficher la photo actuelle :
+            echo '<img src="' . $produit_actuel['photo'] . '" width="90" height="90"><br>';
+            // Mettre le chemin de la photo dans un champ caché pour l'enregistrer en base :
+            echo '<input type="hidden" name="photo_actuelle" value="' . $produit_actuel['photo'] . '">':
+            // Ce champ renseigne le $_POST['photo_actuelle'] qui va en base quand on soumet le formulaire de modification. 
+            // Si on ne remplit pas le formulaire ici, le champ photo de la base est remplacé par un vide,ce qui efface le chemin de la photo
+        }
+    ?>
 
     <label for="prix">Prix</label><br>
     <input type="text" id="prix" name="prix" value="<?php echo $produit_actuel['prix']?? 0;?>"><br><br>
