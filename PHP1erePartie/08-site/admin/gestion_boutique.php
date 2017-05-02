@@ -86,6 +86,7 @@
     <input type="radio" name="public" value="mixte">Mixte<br><br>
 
     <label for="photo">Photo</label><br><br>
+    <input type="file" id="photo" name="photo">
     
 
     <label for="prix">Prix</label><br>
