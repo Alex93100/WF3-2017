@@ -79,10 +79,14 @@
                 // Affichage des lignes :
                 while($ligne = $resultat->fetch(PDO::FETCH_ASSOC)){
                     $contenu .= '<tr>';
-                        echo '<pre>'; print_r($ligne) ; echo '</pre>';                    
+                        // echo '<pre>'; print_r($ligne) ; echo '</pre>';                    
                         foreach($ligne as $index => $data){ // $index réceptionne les indices, $data les valeurs
-                            $contenu .= '<td>' . $data . '</td>';
-
+                            if($index == 'photo'){
+                                $contenu .= '<td><img src="' . $data . '" width="70" height="70"alt=""></td>';
+                            }
+                            else{
+                                $contenu .= '<td>' . $data . '</td>';
+                            }
                         }
                     $contenu .= '</tr>';
                 }
