@@ -152,16 +152,16 @@
 
     <label>Taille</label><br>
     <select name="taille">
-        <option value="S">S</option>
-        <option value="M">M</option>
-        <option value="L">L</option>
-        <option value="XL">XL</option>
+        <option value="S" selected>S</option>
+        <option value="M" <?php if(isset($produit_actuel['taille'])&& $produit_actuel['taille'] == 'M') echo 'selected'; ?>>M</option>
+        <option value="L" <?php if(isset($produit_actuel['taille'])&& $produit_actuel['taille'] == 'L') echo 'selected'; ?>>L</option>
+        <option value="XL" <?php if(isset($produit_actuel['taille'])&& $produit_actuel['taille'] == 'XL') echo 'selected'; ?>>XL</option>
     </select><br><br>
 
     <label>Public</label><br>
     <input type="radio" name="public" value="m" checked>Homme
-    <input type="radio" name="public" value="f">Femme
-    <input type="radio" name="public" value="mixte">Mixte<br><br>
+    <input type="radio" name="public" value="f" <?php if(isset($produit_actuel['public'])&& $produit_actuel['public'] == 'f') echo 'checked'; ?>>Femme
+    <input type="radio" name="public" value="mixte" <?php if(isset($produit_actuel['public'])&& $produit_actuel['public'] == 'mixte') echo 'checked'; ?>>Mixte<br><br>
 
     <label for="photo">Photo</label><br><br>
     <input type="file" id="photo" name="photo"><br><br> <!-- Coupler avec l'attribut enctype="multipart/form-data" de la balise <form>, le type 'file' permet d'uploader un fichier (ici une photo) -->
