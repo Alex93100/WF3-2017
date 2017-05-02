@@ -17,6 +17,29 @@
             // ici il faudrait mettre les contrôles sur le formulaire
 
             $photo_bdd=''; // La photo subit un traitement spécifique en BDD. Cette variable contiendra son chemin d'accès
+
+            // 5- tratement de la photo :
+            echo '<pre>'; print_r($_FILES) ; echo '</pre>';
+            if(!empty($_FILES['photo']['name'])){ // Si une image a été uploadée, $_FILES est remplie
+
+                // On constitue un nom unique pour le fichier photo :
+                $nom_photo = $_POST['reference'] . '_' . $_FILES['photo']['name'];
+
+                // On constitue le chemin de la photo enregistré en BDD :
+                $photo_bdd = RACINE_SITE . 'photo/' . $nom_photo; // On obtient ici le nom et le chemin de la photo depuis la racine du site
+
+                // On constiute le chemin absolu complet de la photo depuis la racine serveur :
+                $photo_dossier = $_SERVER['DOCUMENT_ROOT'] . $photo_bdd;
+
+                // echo '<pre>'; print_r($photo_dossier) ; echo '</pre>';
+
+                // Enregistrement du fichier photo sur le serveur :
+                copy($_FILES['photo']['tmp_name'], $photo_dossier);
+                // On copie le fichier temporaire de la photo stockée au chemin indiqué par $_FILES['photo']['tmp_name'] dans le chemin $photo_dossier de notre serveur
+                
+
+            }
+
             
             // 4- Suite de l'enregistrement en BDD :
             executeRequete("REPLACE INTO produit (id_produit, reference, categorie, titre, description, couleur, taille, public, photo, prix, stock)VALUES(:id_produit, :reference, :categorie, :titre, :description, :couleur, :taille, :public, :photo_bdd, :prix, :stock)", array('id_produit' => $_POST['id_produit'], 'reference' => $_POST['reference'], 'categorie' => $_POST['categorie'], 'titre' => $_POST['titre'], 'description' => $_POST['description'], 'couleur' => $_POST['couleur'], 'taille' => $_POST['taille'], 'public' => $_POST['public'], ':photo_bdd' => $photo_bdd, 'prix' => $_POST['prix'], 'stock' => $_POST['stock']));
@@ -32,6 +55,43 @@
                         <li><a href="?action=affichage">Affichage du produits</a></li>
                         <li><a href="?action=ajout">Ajout d\'un produits</a></li>
                     </ul>';
+
+    
+    // 6- Affichage des produits dans le back-office :
+        if(isset($_GET['action']) && $_GET['action'] == 'affichage' || !isset($_GET['action'])) {
+            // Si $_GET contient affichage ou que l'on arrive sur l apage la 1ere fois ($_GET['action'] n'existe pas)
+            $resultat = executeRequete("SELECT * FROM produit"); // On sélectionne tous les produits
+
+            $contenu .= '<h3>Affichage des produits</h3>';
+            $contenu .= '<p>Nombre de produit(s) dans la boutique :'. $resultat->rowCount() . '</p>';
+
+            $contenu .= '<table class="table">';
+                // La ligne des entêtes
+                $contenu .= '<tr>';
+                    for($i = 0; $i< $resultat->columnCount(); $i++){
+                        $colonne = $resultat->getColumnMeta($i);
+                        // echo '<pre>'; print_r($colonne) ; echo '</pre>';
+                        $contenu .='<th>' . $colonne['name'] . '</th>'; // getColumnMeta() retourne un array cotenant notamment l'indice name contenant le nom de la colonne' 
+                    }
+                    $contenu .= '<th>Action</th>'; // On ajoute une colonne "Action"
+                $contenu .= '</tr>';
+
+                // Affichage des lignes :
+                while($ligne = $resultat->fetch(PDO::FETCH_ASSOC)){
+                    $contenu .= '<tr>';
+                        echo '<pre>'; print_r($ligne) ; echo '</pre>';                    
+                        foreach($ligne as $index => $data){ // $index réceptionne les indices, $data les valeurs
+                            $contenu .= '<td>' . $data . '</td>';
+
+                        }
+                    $contenu .= '</tr>';
+                }
+
+            $contenu .= '</table>';
+            
+            
+           
+        }
 
 
 
@@ -86,7 +146,7 @@
     <input type="radio" name="public" value="mixte">Mixte<br><br>
 
     <label for="photo">Photo</label><br><br>
-    <input type="file" id="photo" name="photo">
+    <input type="file" id="photo" name="photo"><br><br> <!-- Coupler avec l'attribut enctype="multipart/form-data" de la balise <form>, le type 'file' permet d'uploader un fichier (ici une photo) -->
     
 
     <label for="prix">Prix</label><br>
