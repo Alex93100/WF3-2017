@@ -34,6 +34,16 @@
 
             $photo_bdd=''; // La photo subit un traitement spécifique en BDD. Cette variable contiendra son chemin d'accès
 
+            // 9- modification de la photo (suite):
+
+            if(isset($_GET['action'])&& $_GET['action'] == 'modification'){
+                // si je suis en modification, je mets en base la photo du champ hidden photo actuelle du formulaire :
+                $photo_bdd = $_POST['photo_actuelle'];
+                // 
+
+            }
+
+
             // 5- tratement de la photo :
             // echo '<pre>'; print_r($_FILES) ; echo '</pre>';
             if(!empty($_FILES['photo']['name'])){ // Si une image a été uploadée, $_FILES est remplie
@@ -124,11 +134,6 @@
 
                 $produit_actuel= $resultat->fetch(PDO::FETCH_ASSOC); // pas de while car un seul produit
             }
-        
-
-        
-
-
 ?>
 
 <h3>Formulaire d'ajout ou de modification d'un produit</h3>
@@ -173,7 +178,7 @@
             // Afficher la photo actuelle :
             echo '<img src="' . $produit_actuel['photo'] . '" width="90" height="90"><br>';
             // Mettre le chemin de la photo dans un champ caché pour l'enregistrer en base :
-            echo '<input type="hidden" name="photo_actuelle" value="' . $produit_actuel['photo'] . '">':
+            echo '<input type="hidden" name="photo_actuelle" value="' . $produit_actuel['photo'] . '">';
             // Ce champ renseigne le $_POST['photo_actuelle'] qui va en base quand on soumet le formulaire de modification. 
             // Si on ne remplit pas le formulaire ici, le champ photo de la base est remplacé par un vide,ce qui efface le chemin de la photo
         }
