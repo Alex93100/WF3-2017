@@ -12,7 +12,7 @@
 
             // Boucle while qui parcourt l'objet $categorie_des_produits'
             while($cat = $categories_des_produits->fetch(PDO::FETCH_ASSOC)){
-                $contenu_gauche .= '<a href="?categorie='. $cat['categorie'] .'" class="list-group-item">' . $cat['categorie'] . '</a>';
+                $contenu_gauche .= '<a href="?categorie='. $cat['categorie'] .'" class="list-group-item">'. $cat['categorie'] .'</a>';
             }
         $contenu_gauche .= '</div>';
 
@@ -28,8 +28,11 @@
 
         while($produit = $donnees->fetch(PDO::FETCH_ASSOC)){
                 $contenu_droite .= '<div = class="col-sm-4 col-lg-4 col-md-4">';
-                
-                $contenu_gauche .= '</div>';
+                    $contenu_droite .= '<div class="thumbnail">';
+                        $contenu_droite .= '<a href="fiche_produit.php?id_produit='. $produit['id_produit'] .'"><img src="'. $produit['photo'] .'"width="130" height="100"></a>';
+                    $contenu_droite .= '</div>';                
+                $contenu_droite .= '</div>';
+
             }
 
 
