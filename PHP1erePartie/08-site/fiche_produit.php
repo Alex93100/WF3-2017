@@ -42,6 +42,33 @@
 
                         <p class="lead">Prix :'. $produit['prix'] .' €</p>
                     </div>';
+
+        // 3- Affichage du formulaire d'ajout au panier si stock > 0 :
+        $contenu .= '<div class"col-md-4">';
+            if($produit['stock'] > 0){
+                // Si il y a du stock, on met le bouton d'ajout au panier
+                $contenu .='<form method="post" action="panier.php">
+                                <input type="hidden" name="id_produit" value="'. $produit['id_produit'] .'">
+                                <select name="quantite" id="quantite" class="form-group-sm form-control-static">';
+                                for($i = 1; $i <= $produit['stock'] && $i <= 5; $i++){
+                                    $contenu .= "<option>$i</option>";
+                                }
+                                $contenu .='</select>
+                                <input type="submit" name="ajout_panier" value="Ajouter au panier" class="btn">
+                            </form>';
+            }
+            else{
+                $contenu .= '<p>Rupture de stock</p>';
+            }
+
+            // 4- Lien retour vers la boutique :
+            $contenu .= '<p><a href="boutique.php?categorie='. $produit['categorie'] .'">Retour vers votre sélection</a></p>';
+        $contenu .= '</div>';
+    
+    
+    
+    
+    
     }
     else{
         // Si l'indicce id_produit n'est pas dans l'URL
@@ -49,7 +76,30 @@
         exit();
     }
 
+    // ------------------------
+    // Exercice
+    // ------------------------
 
+    /*
+    
+    Vous allez créer des suggestions de produits : affichez 2 produits (photo et titre) aléatoirement appartenant à la catégorie  du produit affiché dans la page détail.
+    Ces produits doivent être différents du produit affiché. La photo est cliquable et amène à la fiche produit.
+
+    Utilisez la variable $aside pour afficher le contenu.
+    
+    */
+
+    // $requete = executeRequete("SELECT id_produit, photo, titre FROM produit WHERE id_produit <> :id_produit AND categorie = :categorie ORDER BY RAND() LIMIT 2", array('id_produit' => $produit['id_produit'], 'categorie' => $produit['categorie']));       
+    //     while ($prod = $requete->fetch(PDO::FETCH_ASSOC)) {
+    //             $aside .= '<p>'. $prod['titre'] .'</p>';
+    //             $aside .= '<a href="?id_produit='. $prod['id_produit'].'"><img src="'. $prod['photo'] .'" alt=""></a>';
+    //         }
+
+    $suggestion = executeRequete("SELECT id_produit, photo, titre FROM produit WHERE categorie = '$produit[categorie]' AND id_produit != '$_GET[id_produit]' ORDER BY RAND() LIMIT 2");       
+        while ($prod = $suggestion->fetch(PDO::FETCH_ASSOC)) {
+            $aside .= '<p>'. $prod['titre'] .'</p>';
+            $aside .= '<a href="?id_produit='. $prod['id_produit'].'"><img src="'. $prod['photo'] .'" alt=""></a>';
+        }
 
 
 
