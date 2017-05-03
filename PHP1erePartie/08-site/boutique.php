@@ -19,17 +19,23 @@
         // 2-Affichage des produits selon la catégorie choisie :
         if(isset($_GET['categorie']) && $_GET['categorie'] != 'all'){
             // Si on choisi une catégorie autre que "all" :
-            $donnees = executeRequete("SELECT id_produit, reference, titre, photo, description FROM produit WHERE categorie = :categorie",array(':categorie' => $_GET['categorie']));
+            $donnees = executeRequete("SELECT id_produit, reference, titre, photo, prix, description FROM produit WHERE categorie = :categorie",array(':categorie' => $_GET['categorie']));
         }
         else{
             // Sinon si on a demandé toutes les catégories :
-            $donnees = executeRequete("SELECT id_produit, reference, titre, photo, description FROM produit"); // Pas de clause WHERE car on veut toutes les catégorie
+            $donnees = executeRequete("SELECT id_produit, reference, titre, photo, prix, description FROM produit"); // Pas de clause WHERE car on veut toutes les catégorie
         }
 
         while($produit = $donnees->fetch(PDO::FETCH_ASSOC)){
                 $contenu_droite .= '<div = class="col-sm-4 col-lg-4 col-md-4">';
                     $contenu_droite .= '<div class="thumbnail">';
                         $contenu_droite .= '<a href="fiche_produit.php?id_produit='. $produit['id_produit'] .'"><img src="'. $produit['photo'] .'"width="130" height="100"></a>';
+
+                        $contenu_droite .= '<div class="caption">';
+                            $contenu_droite .= '<h4 class="pull-right">'. $produit['prix'] .' €</h4>';
+                            $contenu_droite .= '<h4>'. $produit['titre'] .'</h4>';
+                            $contenu_droite .= '<p>'. $produit['description'] .'</p>';
+                        $contenu_droite .= '</div>';
                     $contenu_droite .= '</div>';                
                 $contenu_droite .= '</div>';
 
