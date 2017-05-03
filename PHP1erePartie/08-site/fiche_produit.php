@@ -97,8 +97,10 @@
 
     $suggestion = executeRequete("SELECT id_produit, photo, titre FROM produit WHERE categorie = '$produit[categorie]' AND id_produit != '$_GET[id_produit]' ORDER BY RAND() LIMIT 2");       
         while ($prod = $suggestion->fetch(PDO::FETCH_ASSOC)) {
-            $aside .= '<p>'. $prod['titre'] .'</p>';
-            $aside .= '<a href="?id_produit='. $prod['id_produit'].'"><img src="'. $prod['photo'] .'" alt=""></a>';
+            $aside .= '<div class="col-sm-3">';
+                $aside .= '<a href="?id_produit='. $prod['id_produit'].'"><img src="'. $prod['photo'] .'" style="width:100%"></a>';
+                $aside .= '<h4>'. $prod['titre'] .'</h4>';
+            $aside .= '</div>';
         }
 
 
