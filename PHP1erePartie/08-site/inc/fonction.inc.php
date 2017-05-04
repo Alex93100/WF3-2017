@@ -126,3 +126,16 @@
                 // }
             }
         }        
+
+        // ----------------------------------------
+
+        // Exercice : Créer une fonction qui retourne le nombre de produits différents dans le panier. 
+        // Et afficher le résultat à côté du lien "panier" dans le menu de navigation, exemple : panier(3). Si le panier est vide,vous affichez panier(0)
+        function afficherQuantiteProduitDuPanier(){
+            if(isset($_SESSION['panier'])){
+               return count($_SESSION['panier']['id_produit']);
+            }
+            else{
+                return 0;
+            }
+        }

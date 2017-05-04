@@ -3,6 +3,7 @@
     //--------------------------- TRAITEMENT --------------------------------
 
         // 2- Ajouter un produit au panier :
+
         // echo '<pre>'; print_r($_POST) ;echo'</pre>';
         if(isset($_POST['ajout_panier'])){
             // Si on a cliqué sur "ajouter au panier", alors on sélectionne en base les infos du produit ajouté(en particulier le titre et le prix) :
@@ -14,8 +15,9 @@
 
             ajouterProduitDansPanier($produit['titre'], $_POST['id_produit'], $_POST['quantite'], $produit['prix']);
             
-            //................................
-            
+            //On redirige vers la fiche produit en indiquant que le produit a bien été ajouté au panier :
+            header('location:fiche_produit.php?statut_produit=ajoute&id_produit='.$_POST['id_produit']);
+            exit();            
         }
 
 

@@ -64,16 +64,34 @@
             // 4- Lien retour vers la boutique :
             $contenu .= '<p><a href="boutique.php?categorie='. $produit['categorie'] .'">Retour vers votre sélection</a></p>';
         $contenu .= '</div>';
-    
-    
-    
-    
-    
     }
     else{
-        // Si l'indicce id_produit n'est pas dans l'URL
+        // Si l'indice id_produit n'est pas dans l'URL
         header('location:boutique.php'); // On le redirige vers la boutique
         exit();
+    }
+
+    // Affichage d'une fenêtre modale pour confirmer l'ajout du produit au panier :
+    if(isset($_GET['statut_produit']) && $_GET['statut_produit'] == 'ajoute'){
+        
+        // On met dans une variable le HTML de la fenêtre modale pour afficher ensuite :
+        $contenu_gauche ='<div class="modal fade" id="myModal" role="dialog">
+                            <div class="modal-dialog">
+                                <div class="modal-content">
+                                    
+                                    <div class="modal-header">
+                                        <h4 class="modal-title">Le produit a bien été ajouté au panier</h4>
+                                    </div>
+
+                                    <div class="modal-body">
+                                        <p><a href="panier.php">Voir le panier</a></p>
+                                        <p><a href="boutique.php">Continuer ses achats</a></p>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>';
+
     }
 
     // ------------------------
@@ -121,6 +139,15 @@
         </div>
         <?php echo $aside; // Affiche les produits suggérés ?>
     </div>
+
+    <!-- Jquery -->
+
+        <script>
+            $(document).ready(function(){
+                // Affiche la fenêtre modale :
+                $("#myModal").modal("show");
+            });
+        </script>
 
 <?php
     require_once('inc/bas.inc.php');
