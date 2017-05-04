@@ -98,4 +98,5 @@
                 $total += $_SESSION['panier']['quantite'][$i] * $_SESSION['panier']['prix'][$i];
                 // Le symbole += pour ajouter la nouvelle valeur à l'ancienne sans l'écraser
             }
+            return round($total,2); // On retourne le total arrondi à 2 décimales
         }

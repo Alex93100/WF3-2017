@@ -1,6 +1,19 @@
 <?php
     require_once('inc/init.inc.php');
     //--------------------------- TRAITEMENT --------------------------------
+
+        // 2- Ajouter un produit au panier :
+        // echo '<pre>'; print_r($_POST) ;echo'</pre>';
+        if(isset($_POST['ajout_panier'])){
+            // Si on a cliqué sur "ajouter au panier", alors on sélectionne en base les infos du produit ajouté(en particulier le titre et le prix) :
+            $resultat = executeRequete("SELECT id_produit, titre, prix FROM prodit WHERE id_produit = :id_produit", array(':id_produit' => $_POST['id_produit']));
+            // l'id du produit est donnée par le formulaire d'ajout au panier
+            
+            $produit = $resultat->fetch(PDO::FETCH_ASSOC);
+            //  pas de while car qu'un seul produit (on passe par l'id)
+
+            ajouterProduitDansPanier($produit['titre'], $_POST['id_produit'], $_POST['quantite'], $produit['prix']);
+        }
     //--------------------------- AFFICHAGE --------------------------------
 
 

@@ -21,7 +21,7 @@
             }
 
 
-            $contenu .= '<div><h3>Voici vos information de profile</h3>';            
+            $contenu .= '<div><h3>Voici vos information de profil</h3>';            
                 $contenu .= '<p> Votre email :' . $_SESSION['membre']['email'] . '</p>';
                 $contenu .= '<p>Votre adresse :' . $_SESSION['membre']['adresse'] . '</p>';
                 $contenu .= '<p>Votre code postal :' . $_SESSION['membre']['code_postal'] . '</p>';
