@@ -33,7 +33,7 @@
                             echo '<li><a href="'. RACINE_SITE .'boutique.php">Boutique</a></li>';
 
                             if(internauteEstConnecte()){ // si membre est connecté
-                                echo '<li><a href="'. RACINE_SITE .'profile.php">Profile</a></li>';
+                                echo '<li><a href="'. RACINE_SITE .'profil.php">Profil</a></li>';
                                 echo '<li><a href="'. RACINE_SITE .'connexion.php?action=deconnexion">Se déconnecter</a></li>';
                             }
                             else{ // Sinon s'il n'est pas connecté

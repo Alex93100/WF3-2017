@@ -92,7 +92,7 @@
         function montantTotal(){
             $total = 0; // contient le total de la commande
 
-            for($i = 0; $i < count($_SESSION['paner']['id_produit']); $i++){
+            for($i = 0; $i < count($_SESSION['panier']['id_produit']); $i++){
                 // Tant que $i est inférieur au nombre de produits présents dans le paner, on additionne le prix fois la quantité :
 
                 $total += $_SESSION['panier']['quantite'][$i] * $_SESSION['panier']['prix'][$i];

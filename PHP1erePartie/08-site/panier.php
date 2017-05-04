@@ -6,13 +6,15 @@
         // echo '<pre>'; print_r($_POST) ;echo'</pre>';
         if(isset($_POST['ajout_panier'])){
             // Si on a cliqué sur "ajouter au panier", alors on sélectionne en base les infos du produit ajouté(en particulier le titre et le prix) :
-            $resultat = executeRequete("SELECT id_produit, titre, prix FROM prodit WHERE id_produit = :id_produit", array(':id_produit' => $_POST['id_produit']));
+            $resultat = executeRequete("SELECT id_produit, titre, prix FROM produit WHERE id_produit = :id_produit", array(':id_produit' => $_POST['id_produit']));
             // l'id du produit est donnée par le formulaire d'ajout au panier
             
             $produit = $resultat->fetch(PDO::FETCH_ASSOC);
             //  pas de while car qu'un seul produit (on passe par l'id)
 
             ajouterProduitDansPanier($produit['titre'], $_POST['id_produit'], $_POST['quantite'], $produit['prix']);
+
+            //------------------------------------------------
         }
     //--------------------------- AFFICHAGE --------------------------------
 
@@ -41,9 +43,10 @@
                     echo '<td>'. $_SESSION['panier']['quantite'][$i] .'</td>';
                     echo '<td>'. $_SESSION['panier']['prix'][$i] .'</td>';
                     echo '<td>
-                            <a href="?action=supprimer_article&articleASupprimer='. $_SESSION['pannier']['id_produit'][$i] .'">Supprimer article</a>
+                            <a href="?action=supprimer_article&articleASupprimer='. $_SESSION['panier']['id_produit'][$i] .'">Supprimer article</a>
                          </td>';
                 echo'</tr>';
+            }
                 echo'<tr class="info">
                         <th colspan="3">Total</th>
                         <th colspan="2">'. montantTotal() .' €</th>
@@ -72,7 +75,7 @@
                             <a href="?action=vider">Vider le panier</a>
                         </td>
                     </tr>';
-            }
+            
         echo '</table>';
     }// fin de else
 
