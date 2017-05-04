@@ -82,7 +82,20 @@
                 $_SESSION['panier']['prix'][] = $prix;
             }
             else{
-                // Si le produit existe, on ajoute la quantité nouvelle à la quantité déjà présnete dans le panier
+                // Si le produit existe, on ajoute la quantité nouvelle à la quantité déjà présente dans le panier
                 $_SESSION['panier']['quantite'][$position_produit] += $quantite;
+            }
+        }
+
+        //-------------------------------------
+
+        function montantTotal(){
+            $total = 0; // contient le total de la commande
+
+            for($i = 0; $i < count($_SESSION['paner']['id_produit']); $i++){
+                // Tant que $i est inférieur au nombre de produits présents dans le paner, on additionne le prix fois la quantité :
+
+                $total += $_SESSION['panier']['quantite'][$i] * $_SESSION['panier']['prix'][$i];
+                // Le symbole += pour ajouter la nouvelle valeur à l'ancienne sans l'écraser
             }
         }
