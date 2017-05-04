@@ -109,12 +109,20 @@
             // array_search renvoie la position du produit(integer) sinon false s'il n'y est pas
 
             if($position_produit !== false){
-                // Si le produit est bien dans le panier, on coupe sa ligne :
-                array_splice($_SESSION['panier']['titre'], $position_produit, 1);
-                // efface la portion du tableau à) partir de l'indice indiqué par $position_produit et sur 1 ligne
-                
-                array_splice($_SESSION['panier']['id_produit'], $position_produit, 1);
-                array_splice($_SESSION['panier']['quantite'], $position_produit, 1);
-                array_splice($_SESSION['panier']['prix'], $position_produit, 1);
+
+                // Décrémentation de la quantité du produit :
+                // if($_SESSION['panier']['quantite'][$position_produit] > 1){
+                //     $_SESSION['panier']['quantite'][$position_produit] -= 1;
+                // }
+                // else{
+
+                    // Si le produit est bien dans le panier, on coupe sa ligne :
+                    array_splice($_SESSION['panier']['titre'], $position_produit, 1);
+                    // efface la portion du tableau à) partir de l'indice indiqué par $position_produit et sur 1 ligne
+
+                    array_splice($_SESSION['panier']['id_produit'], $position_produit, 1);
+                    array_splice($_SESSION['panier']['quantite'], $position_produit, 1);
+                    array_splice($_SESSION['panier']['prix'], $position_produit, 1);
+                // }
             }
         }        

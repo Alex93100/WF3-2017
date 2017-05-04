@@ -28,7 +28,6 @@
         // 4- Supprimer un article du panier :
             if(isset($_GET['action']) && $_GET['action'] == 'supprimer_article' && isset($_GET['articleASupprimer'])){
                 retirerProduitDuPanier($_GET['articleASupprimer']); // On passe à la fonction retirerProduitDuPanier l'id du produit à retirer
-
             }
 
         // 5- Validation du panier :
@@ -42,8 +41,24 @@
             // On récupère l'id_commande de la commande insérée ci-dessus, pour l'utiliser en clé étrangère dans la table details_commande :
             $id_commande = $pdo->lastInsertId();
             
-            // Mise à jour de la table details_commande:
+            // Mise à jour de la table details_commande :
+            for($i = 0; $i < count($_SESSION['panier']['id_produit']); $i++){
+                // On parcout le panier pour enregistrer chaque produit :
+                $id_produit = $_SESSION['panier']['id_produit'][$i];
+                $quantite = $_SESSION['panier']['quantite'][$i];
+                $prix = $_SESSION['panier']['prix'][$i];
+
+                executeRequete("INSERT INTO details_commande(id_commande, id_produit, quantite, prix)VALUES(:id_commande, :id_produit, :quantite, :prix)",array(':id_commande'=> $id_commande, ':id_produit'=>$id_produit, ':quantite'=>$quantite, ':prix'=>$prix));
+                
+                // Décrémentation du stock du produit :
+                executeRequete("UPDATE produit SET stock = stock - :quantite WHERE id_produit = :id_produit", array (':quantite' => $quantite, ':id_produit' => $id_produit));
+            }
+
+            unset($_SESSION['panier']); // On supprime le panier validé
+            $contenu .= '<div class="bg-success">Merci pour votre commande, le numéro de suivi est le '. $id_commande .'</div>';
         }
+
+
     //--------------------------- AFFICHAGE --------------------------------
 
 
