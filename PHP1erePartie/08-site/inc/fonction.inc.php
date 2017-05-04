@@ -100,3 +100,21 @@
             }
             return round($total,2); // On retourne le total arrondi à 2 décimales
         }
+
+        //-------------------------------------
+
+        function retirerProduitDuPanier($id_produit_a_supprimer){
+            // On cherche la position du produit dans le panier :
+            $position_produit = array_search($id_produit_a_supprimer, $_SESSION['panier']['id_produit']);
+            // array_search renvoie la position du produit(integer) sinon false s'il n'y est pas
+
+            if($position_produit !== false){
+                // Si le produit est bien dans le panier, on coupe sa ligne :
+                array_splice($_SESSION['panier']['titre'], $position_produit, 1);
+                // efface la portion du tableau à) partir de l'indice indiqué par $position_produit et sur 1 ligne
+                
+                array_splice($_SESSION['panier']['id_produit'], $position_produit, 1);
+                array_splice($_SESSION['panier']['quantite'], $position_produit, 1);
+                array_splice($_SESSION['panier']['prix'], $position_produit, 1);
+            }
+        }        

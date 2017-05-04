@@ -13,8 +13,36 @@
             //  pas de while car qu'un seul produit (on passe par l'id)
 
             ajouterProduitDansPanier($produit['titre'], $_POST['id_produit'], $_POST['quantite'], $produit['prix']);
+            
+            //................................
+            
+        }
 
-            //------------------------------------------------
+
+        // 3- vider le panier :
+            if(isset($_GET['action'])&& $_GET['action'] == 'vider'){
+                // Si il y a l'indice 'action' dans l'URL et qu'il vaut 'vider' :
+                unset($_SESSION['panier']); // unset spprime un array ou une variable
+            }
+
+        // 4- Supprimer un article du panier :
+            if(isset($_GET['action']) && $_GET['action'] == 'supprimer_article' && isset($_GET['articleASupprimer'])){
+                retirerProduitDuPanier($_GET['articleASupprimer']); // On passe à la fonction retirerProduitDuPanier l'id du produit à retirer
+
+            }
+
+        // 5- Validation du panier :
+        if(isset($_POST['valider'])){
+            $id_membre = $_SESSION['membre']['id_membre'];
+            $montant_total = montantTotal();
+
+            // Le panier étant validé, on inscrit la commande en BDD
+            executeRequete("INSERT INTO commande (id_membre, montant, date_enregistrement) VALUES(:id_membre, :montant, NOW())", array(':id_membre'=> $id_membre, ':montant'=>$montant_total));
+
+            // On récupère l'id_commande de la commande insérée ci-dessus, pour l'utiliser en clé étrangère dans la table details_commande :
+            $id_commande = $pdo->lastInsertId();
+            
+            // Mise à jour de la table details_commande:
         }
     //--------------------------- AFFICHAGE --------------------------------
 
