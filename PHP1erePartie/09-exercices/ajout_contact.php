@@ -31,11 +31,15 @@
 				
 				// Contrôles du formulaire :
 
-                if(strlen($_POST['prenom']) < 2 || strlen($_POST['prenom']) > 20) $message .= '<article>Le prénom doit comporter au moins 3 caractères</article>'; 
+                if(strlen($_POST['prenom']) < 2 || strlen($_POST['prenom']) > 20){ 
+					$message .= '<article>Le prénom doit comporter au moins 3 caractères</article>'; 
+				}
     
                 if(strlen($_POST['nom']) < 2 || strlen($_POST['nom']) > 20) $message .= '<article>Le nom doit comporter au moins 3 caractères</article>';
 
-                if(strlen($_POST['telephone']) < 10 ) $message .= '<article>Le numéro de téléphone dois avoir 10 chiffre</article>';
+                if (!preg_match('#^[0-9]{10}$#', $_POST['telephone'])){
+					$message .= '<div>Le téléphone doit comporter 10 chiffres</div>';
+				}
 
                 if($_POST['type_contact'] != 'ami' && $_POST['type_contact'] != 'famille' && $_POST['type_contact'] != 'professionnel' && $_POST['type_contact'] != 'autre') $message .= '<article>Le id de contacter n\'est pas correcte</article>';
 				 
