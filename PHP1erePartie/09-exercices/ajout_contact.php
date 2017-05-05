@@ -35,19 +35,32 @@
 					$message .= '<article>Le prénom doit comporter au moins 3 caractères</article>'; 
 				}
     
-                if(strlen($_POST['nom']) < 2 || strlen($_POST['nom']) > 20) $message .= '<article>Le nom doit comporter au moins 3 caractères</article>';
+                if(strlen($_POST['nom']) < 2 || strlen($_POST['nom']) > 20){
+					$message .= '<article>Le nom doit comporter au moins 3 caractères</article>';
+				}
 
                 if (!preg_match('#^[0-9]{10}$#', $_POST['telephone'])){
 					$message .= '<div>Le téléphone doit comporter 10 chiffres</div>';
 				}
 
-                if($_POST['type_contact'] != 'ami' && $_POST['type_contact'] != 'famille' && $_POST['type_contact'] != 'professionnel' && $_POST['type_contact'] != 'autre') $message .= '<article>Le id de contacter n\'est pas correcte</article>';
+				if (!(is_numeric($_POST['annee_rencontre']) && checkdate('01', '01', $_POST['annee_rencontre']))){
+					$message .= '<div>L\'année de rencontre n\'est pas valide</div>';
+				}
+
+                if($_POST['type_contact'] != 'ami' && $_POST['type_contact'] != 'famille' && $_POST['type_contact'] != 'professionnel' && $_POST['type_contact'] != 'autre'){
+					$message .= '<article>Le id de contacter n\'est pas correcte</article>';
+				} 
 				 
 				if (!filter_var($_POST['email'], FILTER_VALIDATE_EMAIL)){
                     $message .= '<article>L\'email est invalide</article>';                        
                 }
 
-				if(empty($message)){ // si les messages sont vides, c'est qu'il n'y a pas d'erreur
+				if(empty($message)){
+					
+					foreach($_POST as $indice => $valeur){
+						$_POST[$indice] = htmlspecialchars($valeur, ENT_QUOTES); // IMPORTANT !!!
+					}
+
                     $resultat = $pdo->prepare("INSERT INTO contact(prenom, nom, type_contact, telephone, annee_rencontre, email)VALUES( :prenom, :nom, :type_contact, :telephone, :annee_rencontre, :email)");
 
                     $resultat->bindParam(':prenom', $_POST['prenom'], PDO::PARAM_STR);
@@ -58,8 +71,7 @@
                     $resultat->bindParam(':email', $_POST['email'], PDO::PARAM_INT);
                     $req = $resultat->execute();
                     
-                    // 4- Afficher à la fin un message "L'employé a bien été ajouté".
-                    if($req){ // execute() ci-dessus renvoie TRUE en cas de succès de la requête, sinon false
+                    if($req){
                         echo 'L\'ajout a bien été fais';
                     }
                     else{

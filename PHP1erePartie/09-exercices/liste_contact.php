@@ -14,7 +14,13 @@
 
         $contenu ='';
 			$envoi = $pdo->query("SELECT DISTINCT id_contact, nom, prenom, telephone FROM contact");
-						$contenu .= '<table>';
+						$contenu .= '<table border=".1">';
+						$contenu .= '<tr>
+										<th>Nom</th>
+										<th>Prénom</th>
+										<th>Téléphone</th>
+										<th>Autres infos</th>
+									</tr>';
 			
                 while( $detail = $envoi->fetch(PDO::FETCH_ASSOC)){
 							$contenu .= '<tr>';       
@@ -25,42 +31,31 @@
 							$contenu .= '</tr>';
 				}
                         $contenu .= '</table>';
-			
-			function executeRequete($envoi, $param = array()){ 
+						
+		// ------------------------------------------------------------
 
-            if (!empty($param)){
-                foreach($param as $indice => $valeur){
-                    $param[$indice] = htmlspecialchars($valeur, ENT_QUOTES); // transofrme en entiées HTML chaque caractères spéciaux, dont les quotes
-                }
-            }
-            //  La requête préparée :
-            global $pdo;
-            $r = $pdo->prepare($envoi);
-            $succes = $r->execute($param);
+		if(isset($_GET['id_contact'])){
+		
+			$query = $pdo->prepare('SELECT * FROM contact WHERE id_contact = :id_contact');
+			$query->bindParam(':id_contact', $_GET['id_contact'], PDO::PARAM_INT);
+			$query->execute();
+			$contact = $query->fetch(PDO::FETCH_ASSOC);
 
-            // Traitement erreur SQL éventuelle :
-            if(!$succes){ 
-                die('Erreur sur la requête SQL : ' . $r->errorInfo()[2]);
-            }
-            return $r;
-        }		
-
-	if(isset($_GET['id_contact'])){
-			$envois = executeRequete("SELECT * FROM contact WHERE id_contact = :id_contact", array(':id_contact'=>$_GET['id_contact']));
-			
-                while( $detail = $envoi->fetch(PDO::FETCH_ASSOC)){
-					$contenu .= ''. $detail['nom'] .'';
-					$contenu .= ''. $detail['prenom'] .'';
-					// $contenu .= '';
-					// $contenu .= '';
-					// $contenu .= '';
+			$contenu .= '<h1>Détail d\'un contact</h1>';
+			if (!empty($contact)) {
+				$contenu .= '<p>Nom : '. $contact['nom'] .'</p>';
+				$contenu .= '<p>Prénom : '. $contact['prenom'] .'</p>';
+				$contenu .= '<p>Téléphone : '. $contact['telephone'] .'</p>';
+				$contenu .= '<p>Email : '. $contact['email'] .'</p>';
+				$contenu .= '<p>Année de rencontre : '. $contact['annee_rencontre'] .'</p>';
+				$contenu .= '<p>Type de contact : '. $contact['type_contact'] .'</p>';
+			}
+			else {
+				$contenu .= '<div>Ce contact n\'existe pas</div>';
+			}
+		}
 echo $contenu;
-					
-				}
-
-echo $contenu;
-
-	}
+	
 
 ?>
 
