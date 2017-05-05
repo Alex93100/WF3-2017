@@ -36,20 +36,28 @@
         
         
         */ 
-        $pdo = new PDO('mysql:host=localhost;dbname=site', 'root', '', array(PDO:: ATTR_ERRMODE => PDO::ERRMODE_WARNING, PDO::MYSQL_ATTR_INIT_COMMAND => 'SET NAMES utf8'));
+
+        
+        // $pdo = new PDO('mysql:host=localhost;dbname=site', 'root', '', array(PDO:: ATTR_ERRMODE => PDO::ERRMODE_WARNING, PDO::MYSQL_ATTR_INIT_COMMAND => 'SET NAMES utf8'));
         // echo '<pre>';print_r($_SESSION);'</pre>';
             $id_membre = $_SESSION['membre']['id_membre'];
             $suivi = executeRequete("SELECT id_commande, id_membre, montant, date_enregistrement, etat FROM commande WHERE id_membre = :id_membre", array(':id_membre'=>$id_membre));
-                
-                while( $commande = $suivi->fetch(PDO::FETCH_ASSOC)){
-                    // On affiche le suivi des commandes :
-                    $contenu .= '<p>Vous avez '. $commande['id_commande'] .'</p>';
-                    $contenu .= '<p>'. $commande['id_membre'] .'</p>';
-                    $contenu .= '<p>'. $commande['montant'] .'</p>';
-                    $contenu .= '<p>'. $commande['date_enregistrement'] .'</p>';
-                    $contenu .= '<p>'. $commande['etat'] .'</p>';
+                if($suivi->rowCount() != 0){
+                    while( $commande = $suivi->fetch(PDO::FETCH_ASSOC)){
+                        // On affiche le suivi des commandes :
+                        $contenu .= '<div><h3>Voici les details de votre commande :</h3>';            
+                                $contenu .= '<p>Vous avez '. $commande['id_commande'] .' commande</p>';
+                                $contenu .= '<p>Votre numéro membre est le N°'. $commande['id_membre'] .'</p>';
+                                $contenu .= '<p>Le montant de votre achat est de '. $commande['montant'] .'€</p>';
+                                $contenu .= '<p> Date de la commande '. $commande['date_enregistrement'] .'</p>';
+                                $contenu .= '<p> L\'etat de votre commande est '. $commande['etat'] .'</p>';
+                        $contenu .= '</div>';            
+                        
+                    }
                 }
-                // $contenu .= '<p>Vous n\'avez aps de commande</p>';                
+                else{
+                    $contenu .= '<p>Vous n\'avez pas de commande</p>';                
+                }
 
 
 
