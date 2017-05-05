@@ -566,16 +566,15 @@
 
             <h3>Choisi ton année :</h3>
             <select>
-                    
-                    <?php
-                        $a = 1917;
-                    
-                        while ($a <= 2017) {
-                            echo "<option>$a</option>";
-                            $a++;
-                        }
-                    ?>
-                </select>
+                <?php
+                    $a = 2017;
+                
+                    while ($a <= 1917) {
+                        echo "<option>$a</option>";
+                        $a++;
+                    }
+                ?>
+            </select>
 
 
             <select>

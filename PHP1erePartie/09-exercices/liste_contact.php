@@ -7,3 +7,25 @@
 
 
 */
+		// Session
+        session_start();
+
+        $pdo = new PDO('mysql:host=localhost;dbname=contacts', 'root', '', array(PDO:: ATTR_ERRMODE => PDO::ERRMODE_WARNING, PDO::MYSQL_ATTR_INIT_COMMAND => 'SET NAMES utf8'));
+
+        $contenu ='';
+			$envoi = $pdo->query("SELECT nom, prenom, telephone FROM contact");
+                while( $detail = $envoi->fetch(PDO::FETCH_ASSOC)){
+						$contenu .= '<table>';
+							$contenu .= '<tr>';       
+                                $contenu .= '<td>'. $detail['nom'] .'</td>';
+                                $contenu .= '<td>'. $detail['prenom'] .'</td>';
+                                $contenu .= '<td>'. $detail['telephone'] .'</td>';
+                                $contenu .= '<td><a href="">autres infos</a>''</td>';
+							$contenu .= '</tr>';
+                        $contenu .= '</table>';
+				}
+echo $contenu;
+
+?>
+
+
