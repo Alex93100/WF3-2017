@@ -37,11 +37,12 @@
                     }
                 }
 
+
+                    if(!empty($_POST)){ // si le formulaire est soumis
+
                 // Contrôles du formulaire :
 
-                    if(!empty($_POST)){ 
-
-                        if(!(ctype_digit($_POST['njl']))){ 
+                        if(!ctype_digit($_POST['njl']) || $_POST['njl'] <= 0){ // vérifie si une chaîne est un entier
                             $message .= '<article>Le nbr de jour n\'est pas correcte</article>'; 
                         }
             
@@ -56,12 +57,15 @@
                             $_POST[$indice] = htmlspecialchars($valeur, ENT_QUOTES); // IMPORTANT !!!
                         }
 
-                        $message .= 'Vous avez choisis la classe '.$_POST['type_vehicules']. ' qui coute' .$_POST['njl'] . 'le prix sera donc de : ' . prixLoc($_POST['njl'], $_POST['type_vehicules']). '€' ;
+                        $message .= 'Vous avez choisis la classe '.$_POST['type_vehicules']. ' pour ' .$_POST['njl'] . ' jours le prix sera donc de : ' . prixLoc($_POST['njl'], $_POST['type_vehicules']). '€' ;
                     
                     }
 
 
 ?>
+
+
+<!-- AFFICHAGE -->
 
 <!DOCTYPE html>
 <html lang="fr">
