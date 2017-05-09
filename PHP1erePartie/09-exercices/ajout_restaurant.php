@@ -70,8 +70,8 @@
                     $resultat->bindParam(':nom', $_POST['nom'], PDO::PARAM_STR);
                     $resultat->bindParam(':type', $_POST['type'], PDO::PARAM_STR);
                     $resultat->bindParam(':telephone', $_POST['telephone'], PDO::PARAM_STR);
-                    $resultat->bindParam(':note', $_POST['note'], PDO::PARAM_STR);
-                    $resultat->bindParam(':avis', $_POST['avis'], PDO::PARAM_INT);
+                    $resultat->bindParam(':note', $_POST['note'], PDO::PARAM_INT);
+                    $resultat->bindParam(':avis', $_POST['avis'], PDO::PARAM_STR);
                     $req = $resultat->execute();
                     
                     if($req){
