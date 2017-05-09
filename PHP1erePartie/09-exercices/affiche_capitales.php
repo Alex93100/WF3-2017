@@ -8,3 +8,17 @@
 
 
 */
+                $capitales = array('France'=>'Paris', 'Italie'=>'Rome', 'Espagne'=>'Madrid', 'inconnu'=>'blablabla', 'Allemagne'=>'Berlin');
+    
+                foreach($capitales as $pays => $capitale){
+                    if($pays == 'inconnu'){
+                        echo'Ca n\'existe pas';
+                    }
+                    else{
+                        echo'<p>La capitale '. $capitale .' se situe en '. $pays .'</p>';
+                    }
+                }
+          
+                    
+?>
+                        

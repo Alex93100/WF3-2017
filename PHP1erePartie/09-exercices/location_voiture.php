@@ -23,12 +23,11 @@
                         case 'B' : $categorie = 50; break;
                         case 'C' : $categorie = 70; break;
                         case 'D' : $categorie = 90; break;
-                        default : echo 'Vous n\'avez pas selectionné de catégorie <br>';
+                        default : return 'Problème sur le prix <br>';
                     }
                 
                     $resultat = $njl * $categorie;
                 
-
                     if ($resultat >= 150){
                     return $resultat - ($resultat * 0.1);
                     }
@@ -36,8 +35,6 @@
                         return $resultat;
                     }
                 }
-
-
                     if(!empty($_POST)){ // si le formulaire est soumis
 
                 // Contrôles du formulaire :
@@ -51,6 +48,7 @@
                         } 
                     }
 
+                // Vérification s'il n'y a pas de message d'erreur :
                     if(empty($message)){
                         
                         foreach($_POST as $indice => $valeur){
@@ -76,9 +74,7 @@
         <title>Document</title>
     </head>
     <body>
-        <?php
-            echo $message;
-         ?>
+        
         <header></header>
         <main>
         
@@ -97,6 +93,9 @@
                 <input type="submit" name="inscription" value="Envoi"><br><br>
         
             </form>
+            <?php
+            echo $message;
+            ?>
         </main>
         <footer></footer>
     </body>
