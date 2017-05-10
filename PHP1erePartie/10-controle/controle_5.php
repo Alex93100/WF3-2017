@@ -13,7 +13,7 @@ $pdo = new PDO('mysql:host=localhost;dbname=exercice_3', 'root', '', array(PDO::
 
 if(isset($_GET['id_film'])){
 	
-	$query = $pdo->prepare('SELECT * FROM movies');
+	$query = $pdo->prepare('SELECT * FROM movies WHERE id_film = :id_film');
 	$query->bindParam(':id_film', $_GET['id_film'], PDO::PARAM_INT);
 	$query->execute();
 	
