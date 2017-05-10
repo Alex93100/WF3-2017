@@ -27,7 +27,7 @@
 				else{
 					$tva = $taux[1]; // 20				
 				}
-            }
+            
 
 			$prixTtc = $montant_travaux * (1 + $tva / 100);
 
@@ -37,7 +37,7 @@
 				}
 				return "Le montant de vos travaux est de $prixTtc euros avec une TVA à $tva% incluse $textRemise.";		
 				}
-
+	
 
 
 			
