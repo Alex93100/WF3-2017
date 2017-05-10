@@ -118,7 +118,7 @@
 				?>
 			</select><br><br>
 
-            <label for="storyline">Langues :</label><br>
+            <label for="language">Langues :</label><br>
             <select name="language" id="language"><br>
 				<option value="francais">Français</option>
 				<option value="anglais">Englais</option>
@@ -126,7 +126,7 @@
 				<option value="portugais">Portugais</option>
 			</select><br><br>
 
-            <label for="storyline">Category :</label><br>           
+            <label for="category">Category :</label><br>           
 			<select name="category" id="category"><br>
 				<option value="action">Action</option>
 				<option value="drama">Dramatique</option>
