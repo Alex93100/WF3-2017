@@ -52,7 +52,6 @@ section{
 }
 
 section:nth-child(2){
-
     background: pink;
     /* Gérer le sens de l'animation */
     -webkit-animation-direction: alternate-reverse;
