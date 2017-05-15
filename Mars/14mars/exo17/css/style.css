@@ -28,6 +28,7 @@ Style Reset
     html{
         font-size: 62.5%
     }
+
     body{
         font-size: 1.5rem; /* 1.5rem = 15px */
         background: black;
@@ -36,6 +37,7 @@ Style Reset
         font-weight: 400;
         text-align: center;
     }
+    
     a{
         text-decoration: none;
         color:pink;
