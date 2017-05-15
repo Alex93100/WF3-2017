@@ -7,6 +7,5 @@ var myNumber = 10;
 console.log(myNumber);
 
 // Créer une var de type BOOLEAN : true/false
-
 var myBoolean = true;
 console.log(myBoolean);
