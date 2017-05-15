@@ -7,7 +7,6 @@ var i = 0;
 
 // Limiter la boucle à la taille du tableau
 while(i < users.length){
-
     console.log('Salut ' + users[i]);
     
     // Incrémenter la variable i
