@@ -8,7 +8,6 @@ var users = {
 };
 
 // Faire une boucle for..in sur l'objet
-
 for (var prop in users) {
     
     // Afficher le nom de la propriété
