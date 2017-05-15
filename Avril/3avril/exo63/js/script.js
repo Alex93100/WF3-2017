@@ -201,8 +201,6 @@ $(document).ready(function(){
                             var ageAmoutRounded = Math.round(totalAge / myTown.length);
                             $('#simsAgeAmount').html(ageAmoutRounded + '<b>/ans</b>');
                         };
-
-
                     };
         });
 
