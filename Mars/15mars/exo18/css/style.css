@@ -40,8 +40,8 @@ Masquer la nav pour les mobiles
     /* Afficher la nav lorsque le curseur est au-dessus du menu burger */
     .fa-bars:hover + nav{
         display: block;
-
     }
+    
     article{
         color: pink;
     }
