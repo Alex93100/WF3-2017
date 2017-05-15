@@ -1,4 +1,5 @@
 // Sélectionner la balise h1
+
 var myTitle = document.querySelector('h1');
 
 // Afficher le contenue texte de la balise dans la console
