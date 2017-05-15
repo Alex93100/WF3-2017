@@ -1,4 +1,5 @@
 var user = 'Alexandre Rodrigues';
+
 // Créer une variable de type ARRAY (tableau)
 var myArray =['texte', 20, true, user];
 
