@@ -15,5 +15,4 @@ for(var i=0; i<myArray.length; i++){
 
     // Ajouter un enfant dans myMain
     myMain.appendChild(myNewTag);
-    
 };
