@@ -37,4 +37,5 @@ function translateColor(paramColor){
         default:console.log('this is not a color');break;
     }
 };
+
 chooseAColor();
