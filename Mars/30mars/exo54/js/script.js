@@ -21,5 +21,4 @@ myButton.onclick = function(){
 
     // Ajouter ou supprimer la class move sur la première balise h2
     myFirstH2.classList.toggle('move');
-
 };

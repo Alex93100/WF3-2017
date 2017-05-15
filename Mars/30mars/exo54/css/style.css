@@ -6,9 +6,11 @@ h2{
 .error{
     color: red;
 }
+
 .hidden{
     display: none;
 }
+
 .move{
     padding-left: 3rem;
     color: pink;
