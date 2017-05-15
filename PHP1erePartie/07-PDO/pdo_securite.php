@@ -67,7 +67,6 @@
         <input type="submit" name="envoi" value="envoi">
     </form>
 
-
 <?php
 
     // III. Affichage des messages contenus en BDD :
