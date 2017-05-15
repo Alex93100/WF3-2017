@@ -68,13 +68,7 @@ $(document).ready(function(){
 
             // Supprimer les messages d'erreur
             $('input, textarea').focus(function(){
-
                 $(this).prev().children('b').text('');
-
-
             });
-
     });
-
-
 }); // Fin de la demande de chargement du DOM
