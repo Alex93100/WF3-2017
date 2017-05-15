@@ -4,7 +4,6 @@
     - Appliquer la fonction write
     - Ajouter le contenu
 */ 
-
 document.write('<p>Je suis généré en JS</p>');
 var names = ['Marine', 'Alexandre', 'Marjolaine'];
 
