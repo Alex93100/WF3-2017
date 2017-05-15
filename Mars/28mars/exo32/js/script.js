@@ -1,9 +1,11 @@
 /*
-Programme pour saluer un utilisateur et afficher son année de naissance
-    - Demander le prénom et le nom de l'utilisateur
-    - Saluer en disant : Bonjour prénom nom
-    - Demander l'âgee de l'utilisateur
-    - Afficher l'année de naissance
+
+    Programme pour saluer un utilisateur et afficher son année de naissance
+        - Demander le prénom et le nom de l'utilisateur
+        - Saluer en disant : Bonjour prénom nom
+        - Demander l'âgee de l'utilisateur
+        - Afficher l'année de naissance
+        
 */ 
     
 // - Demander le prénom et le nom de l'utilisateur
