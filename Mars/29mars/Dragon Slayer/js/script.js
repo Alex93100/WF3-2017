@@ -19,11 +19,13 @@ function dragonSlayer() {
                 console.log("Dragon HP: 0");
                 console.log("YOU WIN!");
                 slaying = false;
-            } else {
+            }
+            else {
                 totalDamage = 0;
                 youHit = Math.floor(Math.random() * 2);
             }
-        } else {
+        } 
+        else {
             totalDamage += damageThisRound;
             console.log("The dragon did " + totalDamage + " damage!");
             console.log(" ");
@@ -33,7 +35,8 @@ function dragonSlayer() {
                 console.log("Dragon HP: " + dragonHp);
                 console.log("YOU ARE DEAD!");
                 slaying = false;
-            } else {
+            }
+            else {
                 totalDamage = 0;
                 youHit = Math.floor(Math.random() * 2);
             }
