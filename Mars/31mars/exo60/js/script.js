@@ -92,7 +92,6 @@ $(document).ready(function(){
 
             // Ajouter la class active sur la balise li de la balise a sélectionnée
             $(this).parent().addClass('active');
-            
         }
 
         else{
@@ -110,6 +109,5 @@ $(document).ready(function(){
         $('nav ul').removeClass('toggleBurger');
 
     });
-
 
 }); // Fin de la fonction de Chargement du DOM
