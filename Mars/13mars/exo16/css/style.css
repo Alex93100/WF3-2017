@@ -21,7 +21,6 @@ Style Reset
     html{
         font-size: 62.5%;
         background-color: black;
-      
     }
 
     body{
@@ -32,9 +31,7 @@ Style Reset
 
     /* Supprimer la décoration d balises A */
     a{
-
         text-decoration: none;
-
     }
 
     /* faire en sorte que les image ne dépassent pas leurs parents */
