@@ -36,9 +36,6 @@ $(document).ready(function(){
             // Récupérer la valeur de l'attribut data
             var dataValue = $(this).attr('data');
 
-            
-
-
             // Modifier le contenue de la balise h2
             $('h2').text(content.dataValue.title);
 
