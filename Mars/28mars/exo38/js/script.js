@@ -6,7 +6,6 @@ var user = {
     // Ajouter une fonction pour afficher le nom complet
     fullName: function(){
        return (this.firstName + ' ' + this.lastName);
-
     }
 };
 
