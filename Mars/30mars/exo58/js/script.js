@@ -2,7 +2,6 @@
 
 $(document).ready(function() {
 
-
     // Capter l'événement focus sur le textarea
     $('textarea').focus(function(){
         console.log('Minimum 10 caractères');
@@ -42,7 +41,6 @@ $(document).ready(function() {
         evt.preventDefault();
         
         console.log('Vérifier les inputs/textarea avant de les envoyer au fichier de traitement PHP')
-
     });
 
 }); // Fin de la fonction d'attente de chargement du DOM
