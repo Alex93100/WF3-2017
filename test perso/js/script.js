@@ -73,9 +73,14 @@ $(document).ready(function(){
                             if(viewToLoad == 'about.html'){
                                 
                                 // Appler la fonction mySkills
-                                mySkills(0, '85%');
-                                mySkills(1, '70%');
-                                mySkills(2, '50%');
+                                mySkills(0, '100%');
+                                mySkills(1, '80%');
+                                mySkills(2, '80%');
+                                mySkills(3, '80%');
+                                mySkills(4, '70%');
+                                mySkills(5, '70%');
+                                mySkills(6, '50%');
+                                mySkills(7, '50%');
                             };
 
                             // Vérifier si l'utilisateur est sur la page portfolio.html
@@ -99,9 +104,14 @@ $(document).ready(function(){
                             if(viewToLoad == 'about.html'){
                                 
                                 // Appler la fonction mySkills
-                                mySkills(0, '85%');
-                                mySkills(1, '70%');
-                                mySkills(2, '50%');
+                                mySkills(0, '100%');
+                                mySkills(1, '80%');
+                                mySkills(2, '80%');
+                                mySkills(3, '80%');
+                                mySkills(4, '70%');
+                                mySkills(5, '70%');
+                                mySkills(6, '50%');
+                                mySkills(7, '50%');
                             };
 
                             // Vérifier si l'utilisateur est sur la page portfolio.html
