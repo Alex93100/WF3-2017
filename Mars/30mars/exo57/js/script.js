@@ -1,6 +1,5 @@
 // Attendre le chargement du DOM
 $(document).ready(function() {
-    
 
         // Code à exécuter sur la page une fois chargé
 
