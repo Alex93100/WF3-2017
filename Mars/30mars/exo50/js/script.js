@@ -4,7 +4,6 @@
 
     - Afficher un msg spécial pour votre prénom
 */ 
-
 var myArray = ['Kevin', 'Marine', 'Alexandre', 'Marjolaine'];
 for(i = 0; i<myArray.length; i++){
     // console.log('Salut ' + myArray[i]);
