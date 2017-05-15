@@ -12,8 +12,6 @@ CarType.prototype.welcome = function(){
     console.log('Bonjour, je suis une ' + this.brand + ', je possède ' + this.doors + ' portes et ' + this.gear + ' vitesse et je suis de couleur ' + this.color);
 };
 
-
-
 // Créer une déclinaison de CarType
 var fiat = new CarType(3, 'red', 'Fiat', 4);
 console.log(fiat);
