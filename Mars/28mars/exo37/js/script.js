@@ -21,7 +21,6 @@ function addNote(){
     // Additionner notesAmount et newNote
     notesAmount += +newNote;
     console.log(notesAmount);
-
 };
 
 function average(){
