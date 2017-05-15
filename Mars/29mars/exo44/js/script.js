@@ -41,7 +41,6 @@ function translateColor(paramColor){
         chooseAColor()
     };
 // end
-
 };
 
 chooseAColor();
