@@ -63,7 +63,6 @@ if(isset($_GET['id_film'])){
 
 }
 
-
 ?>
 <!DOCTYPE html>
 <html>
