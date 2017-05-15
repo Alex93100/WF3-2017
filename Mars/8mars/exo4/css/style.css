@@ -46,7 +46,7 @@ h2 b{
 }
 /* Sélecteurs par class */
     
-    /* Sélectionner la class .redBackground */
+/* Sélectionner la class .redBackground */
 .redBackground{
     /* Modifier la couleur de fond */
     background-color: pink;
