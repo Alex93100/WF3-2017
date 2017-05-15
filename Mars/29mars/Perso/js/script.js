@@ -24,7 +24,6 @@ function chooseAColor(){
         chooseAColor()
     };
 // end
-
 }
 
 chooseAColor()
