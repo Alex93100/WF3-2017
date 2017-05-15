@@ -1,5 +1,4 @@
 //  Sélecteur de balise HTML (tag)
-
 var myParaTag = document.getElementsByTagName('p')
 console.log(myParaTag);
 
