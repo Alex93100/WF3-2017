@@ -23,7 +23,6 @@ console.log(myArray);
 
 console.log(myArray.length, myArray[0], myArray[4]);
 
-
 /*
     Créer un objet contenant 3 propriétés
     - le tableau
