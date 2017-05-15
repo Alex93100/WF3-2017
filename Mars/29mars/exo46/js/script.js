@@ -34,8 +34,6 @@ function userChoice(paramChoice){
 
 function computerChoice(){
 
-
-
     var computerMemory = ['Chi', 'Fu', 'Mi'];
 
     // Choisir aléatoirement l'un des 3 index du tableau
