@@ -6,7 +6,7 @@
 $prenom = "";
 
 if(isset($_POST['prenom'])){
-    $prenom = $_POST['prenom']; // on révupère l'argument fourno via post
+    $prenom = $_POST['prenom']; // on récupère l'argument fourni via post
 }
 
 $tab = array(); // on prépare le tableau array qui contiendra la réponse.

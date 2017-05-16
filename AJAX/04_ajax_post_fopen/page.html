@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Document</title>
+        <style>
+        </style>
+    </head>
+
+    <body>
+        <form id="inscription">
+            <label for="email">Email</label>
+            <input type="text" name="email" id="email" value"">
+            <input type="submit" value="S'inscrire">
+        </form>
+        <hr>
+        <div id="liste_inscrit"></div>
+
+        <script>
+            document.getElementById("inscription").addEventListener("submit", ajax);
+
+            function ajax(event){
+                event.preventDefault();
+
+                var file = "ajax.php";
+                if(window.XMLHttpRequest){
+                    var xhttp = new XMLHttpRequest();
+                }
+                else{
+                    var xhttp = new ActiveXObject("Microsoft.XMLHTTP"); // Pour internet explorer < version 7
+                }
+
+                var info = document.getElementById("email");
+                var email = info.value;
+                // console.log(email);
+
+                var parametres = "email="+email;
+
+                xhttp.open("POST", file, true);
+                xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+
+                xhttp.onreadystatechange = function(){
+                    if(xhttp.readyState == 4 && xhttp.status == 200){
+                        console.log(xhttp.responseText);
+                        var liste = JSON.parse(xhttp.responseText);
+
+                        document.getElementById("liste_inscrit").innerHTML = liste.resultat;
+                    }
+                }
+                xhttp.send(parametres);
+            }
+        </script>
+    </body>
+</html>
