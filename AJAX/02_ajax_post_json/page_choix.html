@@ -1,0 +1,63 @@
+<!-- Faire une page avec un champ select qui permet de choisir un prénom
+     mettre en place une requete ajax qui récupère le prenom choisi pour la passer dans les parametres.
+     et afficher la réponse dans notre page
+ -->
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Document</title>
+        <style>
+            form{ width: 50%; margin: 0 auto; }
+            select, input { padding: 5px; width: 100%; }
+        </style>
+    </head>
+
+    <body>
+        <form id="form_choix">
+            <label>Choisissez un prénom</label>
+            <select name="select" id="select" onchange="ajax()">
+                <option value="laura">Laura</option>
+                <option value="daniel">Daniel</option>
+                <option value="julien">Julien</option>
+                <option value="fabrice">Fabrice</option>
+            </select>
+            <br>
+            <br>
+            <input type="submit" value="Valider">
+        </form>
+            <div id="resultat"></div>
+
+        <script>
+            function ajax(){
+                var file = "ajax.php"; // notre page cible
+                r = new XMLHttpRequest();
+
+                var select = document.getElementById("select");
+                select = select.value;
+                console.log(select);
+
+                var parametres = "prenom="+select;
+
+                r.open("POST", file, true);
+                r.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+                // la methode setRequestHeader() définit la valeur d'un header http
+                // vous devez appelez cette methode entre la methode open() et send()
+
+                r.onreadystatechange = function(){
+                    if(r.readyState == 4 && r.status == 200){
+                        console.log(r.responseText);
+
+                        var obj = JSON.parse(r.responseText);
+                        // La methode parse de l'objet JSON permet d'évaluer la réponse et d'en faire un objet.
+                        document.getElementById("resultat").innerHTML = obj.resultat;
+                    }
+                }
+                r.send(parametres); // envoi
+            }
+        </script>
+    </body>
+</html>
