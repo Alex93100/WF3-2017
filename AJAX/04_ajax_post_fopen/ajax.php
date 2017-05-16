@@ -5,6 +5,13 @@ if(isset($_POST['email'])){
     $email = $_POST['email'];
 }
 
+ if(!empty($_POST)){ // si le formulaire est posté
+
+                    if (!filter_var($_POST['email'], FILTER_VALIDATE_EMAIL)){
+                        $contenu .= '<div class="bg-danger">L\'email est invalide</div>';                        
+                    }
+ }
+
 // création ou ouverture d'un fichier via la fonction fopen
 // en mode a php crée le fichier s'il n'existe pas sinon il ne fais que l'ouvrir.
 // http://php.net/manual/fr/function.fopen.php
