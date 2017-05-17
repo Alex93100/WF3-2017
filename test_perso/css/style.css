@@ -267,29 +267,78 @@ Style Main
 
         /* Style Contacts */
 
-        form{
-            margin: 2rem auto;
-        }
+        /* Style Contacts */
 
-        textarea, input:not([type="submit"]){
-            display: block;
-            width: 100%;
-            border: none;
-            border-bottom: .1rem solid slategray;
-            padding: 1rem;
-            margin-bottom:2rem; 
-        }
+            form{
+                text-align: left;
+                margin: 2rem auto;
+            }
 
-        textarea{
-            min-height: 15rem;
-        }
+            select{
+                margin: 1rem auto 2rem auto;
+            }
 
-        form :last-child{
-            background: slategray;
-            color: snow;
-            border: none;
-            padding: .5rem 1rem;
-        }
+            textarea{
+                min-height: 20rem;
+            }
+
+            [type="checkbox"]{
+                display: inline-block;
+                width: auto;
+            }
+
+            textarea, input, label{
+                display: block;
+                width: 100%;
+                border: none;
+                padding: 1rem;
+            }
+
+            textarea, input:not([type="submit"]){
+                border-bottom: .1rem solid #272525;
+                margin-bottom: 2rem;         
+            }
+
+            form article{
+                position: relative;
+            }
+            label{
+                padding: 0;
+                font-weight: 700;
+                -webkit-transition: all .5s;              
+                transition: all .5s;              
+            }
+
+            label:not([for="userSubject"]){
+                position: absolute;
+                top: .5rem;
+            }
+            
+            label.openedLabel{
+                top: -1.5rem;
+                font-size: 1.2rem;
+                color: grey;
+            }
+            form b{
+                font-size: 1rem;
+                text-transform: uppercase;
+                color: red;
+                -webkit-transition: all .5s;
+                transition: all .5s;
+            }
+
+            .hideError b{
+                opacity: 0;
+            }
+
+            [type="submit"]{
+                color: pink;
+                background: #272525;
+            }
+
+
+
+
 
 /*************************************************************************/
 

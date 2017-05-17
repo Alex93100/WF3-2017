@@ -14,14 +14,46 @@
             <h2>Contacts</h2>
             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Et in modi adipisci autem quibusdam nam aut assumenda.</p>
 
-            <form method="post">
-                <input type="text" placeholder="Nom Complet" name="nom" id="nom">
-                <input type="email"placeholder="Email" name="email" id="email">
-                <input type="text"placeholder="Sujet" name="sujet" id="sujet">
-                <textarea placeholder="Message" name="message" id="message"></textarea>
-                <!-- Validation du formulaire -->
-                <input type="submit" value="Envoyer">
+            <form action="php/sendMessage.php">
+                <article>
+                    <label for="userName">Votre nom <b></b> </label>
+                    <input type="text" id="userName" name="name">
+                </article>
+
+                <article>
+                    <label for="userEmail">Votre Email <b></b> </label>
+                    <input type="email" id="userEmail" name="email">
+                </article>
+
+                <article>
+                    <label for="userSubject">Choisir un sujet <b></b> </label>
+
+                    <select id="userSubject" name="subject">
+                        <option value="null">- Selectioner -</option>
+                        <option value="contact">Prise de contact</option>
+                        <option value="rdv">Prise de rendez-vous</option>
+                        <option value="devis">Demande de devis</option>
+                    </select>
+
+                </article>
+
+                <article>
+                    <label for="userMessage">Votre Message <b></b> </label>
+                    <textarea  id="userMessage" name="message"></textarea>
+
+                    <p><input type="checkbox">Accepter le CG <b></b> </p>
+                </article>
+
+                    <input type="submit" value="Envoyer">
             </form>
+
+            <!-- Modal pour remercier l'utilisateur' -->
+            <section id="modal">
+                <article>
+                    <h2>Merci <span></span> ! <i class="fa fa-times"></i></h2>
+                    <p>Nous vous recontacterons dans le splus brefs délais</p>
+                </article>
+            </section>
         </main>
     </body>
 </html>
