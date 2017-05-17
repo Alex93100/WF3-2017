@@ -28,9 +28,6 @@ $(document).ready(function(){
         });
     };
 
-    // Charger le contenu de home.html dans le main
-    $('main').load('views/home.html');
-
     /*
         Formulaire Page Contacts
     */ 
@@ -149,6 +146,33 @@ $(document).ready(function(){
                 if(formScore == 5){
 
                     console.log('Le formulaire est validé')
+
+                     // Envoi des données dans le fichier de traitement PHP
+                    // Php répond true => continuer le traitement du formulaire
+
+                        // Ajouter la valeur de userName dans la balise h2 span de la modal
+                        $('#modal span').text(userName.val());
+
+                        // Afficher la modal
+                        $('#modal').fadeIn();
+
+                        // Vider les champs du formulaire
+                        $('form')[0].reset();
+                        
+                        // Supprimer les msg d'erreur
+                        $('form b').text('');
+
+                        // Replacer les label
+                        $('label').removeClass();
+                        
+                };
+
+            });
+
+        };
+
+    // Charger le contenu de home.html dans le main
+    $('main').load('views/home.html');
     
     
     
