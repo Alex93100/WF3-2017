@@ -27,9 +27,29 @@
         setInterval("ajax()",5000);
         // 2 arguments => la fonction à exécuter, le timer en millisecondes
 
-        function ajax(){
-            
-        }
+        function ajax(event){
+                event.preventDefault();
+
+                var file = "ajax.php";
+                var info = document.getElementById("name");
+                var name = info.value;
+                console.log(name);
+
+                var parametres = "name="+name;
+
+                xhttp.open("POST", file, true);
+                xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+
+                xhttp.onreadystatechange = function(){
+                    if(xhttp.readyState == 4 && xhttp.status == 200){
+                        console.log(xhttp.responseText);
+                        var liste = JSON.parse(xhttp.responseText);
+
+                        document.getElementById("tableau_employes").innerHTML = liste.resultat;
+                    }
+                }
+                xhttp.send(parametres);
+            }
     </script>
   </body>
 </html>

@@ -27,5 +27,5 @@ while($ligne = $liste_employes->fetch(PDO::FETCH_ASSOC)){
 
 $tab['resultat'] .='</table>';
 
-echo $tab['resultat'];
-// echo json_encode($tab); // la réponse
+// echo $tab['resultat'];
+echo json_encode($tab); // la réponse
