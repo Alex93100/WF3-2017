@@ -14,10 +14,12 @@ $erreur = false; // variable de contrle en fin de script. Si sa valeur est pass�
 $mode = isset($_POST['mode']) ? $_POST['mode'] : '';
 
 // action = condition ? condition vrai(if) : condition fausse(else)
-$pseudo = isset($_POST['pseudo']) ? $_POST['pseudo'] : '';
-$civilite = isset($_POST['civilite']) ? $_POST['civilite'] : '';
-$ville = isset($_POST['ville']) ? $_POST['ville'] : '';
-$date_de_naissance = isset($_POST['date_de_naissance']) ? $_POST['date_de_naissance'] : '';
+$pseudo = isset($_POST['pseudo']) ? addslashes($_POST['pseudo']) : '';
+$civilite = isset($_POST['civilite']) ? addslashes($_POST['civilite']) : '';
+$ville = isset($_POST['ville']) ? addslashes($_POST['ville']) : '';
+$date_de_naissance = isset($_POST['date_de_naissance']) ? addslashes($_POST['date_de_naissance']) : '';
+// addslashes($string); // cette fonction prédéfinie php rajoute un antislash "\" devant chaque ' ou " dans la chaine
+
 
 if($mode == "connexion"){
     //  traitement de la connexion/inscription
