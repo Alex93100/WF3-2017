@@ -1,7 +1,11 @@
 <?php
 require_once("inc/init.inc.php");
+if(!empty($_SESSION['pseudo'])){
 
-var_dump($_SESSION);
+    // Si l'utilisateur est déjà présent dans la session, on le redirige sur dialogue.php
+    header("location:dialogue.php");
+}
+// var_dump($_SESSION);
 ?>
 <!DOCTYPE html>
 <html lang="fr">
