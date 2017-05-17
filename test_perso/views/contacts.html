@@ -14,11 +14,11 @@
             <h2>Contacts</h2>
             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Et in modi adipisci autem quibusdam nam aut assumenda.</p>
 
-            <form action="contact.php">
-                <input type="text" placeholder="Nom Complet">
-                <input type="email"placeholder="Email">
-                <input type="text"placeholder="Sujet">
-                <textarea placeholder="Message"></textarea>
+            <form method="post">
+                <input type="text" placeholder="Nom Complet" name="nom" id="nom">
+                <input type="email"placeholder="Email" name="email" id="email">
+                <input type="text"placeholder="Sujet" name="sujet" id="sujet">
+                <textarea placeholder="Message" name="message" id="message"></textarea>
                 <!-- Validation du formulaire -->
                 <input type="submit" value="Envoyer">
             </form>
