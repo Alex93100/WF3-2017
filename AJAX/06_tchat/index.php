@@ -81,7 +81,7 @@ var_dump($_SESSION);
                         if(obj.pseudo == 'disponible') {
                             //  Si l'indice pseudo a la valeur disponible alors on peut connecter l'utilisateur.
                             // on le redirige donc ver dialogue.php
-                            // window.location.href = 'dialogue.php';
+                            window.location.href = 'dialogue.php';
                         }
                     }
                 }

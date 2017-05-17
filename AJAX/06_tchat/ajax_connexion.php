@@ -47,6 +47,19 @@ if($mode == "connexion"){
         // le pseudo est déjà pris et l'adresse ip ne correspond pas à ce pseudo.
         $tab['resultat'] = "Pseudo indisponible, veuillez recommencer";
         $erreur = true; // nous sommes dans un cas d'erreur, nous changeons la valeur de cette variable pour la tester après.
+        $tab['pseudo'] = "indisponible"; // évite la redirection depuis index.php
+    }
+
+    if(!$erreur){ // if($erreur == false) // s'il n'y a pas d'erreur durant les traitements précédant.
+
+        // On place dans la $_SESSION le pseudo, l'id et la civilité de l'utilisateur.
+        $_SESSION['id_membre']= $id_membre;
+        $_SESSION['pseudo']= $pseudo;
+        $_SESSION['civilite']= $civilite;
+
+        $f =    fopen("prenom.txt", "a"); // on ouvre un le fichier prenom.txt sinon on le crée
+                fwrite($f, $pseudo . "\n"); // on écrit dans ce fichier le pseudo de l'utilisateur.
+                fclose($f); // pour fermer le fichier et libérer de la ressource.
     }
 }
 echo json_encode($tab);
