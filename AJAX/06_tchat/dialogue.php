@@ -14,7 +14,7 @@ require_once('inc/init.inc.php')
 
     <body>
         <div id=conteneur>
-            <h2 id="moi">Bonjour<?php echo $_SESSION['pseudo'];?></h2>
+            <h2 id="moi">Bonjour <?php echo $_SESSION['pseudo'];?></h2>
             <div id="message_tchat"></div>
             <div id="liste_membre_connecte"></div>
             <div class="clear"></div>
@@ -23,7 +23,7 @@ require_once('inc/init.inc.php')
             </div>
             <!-- FORMULAIRE -->
             <div id="formulaire_tchat">
-                <form id=form"">
+                <form id="form">
                     <textarea name="message" id="message" maxlength="300" rows="5"></textarea><br>
                     <input type="submit" name="envoi" value="envoi" class="submit">
                 </form>
