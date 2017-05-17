@@ -43,6 +43,10 @@ if($mode == "connexion"){
         $pdo->query("UPDATE membre SET date_connexion=$time WHERE id_membre=$membre[id_membre]");
         $id_membre = $membre['id_membre'];
     }
-
+    else{
+        // le pseudo est déjà pris et l'adresse ip ne correspond pas à ce pseudo.
+        $tab['resultat'] = "Pseudo indisponible, veuillez recommencer";
+        $erreur = true; // nous sommes dans un cas d'erreur, nous changeons la valeur de cette variable pour la tester après.
+    }
 }
 echo json_encode($tab);
