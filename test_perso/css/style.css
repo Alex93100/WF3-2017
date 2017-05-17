@@ -267,8 +267,6 @@ Style Main
 
         /* Style Contacts */
 
-        /* Style Contacts */
-
             form{
                 text-align: left;
                 margin: 2rem auto;
@@ -280,11 +278,6 @@ Style Main
 
             textarea{
                 min-height: 20rem;
-            }
-
-            [type="checkbox"]{
-                display: inline-block;
-                width: auto;
             }
 
             textarea, input, label{
@@ -302,6 +295,7 @@ Style Main
             form article{
                 position: relative;
             }
+            
             label{
                 padding: 0;
                 font-weight: 700;
