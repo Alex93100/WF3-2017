@@ -31,8 +31,17 @@ if($mode == "connexion"){
         $time = time(); // on récupère le timestamp
         $pdo->query("INSERT INTO membre (pseudo, civilite, ville, date_de_naissance, ip, date_connexion) VALUES ('$pseudo', '$civilite', '$ville', '$date_de_naissance', '$_SERVER[REMOTE_ADDR]', '$time')");
 
-        $tab['resultat'] = "membre enregistré !";
+        $id_membre = $pdo->lastInsertId(); // on récupère le dernier id inséré
 
+        $tab['resultat'] = "membre enregistré !";
+    }
+    elseif($resultat->rowCount() > 0 && $_SERVER['REMOTE_ADDR'] == $membre['ip']){
+        // si le pseudo existe et que l'adresse ip est la même que celle enregistrée,c'est donc le même utilisateur.
+        // on met à jour uniquement sa date_connexion
+        $time = time();
+
+        $pdo->query("UPDATE membre SET date_connexion=$time WHERE id_membre=$membre[id_membre]");
+        $id_membre = $membre['id_membre'];
     }
 
 }
