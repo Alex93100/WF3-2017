@@ -2,8 +2,6 @@
  
  //-------------------- TRAITEMENT ---------------------- 
 
-        require_once('views/contacts.html');
-
         //Traitement du POST :
 
             if(!empty($_POST)){ // si le formulaire est posté
