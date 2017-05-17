@@ -27,28 +27,23 @@
         setInterval("ajax()",5000);
         // 2 arguments => la fonction à exécuter, le timer en millisecondes
 
-        function ajax(event){
-                event.preventDefault();
-
+        function ajax(){
                 var file = "ajax.php";
-                var info = document.getElementById("name");
-                var name = info.value;
-                console.log(name);
-
-                var parametres = "name="+name;
+                var xhttp = new XMLHttpRequest();
 
                 xhttp.open("POST", file, true);
                 xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
 
                 xhttp.onreadystatechange = function(){
+                    console.log(xhttp.readyState);
                     if(xhttp.readyState == 4 && xhttp.status == 200){
                         console.log(xhttp.responseText);
-                        var liste = JSON.parse(xhttp.responseText);
+                        var obj = JSON.parse(xhttp.responseText);
 
-                        document.getElementById("tableau_employes").innerHTML = liste.resultat;
+                        document.getElementById("tableau_employes").innerHTML = obj.resultat;
                     }
                 }
-                xhttp.send(parametres);
+                xhttp.send();
             }
     </script>
   </body>

@@ -1,0 +1,95 @@
+body{
+    margin: 0; 
+}
+
+.loader{
+    background: url(ajax-loader.gif) no-repeat;
+    width: 70px;
+    height: 70px;
+}
+
+#conteneur{
+    width: 1000px;
+    margin: 20px auto 200px auto;
+    padding: 10px;
+    background: #dbdbdb;
+    box-shadow: 1px 1px 6px;
+    border-radius: 5px;
+}
+
+#message_tchat{
+    float: left;
+    width: 800px;
+    height: 500px;
+    margin: 0 20px 0 0;
+    border: 1px solid #c0c0c0;
+    padding: 5px;
+    overflow: auto;
+    background: #fff;
+    overflow:scroll;overflow-x:hidden;height:500px;
+}
+
+#message_tchat  p:hover, #liste_membre_connecte  p:hover{background: #e3eefe;}
+#liste_membre_connecte{
+    float: left;
+    width:145px;
+    height: 500px;
+    border: 1px solid #c0c0c0;
+    padding: 5px 10px;
+    background: #fff;
+    overflow: auto;
+}
+
+#smiley{
+    float: left;
+    width:	798px;
+    height: 50px;
+    margin: 20px 0 20px 0;
+    border: 1px solid #c0c0c0;
+}
+
+#smiley img{ 
+    margin: 2px; 
+}
+
+#formulaire_tchat{
+    height: 130px;
+}
+
+textarea{
+    float: left;
+    width: 800px;
+    height: 21px;
+    resize: none;
+    margin: 0 10px 0 0;
+    padding: 2px;
+    border: 1px solid #c0c0c0;
+}
+
+.submit{ float: left; background: #dbdbdb;  }
+
+.clear{ clear: both; }
+
+.bleu { color: #4e99e6; }
+
+.rose { color: #e86dbe; }
+
+.erreur{ background: red; padding: 5px; }
+
+h2{ margin: 0; font-size: 13px; }
+
+p{ margin: 0; }
+
+#message_tchat:hover{ cursor: default; }
+
+#liste_membre_connecte:hover{ cursor: default; }
+
+.cadre_accueil{
+    width: 50%;
+    margin: 0 auto;
+}
+
+#form input, #form select{
+    width: 100%;
+    padding: 5px;
+}
