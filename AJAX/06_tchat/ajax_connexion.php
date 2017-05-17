@@ -22,7 +22,7 @@ $mode = isset($_POST['date_de_naissance']) ? $_POST['date_de_naissance'] : '';
 if($mode == "connexion"){
     //  traitement de la connexion/inscription
     // requete pour tester si le pseudo est déjà présent dans la BDD
-    $resultat = $pdo->("SELECT * FROM membre WHERE pseudo = '$pseudo'");
+    $resultat = $pdo->query("SELECT * FROM membre WHERE pseudo = '$pseudo'");
     $membre = $resultat->fetch(PDO::FETCH_ASSOC);
     if($membre->rowCount() == 0){ // s'il n'y a pas de ligne alors le pseudo est libre car inexistant en BDD
         
