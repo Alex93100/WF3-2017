@@ -1,5 +1,10 @@
 <?php
-require_once('inc/init.inc.php')
+require_once('inc/init.inc.php');
+if(empty($_SESSION['pseudo'])){
+
+    // Si l'utilisateur est déjà présent dans la session, on le redirige sur dialogue.php
+    header("location:index.php");
+}
 
 ?>
 
