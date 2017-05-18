@@ -50,6 +50,10 @@ if(empty($_SESSION['pseudo'])){
                 var messageValeur = document.getElementById("message").value;
                 // On envoi notre ajax
                 ajax("postMessage", messageValeur);
+
+                // On envoi  une autre requete ajax pour récupérer les message et les afficher.
+                ajax("message_tchat");
+
                 // On vide le champ
                 document.getElementById("message").value = "";
 
