@@ -30,7 +30,7 @@ if(empty($_SESSION['pseudo'])){
             <div id="formulaire_tchat">
                 <form id="form">
                     <textarea name="message" id="message" maxlength="300" rows="5"></textarea><br>
-                    <input type="submit" name="envoi" value="envoi" class="submit" onkeypress="myFunction()">
+                    <input type="submit" name="envoi" value="envoi" class="submit">
                 </form>
             </div>
             <div id="postMessage"></div>

@@ -41,41 +41,34 @@
         <hr>
         <div id="resultat"></div>
 
+        <script
+            src="https://code.jquery.com/jquery-1.12.4.min.js"
+            integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ="
+            crossorigin="anonymous">
+        </script>
+
+
         <script>
-            var formulaire = document.getElementById("mon_form").addEventListener("submit", ajax);
+            $(document).ready(function(){
+                // Lorsque le document est prêt ( chargé)
+                $("#mon_form").on('submit', function(event){
+                    event.preventDefault();
 
-            function ajax(event){
-                event.preventDefault();
-                var champSelect = document.getElementById("choix");
-                var valeur = champSelect.value;
-                console.log(valeur);
+                    var url="ajax.php";
+                    var personne = $("#choix").val();
+                    var parametres = "personne="+personne;
 
-
-                var file = "ajax.php"; // notre page cible
-                var parametres = "personne="+valeur;
-
-                var xhttp = new XMLHttpRequest();
-
-                xhttp.open("POST", file, true);
-                xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-                // la methode setRequestHeader() définit la valeur d'un header http
-                // vous devez appelez cette methode entre la methode open() et send()
-
-                xhttp.onreadystatechange = function(){
-                    if(xhttp.readyState == 4 && xhttp.status == 200){
-                        console.log(xhttp.responseText);
-                        var reponse = JSON.parse(xhttp.responseText);
-                        document.getElementById("resultat").innerHTML = reponse.resultat;
-                    }
-                }
-                xhttp.send(parametres); // envoi
-            }
-            // Mettre en place un événement sur la validation du formulaire (submit)
-            // bloquer le rechargement de page consecutif à la validadtion du formulaire
-            // et déclencher une requete ajax qui envoie sur ajax.php
-            // sur ajax.php récupérer les informations de l'employes correspondant à l'id récupéré
-            // et envoyer une réponse sous forme de tableau html.Le tableau doit avoir deux ligne, une avec le noms des colonnes et l'autre avec les valeurs
-
+                    $.ajax({
+                        url: url,
+                        type: "POST",
+                        data: parametres,
+                        dataType: "json",
+                        success: function(reponse){
+                            $("#resultat").html(reponse.resultat);
+                        }
+                    });
+                });
+            });
         </script>
     </body>
 </html>
