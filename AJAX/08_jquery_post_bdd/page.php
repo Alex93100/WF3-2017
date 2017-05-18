@@ -53,20 +53,11 @@
                 // Lorsque le document est prêt ( chargé)
                 $("#mon_form").on('submit', function(event){
                     event.preventDefault();
+                    var parametres = "personne="+$("#choix").val();                    
 
-                    var url="ajax.php";
-                    var personne = $("#choix").val();
-                    var parametres = "personne="+personne;
-
-                    $.ajax({
-                        url: url,
-                        type: "POST",
-                        data: parametres,
-                        dataType: "json",
-                        success: function(reponse){
-                            $("#resultat").html(reponse.resultat);
-                        }
-                    });
+                    $.post("ajax.php",parametres, function(reponse){
+                        $("#resultat").html(reponse.resultat);
+                    }, "json");
                 });
             });
         </script>
