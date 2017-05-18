@@ -3,7 +3,7 @@
  //-------------------- TRAITEMENT ---------------------- 
 
         //Traitement du POST :
-
+            $envoi = false;
             if(!empty($_POST)){ // si le formulaire est posté
 
                 // validation du formulaire :
@@ -11,14 +11,14 @@
                         $contenu .= '<div>Le nom doit contenir au moins 4 caractères</div>';
                     }
                     else{
-
+                        $envoi = true;
                     }
 
                     if (!filter_var($_POST['userEmail'], FILTER_VALIDATE_EMAIL)){
                         $contenu .= '<div>L\'email est invalide</div>';                        
                     }
                     else{
-                        
+                        $envoi = true;
                     }
                     // filter_var() permet de valider des format de chaines de caractères pour vérifier qu'il s'agit ici d'email (on pourrait valider une URL par exemple).
 
@@ -26,14 +26,14 @@
                         $contenu .= '<div class="bg-danger">Le sujet est incorrecte</div>';
                     }
                     else{
-                        
+                        $envoi = true;     
                     }
 
                     if(strlen($_POST['userMessage']) < 10 || strlen($_POST['userMessage']) > 255){
                         $contenu .= '<div>Le message doit contenir au moins 10 caractères</div>';
                     }
                     else{
-                        
+                        $envoi = true;                        
                     }
 
 
