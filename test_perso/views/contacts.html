@@ -2,56 +2,53 @@
 <html lang="fr">
     <head>
         <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
-        <title>TP 21 mars Exo 23 - Portfolio</title>
-        <link rel="stylesheet" href="css/style.css">
+        <title>Document</title>
     </head>
 
-    <body class="contactsPage">
-        <!-- Contenue principal -->
-        <main>
-            <h2>Contacts</h2>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Et in modi adipisci autem quibusdam nam aut assumenda.</p>
+    <body>
+        <h2>Contactez-moi</h2>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Natus laudantium possimus ipsum tenetur ex libero, nobis nihil perferendis architecto nemo aperiam eum numquam ea voluptas aliquid laboriosam, consequatur magni voluptate.</p>
 
-            <form action="php/sendMessage.php">
-                <article>
-                    <label for="userName">Votre nom <b></b> </label>
-                    <input type="text" id="userName" name="name">
-                </article>
+        <form action="sendMessage.php">
+            <article>
+                <label for="userName">Votre nom <b></b> </label>
+                <input type="text" id="userName" name="name">
+            </article>
 
-                <article>
-                    <label for="userEmail">Votre Email <b></b> </label>
-                    <input type="email" id="userEmail" name="email">
-                </article>
+            <article>
+                <label for="userEmail">Votre Email <b></b> </label>
+                <input type="email" id="userEmail" name="email">
+            </article>
 
-                <article>
-                    <label for="userSubject">Choisir un sujet <b></b> </label>
+            <article>
+                <label for="userSubject">Choisir un sujet <b></b> </label>
 
-                    <select id="userSubject" name="subject">
-                        <option value="null">- Selectioner -</option>
-                        <option value="contact">Prise de contact</option>
-                        <option value="rdv">Prise de rendez-vous</option>
-                        <option value="devis">Demande de devis</option>
-                    </select>
+                <select id="userSubject" name="subject">
+                    <option value="null">- Selectioner -</option>
+                    <option value="contact">Prise de contact</option>
+                    <option value="rdv">Prise de rendez-vous</option>
+                    <option value="devis">Demande de devis</option>
+                </select>
 
-                </article>
+            </article>
 
-                <article>
-                    <label for="userMessage">Votre Message <b></b> </label>
-                    <textarea  id="userMessage" name="message"></textarea>
-                </article>
+            <article>
+                <label for="userMessage">Votre Message <b></b> </label>
+                <textarea  id="userMessage" name="message"></textarea>
+            </article>
 
-                    <input type="submit" value="Envoyer">
-            </form>
+                <input type="submit" value="Envoyer">
+        </form>
 
-            <!-- Modal pour remercier l'utilisateur' -->
-            <section id="modal">
-                <article>
-                    <h2>Merci <span></span> ! <i class="fa fa-times"></i></h2>
-                    <p>Nous vous recontacterons dans le splus brefs délais</p>
-                </article>
-            </section>
-        </main>
+        <!-- Modal pour remercier l'utilisateur' -->
+        <section id="modal">
+            <article>
+                <h2>Merci <span></span> ! <i class="fa fa-times"></i></h2>
+                <p>Nous vous recontacterons dans le splus brefs délais</p>
+            </article>
+        </section>
+
     </body>
 </html>

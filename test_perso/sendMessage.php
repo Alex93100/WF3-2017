@@ -7,7 +7,7 @@
             if(!empty($_POST)){ // si le formulaire est posté
 
                 // validation du formulaire :
-                    if(strlen($_POST['nom']) < 4 || strlen($_POST['nom']) > 40){
+                    if(strlen($_POST['name']) < 4 || strlen($_POST['name']) > 40){
                         $contenu .= '<div>Le nom doit contenir au moins 4 caractères</div>';
                     }
 
@@ -16,22 +16,19 @@
                     }
                     // filter_var() permet de valider des format de chaines de caractères pour vérifier qu'il s'agit ici d'email (on pourrait valider une URL par exemple).
 
-                    if(strlen($_POST['sujet']) < 6 || strlen($_POST['sujet']) > 40){
-                        $contenu .= '<div>La sujet ne doit pas être vide</div>';
+                    if ($_POST['subject'] != 'contacts' && $_POST['subject'] != 'rdv' && $_POST['subject'] != 'devis'){
+                        $contenu .= '<div class="bg-danger">Le sujet est incorrecte</div>';
                     }
 
-                    if(strlen($_POST['message']) < 5 || strlen($_POST['message']) > 255){
-                        $contenu .= '<div>Le message doit contenir au moins 5 caractères</div>';
+                    if(strlen($_POST['message']) < 10 || strlen($_POST['message']) > 255){
+                        $contenu .= '<div>Le message doit contenir au moins 10 caractères</div>';
                     }
 
 
-                    // // Si aucune erreur sur le formuaire, on vérifie l'unicité du pseudo avant inscription en BDD :
+                    // // Si aucune erreur sur le formuaire avant envoi sur l'adresse email
                     // if(empty($contenu)){ // Si $contenu est vide,c'est qu'il n'y a pas d'erreur
                     //     else{
-                    //         // Si le pseudo est unique, on peut faire l'inscription en BDD:
-
-                    //         $contenu .= '<div class="bg-danger">Vous avez bien été inscrit.<a href="connexion.php">Cliquez ici pour vous connecter</a></div>';
-                    //         $inscription = true; //Pour ne plus afficher le formulaire d'inscription
+                    //         $contenu .= '<div class="bg-danger">Votre message a bien été envoyez.</div>';
                     //     } // fin du else de if($membre->rowCount() > 0)
 
                     // }// fin du if(empty($contenu))
