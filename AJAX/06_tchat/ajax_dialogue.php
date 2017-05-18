@@ -8,7 +8,7 @@ $tab['resultat'] = '';
 $mode = isset($_POST['mode']) ? $_POST['mode'] : '';
 $arg = isset($_POST['arg']) ? $_POST['arg'] : '';
 
-if($mode == 'liste_membre_connecte'){
+if($mode == 'liste_membre_connecte' && empty($arg)){
 
     // récupérez le contenu du fichier prenom.txt(file())
     // placer dans $tab['resultat'] le contenu de fichier sous la forme '<p>pseudo1</p><p>pseudo2</p>'
@@ -54,6 +54,9 @@ elseif($mode == "message_tchat"){
 elseif($mode == 'liste_membre_connecte' && !empty($arg)){
     // Si $arg n'ets pas vide alors on a un pseudo et nous devons le retirer du fichier prenom.txt
     $contenu = file_get_contents('prenom.txt'); // On récupère le contenu du ficher prenom.txt dans la variable $contenu
+    $contenu = str_replace($arg, "", $contenu); // On remplace le pseudo par rien
+
+    file_put_contents('prenom.txt',$contenu); //On écrase l'ancien contenu par le nouveau ou l'on a supprimé le pseudo concerné
 
 }
 echo json_encode($tab);

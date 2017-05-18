@@ -66,7 +66,7 @@ if(empty($_SESSION['pseudo'])){
 
             // On le retire du fichier prenom.txt
             window.onbeforeunload = function(){
-                ajax('lsite_membre_connecte', '<?php echo $_SESSION['pseudo']?>');
+                ajax('liste_membre_connecte', '<?php echo $_SESSION['pseudo']?>');
 
             };
 
