@@ -22,10 +22,12 @@ elseif($mode == 'postMessage'){
     $arg = trim($arg); // On enlève les espace avant et après la chaine ainsi que si le message ne possède que des espaces.
     if(!empty($arg)){ // Si le message n'est pas vide. Alors on lance un insert into
     
-        $position = strpos($arg, ":");
-        $arg = substr($arg, $position);
+        // $position = strpos($arg, ":");
+        // $arg = substr($arg, $position);
         // Alexandre > Bonjour à tous
         // Bonjour à tous
+
+        $arg = addslashes($arg); // met un \ devant les ' et les "
 
         // enregistrement du message
         $pdo->query("INSERT INTO dialogue(id_membre, message, date) VALUES ($_SESSION[id_membre], '$arg', NOW())");

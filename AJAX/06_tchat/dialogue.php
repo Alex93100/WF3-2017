@@ -30,12 +30,39 @@ if(empty($_SESSION['pseudo'])){
             <div id="formulaire_tchat">
                 <form id="form">
                     <textarea name="message" id="message" maxlength="300" rows="5"></textarea><br>
-                    <input type="submit" name="envoi" value="envoi" class="submit">
+                    <input type="submit" name="envoi" value="envoi" class="submit" onkeypress="myFunction()">
                 </form>
             </div>
             <div id="postMessage"></div>
         </div>
         <script>
+
+            // faire en sorte que si l'utilisateur appuie sur la touche "entrée" cela enregistre le message
+            // code la touche "entrée" => 13
+                document.addEventListener("keypress", function(event){
+                    if(event.keyCode  == 13) {
+                        event.preventDefault();
+                        var messageValeur = document.getElementById("message").value;
+
+                        ajax("postMessage", messageValeur);
+
+                        ajax("message_tchat");
+
+                        document.getElementById("message").value = "";
+                    }
+                });
+
+            
+
+            // ajout de :) dans le messag lors du clic sur le smiley
+            document.getElementById("smiley").addEventListener("click", function(event){
+                // document.getElementById("message").value = document.getElementById("message").value + event.target.alt;
+                // document.getElementById("message").focus(); // Permet de remettre le curseur.
+
+                document.getElementById("message").value = document.getElementById("message").value +' <img src="'+event.target.src+'"/> ';                
+                console.log(event)
+
+            });
             // pour récupérer la liste des membres connectés
             setInterval("ajax(liste_membre_connecte)", 3000);
 
