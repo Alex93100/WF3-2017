@@ -7,20 +7,20 @@
             if(!empty($_POST)){ // si le formulaire est posté
 
                 // validation du formulaire :
-                    if(strlen($_POST['name']) < 4 || strlen($_POST['name']) > 40){
+                    if(strlen($_POST['userName']) < 4 || strlen($_POST['userName']) > 40){
                         $contenu .= '<div>Le nom doit contenir au moins 4 caractères</div>';
                     }
 
-                    if (!filter_var($_POST['email'], FILTER_VALIDATE_EMAIL)){
+                    if (!filter_var($_POST['userEmail'], FILTER_VALIDATE_EMAIL)){
                         $contenu .= '<div>L\'email est invalide</div>';                        
                     }
                     // filter_var() permet de valider des format de chaines de caractères pour vérifier qu'il s'agit ici d'email (on pourrait valider une URL par exemple).
 
-                    if ($_POST['subject'] != 'contacts' && $_POST['subject'] != 'rdv' && $_POST['subject'] != 'devis'){
+                    if ($_POST['userSubject'] != 'contacts' && $_POST['userSubject'] != 'rdv' && $_POST['userSubject'] != 'devis'){
                         $contenu .= '<div class="bg-danger">Le sujet est incorrecte</div>';
                     }
 
-                    if(strlen($_POST['message']) < 10 || strlen($_POST['message']) > 255){
+                    if(strlen($_POST['userMessage']) < 10 || strlen($_POST['userMessage']) > 255){
                         $contenu .= '<div>Le message doit contenir au moins 10 caractères</div>';
                     }
 
