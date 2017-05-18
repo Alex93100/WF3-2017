@@ -37,7 +37,11 @@ if(empty($_SESSION['pseudo'])){
         </div>
         <script>
             // pour récupérer la liste des membres connectés
-            setInterval("ajax(liste_membre_connecte)", 11000);
+            setInterval("ajax(liste_membre_connecte)", 3000);
+
+
+            // pour récupérer la liste des membres connectés
+            setInterval("ajax(message_tchat)", 2000);
 
             // Enregistrement du message via le bouton submit
             document.getElementById("form").addEventListener("submit", function(e){
@@ -56,9 +60,15 @@ if(empty($_SESSION['pseudo'])){
 
                 // On vide le champ
                 document.getElementById("message").value = "";
-
-
             });
+
+            // FERMETURE DE LA PAGE PAR L'UTILISATEUR
+
+            // On le retire du fichier prenom.txt
+            window.onbeforeunload = function(){
+                ajax('lsite_membre_connecte', '<?php echo $_SESSION['pseudo']?>');
+
+            };
 
             // déclaration de la fonction ajax
             function ajax(mode, arg = '') {
