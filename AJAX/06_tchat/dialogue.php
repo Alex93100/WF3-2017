@@ -39,6 +39,23 @@ if(empty($_SESSION['pseudo'])){
             // pour récupérer la liste des membres connectés
             setInterval("ajax(liste_membre_connecte)", 11000);
 
+            // Enregistrement du message via le bouton submit
+            document.getElementById("form").addEventListener("submit", function(e){
+
+                e.preventDefault(); // On block le rechargement de page lors de la soumission du formulaire.
+
+                // ajax("postMessage", message.value);
+
+                // On récupère la value
+                var messageValeur = document.getElementById("message").value;
+                // On envoi notre ajax
+                ajax("postMessage", messageValeur);
+                // On vide le champ
+                document.getElementById("message").value = "";
+
+
+            });
+
             // déclaration de la fonction ajax
             function ajax(mode, arg = '') {
                 if(typeof(mode) == 'object'){
