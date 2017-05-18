@@ -30,7 +30,7 @@ elseif($mode == 'liste'){
         $tab['resultat'] .= '<div class="panel-body">';
         $tab['resultat'] .= '<span class="small">Par: '. $article['auteur']. ' le '.$article['date_fr'].'</span>';
 
-        $contenu = substr($article['contenu'],0,105). ' ... <a href="#url/fiche_article.php?id_article='. $article['id_article'] .'">Lire la suite</a>';
+        $contenu = substr($article['contenu'],0,30). ' ... <a href="#url/fiche_article.php?id_article='. $article['id_article'] .'">Lire la suite</a>';
         $tab['resultat'] .= '<p>'. $contenu .'</p>';
         $tab['resultat'] .= "</div></div></div>";
     }
