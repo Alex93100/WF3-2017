@@ -27,12 +27,11 @@
                 $contenu .= '<p> Votre email :' . $_SESSION['membre']['email'] . '</p>';
                 $contenu .= '<p>Votre adresse :' . $_SESSION['membre']['adresse'] . '</p>';
                 $contenu .= '<p>Votre ville :' . $_SESSION['membre']['ville'] . '</p>';
-                $contenu .= '<p>Votre code postal :' . $_SESSION['membre']['cp'] . '</p>';
             $contenu .= '</div>';            
             
         // echo '<pre>';print_r($_SESSION);'</pre>';
             $id_membre = $_SESSION['membre']['id_membre'];
-            $suivi = executeRequete("SELECT id_commande, id_membre, montant, date_enregistrement, etat FROM commande WHERE id_membre = '$id_membre'", array(':id_membre'=>$id_membre));
+            $suivi = executeRequete("SELECT id_commande, id_membre, id_produit, montant, date_enregistrement FROM commande WHERE id_membre = '$id_membre'", array(':id_membre'=>$id_membre));
                 if($suivi->rowCount() != 0){
                     while( $commande = $suivi->fetch(PDO::FETCH_ASSOC)){
                         // On affiche le suivi des commandes :
