@@ -1,27 +1,25 @@
 <?php
 
-    // require_once('inc/init.inc.php');
+    require_once('inc/init.inc.php');
+
+    //----------------- AFFICHAGE ------------------
+
+
+
+
+
 ?>
 
 
 <form method="post" action="">
     
-    <label for="tarif">Tarif</label><br>
-    <div class="input-group date" data-provide="datepicker">
-        <input type="text" class="form-control">
-        <div class="input-group-addon">
-            <span class="glyphicon glyphicon-th"></span>
-        </div>
-    </div>
+    <label for="date_a">Date d'arrivée</label><br>
 
-    <label for="tarif">Tarif</label><br>
-    <div class="input-group date" data-provide="datepicker">
-        <input type="text" class="form-control">
-        <div class="input-group-addon">
-            <span class="glyphicon glyphicon-th"></span>
-        </div>
-    </div>
 
+    <label for="date_d">Date de départ</label><br>
+    
+
+    <label for="date_d">Salle</label><br>
     <select name="salle" id="salle"><br>
         <?php 
         foreach ($categorie as $value) {
