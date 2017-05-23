@@ -97,7 +97,7 @@
 
     }
 
-    $suggestion = executeRequete("SELECT id_salle, photo, titre FROM produit WHERE categorie = '$produit[categorie]' AND id_salle != '$_GET[id_salle]' ORDER BY RAND() LIMIT 2");       
+    $suggestion = executeRequete("SELECT id_salle, photo, titre FROM produit WHERE categorie = '$produit[categorie]' AND id_salle != '$_GET[id_salle]' ORDER BY RAND() LIMIT 3", array(':categories' => $produit['categories'], ':id_salle' => $produit['id_salle']));       
         while ($prod = $suggestion->fetch(PDO::FETCH_ASSOC)) {
             $aside .= '<div class="col-sm-3">';
                 $aside .= '<a href="?id_salle='. $prod['id_salle'].'"><img src="'. $prod['photo'] .'" style="width:100%"></a>';
