@@ -12,15 +12,7 @@
 
     // 7- Suppression d'un produit
         if(isset($_GET['action']) && $_GET['action'] == 'suppression' && isset($_GET['id_produit'])){
-            // On sélectionne en base la photo pour pouvoir supprimer le fichier pjoto correspondant :
-            $resultat = executeRequete("SELECT photo FROM produit WHERE id_produit = :id_produit", array(':id_produit' => $_GET['id_produit']));
-            $produit_a_supprimer = $resultat->fetch(PDO::FETCH_ASSOC); // pas de while car qu'un seul produit
-            $chemin_photo_a_supprimer = $_SERVER['DOCUMENT_ROOT'] . $produit_a_supprimer['photo']; //Chemin du fichier à supprimer
-            if(!empty($produit_a_supprimer['photo']) && file_exists($chemin_photo_a_supprimer)){
-                // si il y a un chemin de photo en base ET que le fichier existe, on peut le supprimer :
-                unlink($chemin_photo_a_supprimer); // supprime le fichier spécifié
-            }
-            // Puis suppression du produit en BDD :
+            // Suppression du produit en BDD :
             executeRequete("DELETE FROM produit WHERE id_produit = :id_produit", array(':id_produit' => $_GET['id_produit']));
             $contenu .= '<div class="bg_success">Le produit a été supprimé !</div>';
             $_GET['action'] = 'affichage'; // Pour lancer l'affichage de sproduit dans le tableau HTML (point 6)
@@ -30,40 +22,6 @@
 
         if($_POST){ // Equivalent à !empty($_POST) car si le $_POST est rempli, il vaut TRUE = formulaire posté
 
-            // ici il faudrait mettre les contrôles sur le formulaire
-
-            $photo_bdd=''; // La photo subit un traitement spécifique en BDD. Cette variable contiendra son chemin d'accès
-
-            // 9- modification de la photo (suite):
-
-            if(isset($_GET['action'])&& $_GET['action'] == 'modification'){
-                // si je suis en modification, je mets en base la photo du champ hidden photo actuelle du formulaire :
-                $photo_bdd = $_POST['photo_actuelle'];
-                // 
-
-            }
-
-
-            // 5- tratement de la photo :
-            // echo '<pre>'; print_r($_FILES) ; echo '</pre>';
-            if(!empty($_FILES['photo']['name'])){ // Si une image a été uploadée, $_FILES est remplie
-
-                // On constitue un nom unique pour le fichier photo :
-                $nom_photo = $_POST['id_salle'] . '_' . $_FILES['photo']['name'];
-
-                // On constitue le chemin de la photo enregistré en BDD :
-                $photo_bdd = RACINE_SITE . 'photo/' . $nom_photo; // On obtient ici le nom et le chemin de la photo depuis la racine du site
-
-                // On constiute le chemin absolu complet de la photo depuis la racine serveur :
-                $photo_dossier = $_SERVER['DOCUMENT_ROOT'] . $photo_bdd;
-
-                // echo '<pre>'; print_r($photo_dossier) ; echo '</pre>';
-
-                // Enregistrement du fichier photo sur le serveur :
-                copy($_FILES['photo']['tmp_name'], $photo_dossier);
-                // On copie le fichier temporaire de la photo stockée au chemin indiqué par $_FILES['photo']['tmp_name'] dans le chemin $photo_dossier de notre serveur
-            }
-   
             // 4- Suite de l'enregistrement en BDD :
             executeRequete("REPLACE INTO produit (id_produit, id_salle, date_arrivee, date_depart, prix, etat)VALUES(:id_produit, :id_salle, :date_arrivee, :date_depart, :prix, :etat)", array('id_produit' => $_POST['id_produit'], 'id_salle' => $_POST['id_salle'], 'date_arrivee' => $_POST['date_arrivee'], 'date_depart' => $_POST['date_depart'], 'prix' => $_POST['prix'], 'etat' => $_POST['etat']));
 
@@ -119,7 +77,7 @@
         }
     //--------------------------- AFFICHAGE ------------------------------
 
-    require_once('../inc/haut.inc.php');
+    require_once('../inc/header.inc.php');
     echo $contenu;
 
     // 3- Formulaire  HTML
@@ -134,21 +92,28 @@
 
                 $produit_actuel= $resultat->fetch(PDO::FETCH_ASSOC); // pas de while car un seul produit
             }
+
+
+// $salle = executeRequete("SELECT * FROM salle");
 ?>
+
+
 
 <h3>Formulaire d'ajout ou de modification d'un produit</h3>
 <form method="post" enctype="multipart/form-data" action=""> <!-- "multipart/form-data" perùet d'uploader un fichier et de générer une superglobale $_FILES -->
 
-    <label for="date_a">Date d'arrivée</label><br>
+    <label for="date_arrivee">Date d'arrivée</label><br>
+    <input type="datetime" name="date_arrivee" id="date_arrivee">
 
 
-    <label for="date_d">Date de départ</label><br>
+    <label for="date_depart">Date de départ</label><br>
+    <input type="datetime" name="date_depart" id="date_depart">
     
-    <label for="salle">Salle</label><br>
-    <select name="salle" id="salle"><br>
+    <label for="id_salle">Salle</label><br>
+    <select name="id_salle" id="id_salle"><br>
         <?php 
-        foreach ($categorie as $value) {
-            echo '<p>'.$value['id_produit'].'</p>';
+        foreach($salle as $value) {
+            echo '<p>'.$value.'</p>';
         } 
         ?>
     </select><br><br>
@@ -163,5 +128,5 @@
 <?php
         endif;
 
-    require_once('../inc/bas.inc.php');
+    require_once('../inc/footer.inc.php');
 ?>

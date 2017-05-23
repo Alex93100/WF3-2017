@@ -12,18 +12,18 @@
 
             // Boucle while qui parcourt l'objet $categorie_des_produits'
             while($cat = $categories_des_produits->fetch(PDO::FETCH_ASSOC)){
-                $contenu_gauche .= '<a href="?categorie='. $cat['categorie'] .'" class="list-group-item">'. $cat['categorie'] .'</a>';
+                $contenu_gauche .= '<a href="?categorie='. $cat['categories'] .'" class="list-group-item">'. $cat['categories'] .'</a>';
             }
         $contenu_gauche .= '</div>';
 
         // 2-Affichage des produits selon la catégorie choisie :
-        if(isset($_GET['categorie']) && $_GET['categorie'] != 'all'){
+        if(isset($_GET['categories']) && $_GET['categories'] != 'all'){
             // Si on choisi une catégorie autre que "all" :
-            $donnees = executeRequete("SELECT id_produit, reference, titre, photo, prix, description FROM produit WHERE categorie = :categorie",array(':categorie' => $_GET['categorie']));
+            $donnees = executeRequete("SELECT id_produit, id_salle, date_arrivee, date_depart, prix, etat FROM produit WHERE categories = :categories",array(':categories' => $_GET['categories']));
         }
         else{
             // Sinon si on a demandé toutes les catégories :
-            $donnees = executeRequete("SELECT id_produit, reference, titre, photo, prix, description FROM produit"); // Pas de clause WHERE car on veut toutes les catégorie
+            $donnees = executeRequete("SELECT id_produit, id_salle, date_arrivee, date_depart, prix, etat FROM produit"); // Pas de clause WHERE car on veut toutes les catégorie
         }
 
         while($produit = $donnees->fetch(PDO::FETCH_ASSOC)){
