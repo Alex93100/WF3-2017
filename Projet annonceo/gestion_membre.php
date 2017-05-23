@@ -12,8 +12,6 @@
 
     // 7- Suppression d'un membre
         if(isset($_GET['action']) && $_GET['action'] == 'suppression' && isset($_GET['id_membre'])){
-            // On sélectionne en base la photo pour pouvoir supprimer le fichier pjoto correspondant :
-            $resultat = executeRequete("SELECT id_membre FROM membre WHERE id_membre = :id_membre", array(':id_membre' => $_GET['id_membre']));
             $membre_a_supprimer = $resultat->fetch(PDO::FETCH_ASSOC); // pas de while car qu'un seul membre
 
             // Puis suppression du membre en BDD :
@@ -45,7 +43,7 @@
             // Si $_GET contient affichage ou que l'on arrive sur l apage la 1ere fois ($_GET['action'] n'existe pas)
             $resultat = executeRequete("SELECT * FROM produit"); // On sélectionne tous les produits
 
-            $contenu .= '<h3>Affichage des produits</h3>';
+            $contenu .= '<h3>Affichage des membres</h3>';
             $contenu .= '<p>Nombre de membre(s) inscrit :'. $resultat->rowCount() . '</p>';
 
             $contenu .= '<table class="table">';
@@ -120,7 +118,7 @@
     <label>Civilité</label><br>
     <select name="civilite">
         <option value="m" selected>Homme</option>
-        <option value="f" <?php if(isset($produit_actuel['civilite'])&& $produit_actuel['civilite'] == 'f') echo 'selected'; ?>>Femme</option>
+        <option value="f" <?php if(isset($membre_actuelle['civilite'])&& $membre_actuelle['civilite'] == 'f') echo 'selected'; ?>>Femme</option>
     </select><br><br>
 
     <input type="submit" value="enregister" class="btn"><br><br>
