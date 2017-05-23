@@ -49,7 +49,7 @@
             if(!empty($_FILES['photo']['name'])){ // Si une image a été uploadée, $_FILES est remplie
 
                 // On constitue un nom unique pour le fichier photo :
-                $nom_photo = $_POST['reference'] . '_' . $_FILES['photo']['name'];
+                $nom_photo = $_POST['id_salle'] . '_' . $_FILES['photo']['name'];
 
                 // On constitue le chemin de la photo enregistré en BDD :
                 $photo_bdd = RACINE_SITE . 'photo/' . $nom_photo; // On obtient ici le nom et le chemin de la photo depuis la racine du site
@@ -65,7 +65,7 @@
             }
    
             // 4- Suite de l'enregistrement en BDD :
-            executeRequete("REPLACE INTO produit (id_produit, reference, categorie, titre, description, couleur, taille, public, photo, prix, stock)VALUES(:id_produit, :reference, :categorie, :titre, :description, :couleur, :taille, :public, :photo_bdd, :prix, :stock)", array('id_produit' => $_POST['id_produit'], 'reference' => $_POST['reference'], 'categorie' => $_POST['categorie'], 'titre' => $_POST['titre'], 'description' => $_POST['description'], 'couleur' => $_POST['couleur'], 'taille' => $_POST['taille'], 'public' => $_POST['public'], ':photo_bdd' => $photo_bdd, 'prix' => $_POST['prix'], 'stock' => $_POST['stock']));
+            executeRequete("REPLACE INTO produit (id_produit, id_salle, date_arrivee, date_depart, prix, etat)VALUES(:id_produit, :id_salle, :date_arrivee, :date_depart, :prix, :etat)", array('id_produit' => $_POST['id_produit'], 'id_salle' => $_POST['id_salle'], 'date_arrivee' => $_POST['date_arrivee'], 'date_depart' => $_POST['date_depart'], 'prix' => $_POST['prix'], 'etat' => $_POST['etat']));
 
             $contenu .='<div class="bg-success">Le produit a été enregistré</div>';
             $_GET['action'] = 'affichage'; // On met la valeur 'affichage' dans $_GET['action'] pour affcher automatiquement la table HTML des produits plus loin dans le script (point 6)
