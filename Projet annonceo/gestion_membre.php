@@ -1,6 +1,6 @@
 <?php
 
-    require_once('../inc/init.inc.php');
+    require_once('inc/init.inc.php');
 
     //--------------------------- TRAITEMENT ------------------------------
     
@@ -79,7 +79,7 @@
         }
     //--------------------------- AFFICHAGE ------------------------------
 
-    require_once('../inc/header.inc.php');
+    require_once('inc/header.inc.php');
     echo $contenu;
 
     // 3- Formulaire  HTML
@@ -127,5 +127,5 @@
 <?php
         endif;
 
-    require_once('../inc/footer.inc.php');
+    require_once('inc/footer.inc.php');
 ?>
