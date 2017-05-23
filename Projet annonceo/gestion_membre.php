@@ -46,7 +46,7 @@
             $resultat = executeRequete("SELECT * FROM produit"); // On sélectionne tous les produits
 
             $contenu .= '<h3>Affichage des produits</h3>';
-            $contenu .= '<p>Nombre de produit(s) dans la boutique :'. $resultat->rowCount() . '</p>';
+            $contenu .= '<p>Nombre de membre(s) inscrit :'. $resultat->rowCount() . '</p>';
 
             $contenu .= '<table class="table">';
                 // La ligne des entêtes

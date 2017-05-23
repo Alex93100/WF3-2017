@@ -138,28 +138,61 @@
 
 <h3>Formulaire d'ajout ou de modification d'un produit</h3>
 <form method="post" enctype="multipart/form-data" action=""> <!-- "multipart/form-data" perùet d'uploader un fichier et de générer une superglobale $_FILES -->
-
-    <label for="date_a">Date d'arrivée</label><br>
-
-
-    <label for="date_d">Date de départ</label><br>
+    <input type="hidden" id="id_produit" name="id_produit" value="<?php echo $produit_actuel['id_produit']?? 0;?>"> <!-- champ caché qui récetionne l'id_produit nécessaire lors de la modification d'un produit existant -->
     
-    <label for="salle">Salle</label><br>
-    <select name="salle" id="salle"><br>
-        <?php 
-        foreach ($categorie as $value) {
-            echo '<p>'.$value['id_produit'].'</p>';
-        } 
-        ?>
+    <label for="reference">Référence</label><br>
+    <input type="text" id="reference" name="reference" value="<?php echo $produit_actuel['reference']?? '';?>"><br><br>
+
+    <label for="categorie">Catégorie</label><br>
+    <input type="text" id="categorie" name="categorie" value="<?php echo $produit_actuel['categorie']?? '';?>"><br><br>
+
+    <label for="titre">Titre</label><br>
+    <input type="text" id="titre" name="titre" value="<?php echo $produit_actuel['titre']?? '';?>"><br><br>
+
+    <label for="description">Description</label><br>
+    <textarea id="description" name="description"><?php echo $produit_actuel['description']?? '';?></textarea><br><br>
+
+    <label for="couleur">Couleur</label><br>
+    <input type="text" id="couleur" name="couleur" value="<?php echo $produit_actuel['couleur']?? '';?>"><br><br>
+
+    <label>Taille</label><br>
+    <select name="taille">
+        <option value="S" selected>S</option>
+        <option value="M" <?php if(isset($produit_actuel['taille'])&& $produit_actuel['taille'] == 'M') echo 'selected'; ?>>M</option>
+        <option value="L" <?php if(isset($produit_actuel['taille'])&& $produit_actuel['taille'] == 'L') echo 'selected'; ?>>L</option>
+        <option value="XL" <?php if(isset($produit_actuel['taille'])&& $produit_actuel['taille'] == 'XL') echo 'selected'; ?>>XL</option>
     </select><br><br>
+
+    <label>Public</label><br>
+    <input type="radio" name="public" value="m" checked>Homme
+    <input type="radio" name="public" value="f" <?php if(isset($produit_actuel['public'])&& $produit_actuel['public'] == 'f') echo 'checked'; ?>>Femme
+    <input type="radio" name="public" value="mixte" <?php if(isset($produit_actuel['public'])&& $produit_actuel['public'] == 'mixte') echo 'checked'; ?>>Mixte<br><br>
+
+    <label for="photo">Photo</label><br><br>
+    <input type="file" id="photo" name="photo"><br><br> <!-- Coupler avec l'attribut enctype="multipart/form-data" de la balise <form>, le type 'file' permet d'uploader un fichier (ici une photo) -->
+
+    <!-- 9- Modification de la photo  -->
+    <?php 
+        if(isset($produit_actuel['photo'])){
+            echo '<i>Vous pouvez uploader une nouvelle photo</i><br>';
+            // Afficher la photo actuelle :
+            echo '<img src="' . $produit_actuel['photo'] . '" width="90" height="90"><br>';
+            // Mettre le chemin de la photo dans un champ caché pour l'enregistrer en base :
+            echo '<input type="hidden" name="photo_actuelle" value="' . $produit_actuel['photo'] . '">';
+            // Ce champ renseigne le $_POST['photo_actuelle'] qui va en base quand on soumet le formulaire de modification. 
+            // Si on ne remplit pas le formulaire ici, le champ photo de la base est remplacé par un vide,ce qui efface le chemin de la photo
+        }
+    ?>
 
     <label for="prix">Prix</label><br>
     <input type="text" id="prix" name="prix" value="<?php echo $produit_actuel['prix']?? 0;?>"><br><br>
 
-    <input type="submit" value="enregistrer" class="btn"><br><br>
+    <label for="stock">Stock</label><br>
+    <input type="text" id="stock" name="stock" value="<?php echo $produit_actuel['stock']?? 0;?>"><br><br>
+
+    <input type="submit" value="valider" class="btn"><br><br>
 
 </form>
-
 <?php
         endif;
 
