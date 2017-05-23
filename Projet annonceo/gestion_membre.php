@@ -41,7 +41,7 @@
     // 6- Affichage des produits dans le back-office :
         if(isset($_GET['action']) && $_GET['action'] == 'affichage' || !isset($_GET['action'])) {
             // Si $_GET contient affichage ou que l'on arrive sur l apage la 1ere fois ($_GET['action'] n'existe pas)
-            $resultat = executeRequete("SELECT * FROM produit"); // On sélectionne tous les produits
+            $resultat = executeRequete("SELECT * FROM membre"); // On sélectionne tous les produits
 
             $contenu .= '<h3>Affichage des membres</h3>';
             $contenu .= '<p>Nombre de membre(s) inscrit :'. $resultat->rowCount() . '</p>';
