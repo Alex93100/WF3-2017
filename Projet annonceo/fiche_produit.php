@@ -12,7 +12,7 @@
         $resultat = executeRequete("SELECT * FROM salle INNER JOIN produit ON s.id_salle = p.id_salle WHERE id_salle = :id_salle", array(':id_salle'=> $_GET['id_salle']));
         
         if($resultat->rowCount() <= 0){
-            header('location:sallea.php'); // Si il n'y a pas de résultat dans la requete, c'est que le produit n'existe pas: on oriente alors vers la sallea
+            header('location:sallea.php'); // Si il n'y a pas de résultat dans la requete, c'est que le produit n'existe pas: on oriente alors vers la fiche_produit
             exit();
         }
 
@@ -48,29 +48,29 @@
 
         // 3- Affichage du formulaire d'ajout au panier si stock > 0 :
         $contenu .= '<div class"col-md-4">';
-            if($produit['stock'] > 0){
-                // Si il y a du stock, on met le bouton d'ajout au panier
-                $contenu .='<form method="post" action="panier.php">
-                                <input type="hidden" name="id_produit" value="'. $produit['id_produit'] .'">
-                                <select name="quantite" id="quantite" class="form-group-sm form-control-static">';
-                                for($i = 1; $i <= $produit['stock'] && $i <= 5; $i++){
-                                    $contenu .= "<option>$i</option>";
-                                }
-                                $contenu .='</select>
-                                <input type="submit" name="ajout_panier" value="Ajouter au panier" class="btn">
-                            </form>';
-            }
-            else{
-                $contenu .= '<p>Rupture de stock</p>';
-            }
+            // if($produit['stock'] > 0){
+            //     // Si il y a du stock, on met le bouton d'ajout au panier
+            //     $contenu .='<form method="post" action="panier.php">
+            //                     <input type="hidden" name="id_produit" value="'. $produit['id_produit'] .'">
+            //                     <select name="quantite" id="quantite" class="form-group-sm form-control-static">';
+            //                     for($i = 1; $i <= $produit['stock'] && $i <= 5; $i++){
+            //                         $contenu .= "<option>$i</option>";
+            //                     }
+            //                     $contenu .='</select>
+            //                     <input type="submit" name="ajout_panier" value="Ajouter au panier" class="btn">
+            //                 </form>';
+            // }
+            // else{
+            //     $contenu .= '<p>Rupture de stock</p>';
+            // }
 
-            // 4- Lien retour vers la sallea :
+            // 4- Lien retour vers la fiche_produit :
             $contenu .= '<p><a href="sallea.php?categorie='. $produit['categorie'] .'">Retour vers votre sélection</a></p>';
         $contenu .= '</div>';
     }
     else{
         // Si l'indice id_produit n'est pas dans l'URL
-        header('location:sallea.php'); // On le redirige vers la sallea
+        header('location:sallea.php'); // On le redirige vers la fiche_produit
         exit();
     }
 
