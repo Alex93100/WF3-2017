@@ -4,22 +4,22 @@
     //--------------------------- TRAITEMENT --------------------------------
 
         // 1- Affichage des catégories de vêtements :
-        $categories_des_salles = executeRequete("SELECT DISTINCT categorie FROM salle");
+        $categories_des_salles = executeRequete("SELECT DISTINCT categories FROM salle");
 
         $contenu_gauche .= '<p class="lead">Vêtements</p>';
         $contenu_gauche .= '<div class="list-group">';
-            $contenu_gauche .= '<a href="?categorie=all" class="list-group-item">Toutes les catégories</a>';
+            $contenu_gauche .= '<a href="?categories=all" class="list-group-item">Toutes les catégories</a>';
 
-            // Boucle while qui parcourt l'objet $categorie_des_salles'
+            // Boucle while qui parcourt l'objet $categories_des_salles'
             while($cat = $categories_des_salles->fetch(PDO::FETCH_ASSOC)){
-                $contenu_gauche .= '<a href="?categorie='. $cat['categorie'] .'" class="list-group-item">'. $cat['categorie'] .'</a>';
+                $contenu_gauche .= '<a href="?categories='. $cat['categories'] .'" class="list-group-item">'. $cat['categories'] .'</a>';
             }
         $contenu_gauche .= '</div>';
 
         // 2-Affichage des salles selon la catégorie choisie :
-        if(isset($_GET['categorie']) && $_GET['categorie'] != 'all'){
+        if(isset($_GET['categories']) && $_GET['categories'] != 'all'){
             // Si on choisi une catégorie autre que "all" :
-            $donnees = executeRequete("SELECT * FROM salle WHERE categorie = :categorie",array(':categorie' => $_GET['categorie']));
+            $donnees = executeRequete("SELECT * FROM salle WHERE categories = :categories",array(':categories' => $_GET['categories']));
         }
         else{
             // Sinon si on a demandé toutes les catégories :
