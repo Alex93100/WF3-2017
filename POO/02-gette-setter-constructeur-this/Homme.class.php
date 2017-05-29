@@ -40,3 +40,21 @@ echo 'Prénom : '. $homme-> getPrenom() . '<br>';
 
 $homme->setNom('Rodrigues');
 echo 'Nom : '. $homme-> getNom();
+
+
+/*
+Commentaires :
+    Pourquoi faire des getters et des setters ?
+        - Le PHP est un langage qui ne type pas ses variables.
+          Il faut systélatiquement controler l'intégrité des données renseignées.
+        
+        - Donc utiliser la visibilité PRIVATE est une très bonne contrainte.
+          Tout dev' devra OBLIGATOIREMENT passer par le setter pour affecter une valeur,  et donc par les contrôles !
+    
+    Setter : Affecter une valeur
+    Getter : Récupérer une valeur
+    On aura autant de getter et setter que de propriétés private
+
+    $this représente à l'intérieur de la classe l'objet en cours de manipulation.
+
+*/ 
