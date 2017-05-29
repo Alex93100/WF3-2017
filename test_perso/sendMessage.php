@@ -1,5 +1,4 @@
 <?php
- 
 //-------------------- TRAITEMENT ---------------------- 
  
     //Traitement du POST :
