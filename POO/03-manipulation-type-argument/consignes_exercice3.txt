@@ -1,0 +1,16 @@
+/*
+CONSIGNES : 
+
+1- Création d'un véhicule
+2- Attribuer un nombre de litre d'essence au véhicule (5L)
+3- Afficher le nombre de litre d'essence dans le véhicule
+4- La capacité max du réservoir du véhicule est de 50L (50)
+5- creation d'une pompe
+6- Attribuer un nombre de litre d'essence é la pompe (800L)
+7- Afficher le nombre de litre d'essence dans la pompe
+8- La pompe donne de l'essence au véhicule et fait le plein
+9- Afficher le nombre de litre d'essence dans le véhicule aprés ravitaillement
+10- Afficher le nombre de litre d'essence dans la pompe aprés ravitaillement
+
+!! Le véhicule ne peut pas recevoir plus que la capacité max de son réservoir !! 
+*/

@@ -30,7 +30,7 @@ $(document).ready(function(){
         Formulaire Page Contacts
     */ 
         // Créer une fonction pour la gestion du formulaire
-        function contactForm(){
+       function contactForm(){
             
             // Capter le focus sur les inputs et le textarea
             $('input:not([type="submit"]), textarea').focus(function(){
@@ -249,7 +249,7 @@ $(document).ready(function(){
                             if(viewToLoad == 'contacts.html'){
                                 // Appeler la fonction pour la gestion du formulaire
                                 contactForm();
-                            };                          
+                            };                     
                         });
                     });
                 });
