@@ -25,3 +25,8 @@
 
 //  $singleton = new Singleton; // IMPOSSIBLE d'instancier notre classe.
 $objet = Singleton::getInstance(); //$objet est le seul et unique objet de cette classe Singleton !!!
+
+/*
+Le singleton est notamment utilisé pour la connexion à la base de données ! Cela est  plus sur !
+
+*/ 
