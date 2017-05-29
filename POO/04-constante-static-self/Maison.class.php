@@ -57,4 +57,8 @@ commentaires :
                 Suis-je à l'intérieur de la classe ?
                     Si oui : $this->
                     Si non : $objet->
+
+    Statitc, signifie qu'un élément appartient à la classe. Pour y accéder il faut l'appeler par la classe (Class:: ou self::).
+
+    const signifie qu'un élément appartient à la classe et ne sera jamais modifiable.
 */ 
