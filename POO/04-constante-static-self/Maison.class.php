@@ -45,4 +45,16 @@ commentaires :
         - $this->      : élément d'un objet à l'intérieur de la classe
         - Class::      : élément d'une class à l'extérieur de la classe
         - self::       : élément d'une class à l'intérieur de la classe
+
+    2 questions à se poser :
+        - est-ce que c'est static ?
+            - Si oui :
+                Suis-je à l'intérieur de la classe ?
+                    Si oui : self::
+                    Si non : Class::
+
+            - Si non :
+                Suis-je à l'intérieur de la classe ?
+                    Si oui : $this->
+                    Si non : $objet->
 */ 
