@@ -24,3 +24,4 @@
  }
 
 //  $singleton = new Singleton; // IMPOSSIBLE d'instancier notre classe.
+$objet = Singleton::getInstance(); //$objet est le seul et unique objet de cette classe Singleton !!!
