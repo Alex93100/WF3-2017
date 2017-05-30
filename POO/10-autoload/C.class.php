@@ -6,6 +6,6 @@
 class C{
 
     public function __construct(){
-        echo 'Instanciation de Cs !<hr>';
+        echo 'Instanciation de C !<hr>';
     }
 }
