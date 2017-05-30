@@ -37,6 +37,7 @@ echo $admin->accesBackOffice() .'<br>';
 
 /*
 Commentaires :
+
     Dans notre site, un Admin est avant tout un membre, avec quelques fonctionnalités supplémentaires(acces backOffice, suppression de membre etc.)
     Il est donc naturel que la classse Admin soit héritière (extends) de la classe Membre et qu'on ne ré-écrive pas tout le code.
 */ 
