@@ -48,7 +48,6 @@ $cat = new Chat;
 echo $cat->manger().'<br>';
 echo $cat->quiSuisJe().'<br>';
 
-
 /*
 Commentaires :
 
