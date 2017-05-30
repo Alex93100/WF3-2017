@@ -37,3 +37,13 @@ echo $c->testB().'<br>'; // Méthode de B accessible par C (héritage direct)
 echo $c->testC().'<br>'; // Méthode de C accessible par C
 
 var_dump(het_class_methods($c)); // Affiche les 3 méthodes, car elles appartiennent toutes à C
+
+/*
+Commentaires :
+
+    Transitivité: 
+        Si B hérite de A
+            Et que C hérite de B ...
+                ... alors C hérite de A
+        Les méthodes protected de A sont également disponibles dans C, m^éme si l'héritage est indirect.
+*/ 
