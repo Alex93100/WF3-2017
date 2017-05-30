@@ -5,7 +5,7 @@ $contenu = '';
 	//Traitement du POST :;
 
 		if(!empty($_POST)){ // si le formulaire est posté;
-
+		print_r($_POST);
 			// validation du formulaire :;
 				if(strlen($_POST['name']) < 4 || strlen($_POST['name']) > 40){
 					$contenu .= '<div>Le nom doit contenir au moins 4 caractères</div>';
@@ -52,4 +52,6 @@ $contenu = '';
 					}
 				}
 		}
+
+echo $contenu; 
 ?>
