@@ -27,7 +27,6 @@ class Application2{
 
 class Extension2 extends Application2{ // OK, Application2 n'est pas final donc on peut en hériter
     public function run2(){}// ERREUR ! IMPOSSIBE de redéfinir ni de surcharger une méthode final.
-
 }
 
 /*
