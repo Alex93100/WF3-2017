@@ -46,4 +46,12 @@ Commentaires :
             Et que C hérite de B ...
                 ... alors C hérite de A
         Les méthodes protected de A sont également disponibles dans C, m^éme si l'héritage est indirect.
-*/ 
+
+    L'héritage est :
+        - non reflexif: class D extends D : Une classe ne peut pas hériter d'elle-même.
+        - non syméttique : Si class F extends E, alors E n'est pas extends de F automatiquement.
+        - Sans cycle : Si class F extends E, alors il est impossible que E extends F.
+        - non multiple : Class N extends M, P : IMPOSSIBLE en PHP. Pas d'héritage multiplee en PHP !!!
+
+        Une classe parent peut avoir un nombre infini d'héritiers.
+*/
