@@ -1,0 +1,39 @@
+      <h2>Contactez-moi</h2>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Natus laudantium possimus ipsum tenetur ex libero, nobis nihil perferendis architecto nemo aperiam eum numquam ea voluptas aliquid laboriosam, consequatur magni voluptate.</p>
+
+        <form method="post" action="sendMessage.php">
+            <article>
+                <label for="userName">Votre nom <b></b> </label>
+                <input type="text" id="userName" name="name">
+            </article>
+
+            <article>
+                <label for="userEmail">Votre Email <b></b> </label>
+                <input type="email" id="userEmail" name="email">
+            </article>
+
+            <article>
+                <label for="userSubject">Choisir un sujet <b></b> </label>
+
+                <select id="userSubject" name="subject">
+                    <option value="contact">Prise de contact</option>
+                    <option value="rdv">Prise de rendez-vous</option>
+                </select>
+
+            </article>
+
+            <article>
+                <label for="userMessage">Votre Message <b></b> </label>
+                <textarea  id="userMessage" name="message"></textarea>
+            </article>
+
+                <input type="submit" value="Envoyer">
+        </form>
+
+        <!-- Modal pour remercier l'utilisateur' -->
+        <!--<section id="modal">-->
+            <!--<article>-->
+                <!--<h2>Merci <span></span> ! <i class="fa fa-times"></i></h2>-->
+                <!--<p>Nous vous recontacterons dans les plus brefs délais</p>-->
+            <!--</article>-->
+        <!--</section>-->

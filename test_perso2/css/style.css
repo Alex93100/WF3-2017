@@ -1,0 +1,490 @@
+/*
+IMPORT
+*/
+    /*Font awesome*/
+    @import url(https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css);
+
+    /*style caracteres*/
+    @import url(https://fonts.googleapis.com/css?family=Asap:400,700|Lobster);
+
+/************************************************************************/
+
+/*
+Style Reset
+*/
+
+    *{
+        margin: 0;
+        padding: 0;
+        -webkit-box-sizing: border-box;
+        box-sizing: border-box;
+    }
+
+    html{
+
+        font-size: 62.5%
+    }
+
+    body{
+        background: #eee;
+        color: snow;
+        text-align: center;
+        font-size: 2rem;
+        font-weight: 400;        
+        font-family: 'Asap', sans-serif;        
+    }
+
+    ul{
+        list-style: none;
+    }
+
+    a, header li{
+        color: pink;
+        text-decoration: none;
+
+        -webkit-transition: all .5s;
+        transition: all .5s;
+    }
+
+    h1, h2, h3{
+        font-weight: 400;
+        font-family: 'Lobster', cursive;
+        letter-spacing: 0.1rem;
+        padding-bottom:2rem;   
+    }
+
+
+    h1 span{
+        font-weight: 400;
+        font-family: 'Asap', sans-serif;
+        font-size: .4em;                        
+        display: block;
+        letter-spacing: 0;
+    }
+
+    p{
+        font-size: 1.5rem;
+    }
+
+    img{
+        max-width: 100%;
+        margin-top: 1rem;
+    }
+
+    aside{
+        font-size: 1.5rem;
+    }
+
+/***********************************************************************/
+
+/*
+Style Header
+*/
+
+    header{
+        background: #272525;
+        padding: 2rem;
+        position: relative;
+    }
+
+    nav{
+        display: none;
+    }
+
+    .aboutPage nav{
+        position: fixed;
+        z-index: 10000;
+        top: 0;
+        left: -100%;
+        height: 100%;
+        width: 20rem;
+        padding: 2rem;
+        display: block;
+        background: slategray;
+    }
+
+    header > a{
+        /* La balise A qui est enfant direct du header */
+        background: snow;
+        width: 3.4rem;
+        height: 3.4rem;
+        border: .2rem solid pink;
+        padding-top: 0.3rem;        
+        display: inline-block;
+        z-index: 10000;
+        
+        position: absolute;
+        left: 50%;
+        top: 100%;
+
+        -webkit-transform: translate(-50%, -50%);        
+        transform: translate(-50%, -50%);
+
+        -webkit-border-radius: 50%;
+        border-radius: 50%;
+    }
+
+    /* Afficher la nav au survol de la balise a du header */
+
+    header > a:hover{
+        background: rgb(156, 60, 150);
+        -webkit-transition: all .5s;
+        transition: all .5s;
+        border-radius: 1rem ;        
+    }
+
+    header li{
+        font-weight: 700;
+        background: rgba(0, 191, 255, .7);
+        padding: 1rem;
+        margin-bottom: 1rem;
+        border-radius: 1rem ;    
+    }
+
+    header li:hover{
+        background: rgba(156, 60, 150, .7);
+        border-radius: 1rem ;            
+    }
+
+/***********************************************************************/
+
+/*
+Style Main
+*/
+
+    main{
+        background: #eee;
+        color: black;
+        padding: 4rem 2rem 12rem 2rem;
+    }
+
+    /*****************************************************/
+
+        /* Style About */
+            [src='img/profil.jpg']{
+                width: 20rem;
+                margin-bottom: 2rem;
+                border: .4rem solid cadetblue;
+
+                -webkit-box-shadow: 0 0 1.5rem rgba(0,0,0,0.6);
+                box-shadow: 0 0 1.5rem rgba(0,0,0,0.6);
+
+                -webkit-border-radius: 50%;
+                border-radius: 50%;
+            }
+
+            [src='img/profil.jpg'] + p{
+                margin-bottom: 2rem;
+            }
+
+            /* La balise ul qui est placé juste apres h3 */
+            h3 + ul{
+                text-align: left;
+                margin: 2rem auto;
+            }
+
+            /* Toutes les balises li qui suivent une balise h3 */
+            h3 + ul li{
+                background:dodgerblue;
+                margin-bottom: 1rem;
+                padding: .2rem;
+                position: relative;
+                border-radius: 2rem ;
+                /*text-align: center;*/
+            }
+
+            h3 + ul p{
+                background: deepskyblue;
+                padding: 1rem;
+                min-height: 3.5rem;
+                border-radius:2rem ;                                  
+
+                /* Pour l'animation */
+                width: 0;
+            }
+
+            h3 + ul span{
+                position: absolute;
+            }
+
+            main a{
+                color: cadetblue;
+            }
+
+            
+
+    /*****************************************************/
+    
+    
+        /* Style Portfolio */
+
+            figure{
+                position: relative;
+            }
+
+            figcaption{
+                position: absolute;
+                width: 20rem;
+                background: rgba(255, 192, 203, .7);
+                padding: 2rem;
+                top: 50%;
+                left: 50%;
+
+                -webkit-transform: translate(-50%, -50%);
+                transform: translate(-50%, -50%);
+
+                -webkit-border-top-left-radius:1rem; 
+                border-top-left-radius:1rem; 
+            }
+
+            figcaption button{
+                position: absolute;
+                left: 0;
+                top: 100%;
+                width: 100%;
+                border: 0;
+                padding: 1rem;
+
+                -webkit-border-bottom-right-radius:1rem; 
+                border-bottom-right-radius:1rem;
+            }
+
+            #modal{
+                position: fixed;
+                z-index: 100000000;
+                top: 0;
+                left: 0;
+                background: rgba(0,0,0,0.7);
+                width: 100%;
+                height: 100%;
+                color: dodgerblue;
+
+                /* Pour l'animation */
+                display: none;
+            }
+
+            #modal article{              
+                width: 50rem;
+                margin: 5rem auto;
+                padding: 2rem;
+                text-align: left;
+            }
+
+            #modal i.fa.fa-times{              
+                position: relative;
+                left: 71%;
+            }
+
+            #modal2{
+                position: fixed;
+                z-index: 100000000;
+                top: 0;
+                left: 0;
+                background: rgba(0,0,0,0.7);
+                width: 100%;
+                height: 100%;
+                color: dodgerblue;
+
+                /* Pour l'animation */
+                display: none;
+            }
+
+            #modal2 article{              
+                width: 78%;
+                margin: 2rem auto;
+                padding: 2rem;
+            }
+
+            #modal2 i.fa.fa-times {
+                position: relative;
+                left: 40%;
+            }
+
+    /*****************************************************/
+
+        /* Style Contacts */
+
+            form{
+                text-align: left;
+                margin: 2rem auto;
+            }
+
+            select{
+                margin: 1rem auto 2rem auto;
+            }
+
+            textarea{
+                min-height: 20rem;
+            }
+
+            textarea, input, label{
+                display: block;
+                width: 100%;
+                border: none;
+                padding: 1rem;
+            }
+
+            textarea, input:not([type="submit"]){
+                /*border-bottom: .1rem solid #272525;*/
+                border-bottom: .2rem solid dodgerblue;                
+                margin-bottom: 2rem;         
+            }
+
+            form article{
+                position: relative;
+            }
+            
+            label{
+                padding: 0;
+                font-weight: 700;
+                -webkit-transition: all .5s;              
+                transition: all .5s;              
+            }
+
+            label:not([for="userSubject"]){
+                position: absolute;
+                top: .5rem;
+            }
+            
+            label.openedLabel{
+                top: -1.5rem;
+                font-size: 1.2rem;
+                color: grey;
+            }
+            form b{
+                font-size: 1rem;
+                text-transform: uppercase;
+                color: red;
+                -webkit-transition: all .5s;
+                transition: all .5s;
+            }
+
+            .hideError b{
+                opacity: 0;
+            }
+
+            [type="submit"]{
+                color: pink;
+                background: #272525;
+            }
+
+
+
+
+
+/*************************************************************************/
+
+/*
+Style Footer
+*/
+
+    footer{
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        background: #272525;
+        padding: 1rem;
+        z-index: 2;
+    }
+
+    /* Toute les balises li du footer sauf la dernière */
+    footer li:not(:last-child){
+        display: inline-block;
+        margin-bottom:1rem; 
+    }
+
+    i.fa.fa-linkedin {
+        padding-right: 5rem;
+    }
+
+    i.fa.fa-github {
+        padding-right: 5rem;
+    }
+
+/************************************/
+
+/*
+Requetes Media
+*/
+
+    /* Ecran d'une tailleminimal de 400px */
+        @media screen and (min-width: 400px){
+
+            /* Style portfolio */
+                .imgSection article{
+
+                    /*passer en 2 colones*/
+                    display: inline-block;
+                    width: 49%;
+                    padding: 0 1rem 0 0;
+                }
+
+                .imgSection main a {
+                
+                    top: -5rem;
+                }
+        }
+
+    /* Ecran d'une tailleminimal de 750px */
+        @media screen and (min-width: 750px){
+
+            /* Style header */
+
+                /* Masquer le burger */
+                header > a{
+                    display: none;
+                }
+                /* afficher la nav */
+                nav{
+                    display: block !important;
+                }
+
+                /* Aligner les item de la nav */
+                nav li{
+                    display: inline-block;
+                }
+
+            /* Style reset */
+                main, h1, nav{
+                    max-width: 85rem;
+                    margin: auto;
+                }
+                
+                h1{
+                    font-size:4rem;
+                }
+
+                h1 span{
+                    display: initial;
+                }
+
+            /* Style header */
+                header{
+                    text-align: left;
+                    text-indent: 1rem;
+                }
+
+                /* Masquer le burger */
+                header > a{
+                    display: none;
+                }
+                /* afficher la nav */
+                nav{
+                     display: block;
+                }
+                        
+                /* Aligner les item de la nav */
+                nav li{
+                     display: inline-block;
+                     text-indent: 0;
+                }
+            /* Style main */
+                main{
+                    padding: 4rem 0 10rem 0;
+                }
+            /* Style contacts */
+                iframe{
+                    padding: 2rem 2rem;
+                }
+        }
