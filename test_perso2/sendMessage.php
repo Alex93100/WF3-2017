@@ -5,7 +5,10 @@ $contenu = '';
 	//Traitement du POST :;
 
 		if(!empty($_POST)){ // si le formulaire est posté;
+		echo '<pre>';
 		print_r($_POST);
+		echo '</pre>';
+		
 			// validation du formulaire :;
 				if(strlen($_POST['name']) < 4 || strlen($_POST['name']) > 40){
 					$contenu .= '<div>Le nom doit contenir au moins 4 caractères</div>';
@@ -14,7 +17,7 @@ $contenu = '';
 					true;
 				}
 
-				if (!filter_var($_POST['email'], FILTER_VALIDATE_EMAIL)){
+				if (filter_var($_POST['email'], FILTER_VALIDATE_EMAIL)){
 					$contenu .= '<div>L\'email est invalide</div>';                        
 				}
 				else{
