@@ -54,10 +54,11 @@ $contenu = '';
 						mail("rodrigues.alexandrepro@gmail.com", $_POST['subject'], $_POST['message'], $_POST['email']); // la fonction mail() reçoit toujours 4 ARGUMENTS et l'ordre à une importance cruciale. Comme dans la plupart des fonctions, il faut respecter le NOMBRE et l'ORDRE des arguments que l'on transmet.;
 					}
 				}
+				
+		}
+	echo $contenu; 
+		
 				unset($_POST['name']);
 				unset($_POST['message']);
 				unset($_POST['email']);
-		}
-
-echo $contenu; 
 ?>
