@@ -17,7 +17,7 @@ $contenu = '';
 					true;
 				}
 
-				if (filter_var($_POST['email'], FILTER_VALIDATE_EMAIL)){
+				if (!filter_var($_POST['email'], FILTER_VALIDATE_EMAIL)){
 					$contenu .= '<div>L\'email est invalide</div>';                        
 				}
 				else{
