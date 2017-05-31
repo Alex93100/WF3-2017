@@ -23,4 +23,8 @@ vendor/
     Attention : seuls les controller sont dans le dossier SRC, il faut donc préciser que si le namespace n'est pas 'Controller' alors les fichiers sont dans vendor.
     Autre subtilité: Le controller général (Controller\Controller) est également dans vendor.
 
+    Entity/
+        Produit.php, Membre.php, Commande.php
+        Classes qui contiennent toutes les propriétés (private) de nos entités et getters et les setters. POPO (Plain Old PHP Object)
+
         
