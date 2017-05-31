@@ -9,15 +9,16 @@ class Autiload{
 
         $tab = explode('\\', $nom_de_la_classe);
 
-        "0" => Controller
-        "1" => ProduitController
-
         if($tab[0] == 'Controller'){
             $path = __DIR__ . '/../src/' . implode ('/', $tab) . '.php';
         }
         else{
             $path = __DIR__ . '/' . implode ('/', $tab) . '.php';
         }
+        require $path;
+
+        echo '<pre>Autoload : ' . $nom_de_la_classe . '<br>';
+        echo '=> ' . $path . '</pre><hr>';
     }
 }
 

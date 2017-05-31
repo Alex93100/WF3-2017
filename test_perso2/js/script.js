@@ -104,7 +104,7 @@ $(document).ready(function(){
             $('form').submit(function(evt){
 
                 // Bloquer le comportement naturel du formulaire
-                // evt.preventDefault();
+                evt.preventDefault();
 
                 // Définir les variables globales du formulaire
                 var userName = $('#userName');
@@ -179,9 +179,7 @@ $(document).ready(function(){
                         $('label').removeClass();
                         
                 };
-
             });
-
         };
 
     // Charger le contenu de home.html dans le main
@@ -302,7 +300,7 @@ $(document).ready(function(){
 
                             if(viewToLoad == 'contacts.html'){
                                 // Appeler la fonction pour la gestion du formulaire
-                                contactForm();
+                                contactForm();                        
                             };                          
                         });
                     });

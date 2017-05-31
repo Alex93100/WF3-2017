@@ -20,5 +20,7 @@ app/
 vendor/
     autoload.php :
     Permet d'inclure les bons fichiers lors d'un 'new' (instanciation)
+    Attention : seuls les controller sont dans le dossier SRC, il faut donc préciser que si le namespace n'est pas 'Controller' alors les fichiers sont dans vendor.
+    Autre subtilité: Le controller général (Controller\Controller) est également dans vendor.
 
         
