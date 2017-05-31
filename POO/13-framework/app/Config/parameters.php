@@ -13,6 +13,6 @@ $parameters = array(
 
 // ----------------------------------
 
-echo '<pre>';
-print_r($parameters);
-echo '</pre>';
+// echo '<pre>';
+// print_r($parameters);
+// echo '</pre>';

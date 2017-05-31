@@ -17,3 +17,7 @@ class Config{
         // Cette méthode va retourner seulement la partie 'connect' de mes parametres
     }
 }
+// $config = new Config;
+// echo '<pre>';
+// print_r($config->getParametersConnect());
+// echo '</pre>';

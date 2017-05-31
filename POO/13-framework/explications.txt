@@ -15,6 +15,10 @@ app/
         Contient tout les informations de connexion à la BDD... et autres paramètres...
 
     Config.php:
-    
+    Contient l'inclusion des params de connexion à la BDD, et les retourne dans une méthode getParametersConnect()
+
+vendor/
+    autoload.php :
+    Permet d'inclure les bons fichiers lors d'un 'new' (instanciation)
 
         
