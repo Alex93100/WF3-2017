@@ -2,7 +2,7 @@
 
 //   namespace MYSILEX\Entity; // Nous sommes dans l'espace Entity qui va contenir toutes nos entités.
 
-  Class Membre {
+  class Membre {
 
     private $id_membre;
     private $pseudo;
