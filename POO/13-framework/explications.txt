@@ -27,4 +27,6 @@ vendor/
         Produit.php, Membre.php, Commande.php
         Classes qui contiennent toutes les propriétés (private) de nos entités et getters et les setters. POPO (Plain Old PHP Object)
 
-        
+web/
+    index.php :
+    Clé d'entrée de notre application (SILEX : index.php / Symfony app.php).

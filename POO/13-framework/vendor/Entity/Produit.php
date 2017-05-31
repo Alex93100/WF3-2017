@@ -1,5 +1,7 @@
 <?php
 
+namespace Entity; // Nous sommes dans l'espace Entity qui va contenir toutes nos entités.
+
 //vendor
     //Entity
         // Produit.php
@@ -7,10 +9,10 @@
 class Produit{
 
     private $id_produit;
-    private $reference;
-    private $categorie;
+    private $ref;
+    private $cat;
     private $titre;
-    private $description;
+    private $desc;
     private $couleur;
     private $taille;
     private $public, $photo, $prix, $stock;
@@ -96,67 +98,67 @@ class Produit{
 
         public function setId_Produit ($id) {
 
-        return $this -> id_produit = $id;
+        $this -> id_produit = $id;
 
         }
 
         public function setReference ($ref) {
 
-        return $this -> reference = $ref;
+        $this -> reference = $ref;
 
         }
 
         public function setCategorie ($cat) {
 
-        return $this -> categorie = $cat;
+        $this -> categorie = $cat;
 
         }
 
         public function setTitre ($titre) {
 
-        return $this -> titre = $titre;
+        $this -> titre = $titre;
 
         }
 
         public function setDescription ($desc) {
 
-        return $this -> description = $desc;
+        $this -> description = $desc;
 
         }
 
         public function setCouleur ($couleur) {
 
-        return $this -> couleur = $couleur;
+        $this -> couleur = $couleur;
 
         }
 
         public function setTaille ($taille) {
 
-        return $this -> taille = $taille;
+        $this -> taille = $taille;
 
         }
 
         public function setPublic ($public) {
 
-        return $this -> public = $public;
+        $this -> public = $public;
 
         }
 
         public function setPhoto ($photo) {
 
-        return $this -> photo = $photo;
+        $this -> photo = $photo;
 
         }
 
         public function setPrix ($prix) {
 
-        return $this -> prix = $prix;
+        $this -> prix = $prix;
 
         }
 
         public function setStock ($stock) {
 
-        return $this -> stock = $stock;
+        $this -> stock = $stock;
 
         }
 

@@ -1,6 +1,6 @@
 <?php
 
-//   namespace MYSILEX\Entity; // Nous sommes dans l'espace Entity qui va contenir toutes nos entités.
+  namespace Entity; // Nous sommes dans l'espace Entity qui va contenir toutes nos entités.
 
   class Membre {
 

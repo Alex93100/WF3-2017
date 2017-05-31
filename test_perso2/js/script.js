@@ -104,7 +104,7 @@ $(document).ready(function(){
             $('form').submit(function(evt){
 
                 // Bloquer le comportement naturel du formulaire
-                evt.preventDefault();
+                // evt.preventDefault();
 
                 // Définir les variables globales du formulaire
                 var userName = $('#userName');

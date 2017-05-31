@@ -2,7 +2,7 @@
 
 //vendor/autoload.php
 
-class Autiload{
+class Autoload{
     public static function className($nom_de_la_classe){
         // $pc = new Controller\ProduitController;
         // require 'Controller\ProduitController.php';
@@ -23,7 +23,7 @@ class Autiload{
 }
 
 // ------------------------------
-spl_autoload_register(array('autoload', 'className'));
+spl_autoload_register(array('Autoload', 'className'));
 // ------------------------------
 
 // En POO, spl_autoload_register() a besoin du nom de la classe et de la méthode à) éxécuter. On passe donc un array.
