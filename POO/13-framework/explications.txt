@@ -36,4 +36,7 @@ vendor/
         PDOManager.php
         Cette classe représente la connexion à la BDD. Elle contient et nous retourne notre objet PDO grâce auquel nous pourrons effectuer des requêtes.
         Cette classe est un Singleton (singlette). Cela signifie qu'il ne peut y avoir qu'un seul objet issu de cette classe.
-        
+
+        EntityRepository.php :
+        Un repository centralise tout ce qui touche à la bdd et la récuération des entités. Concrètement il ne doit pas y avoir de requête SQL ailleurs que dans un repository.
+        Si une entité à besoin de requêtes spécifique (exemple : jointure) dans ce cas les requêtes seront codées directement dans le repository en question.
