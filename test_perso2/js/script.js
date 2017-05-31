@@ -104,7 +104,7 @@ $(document).ready(function(){
             $('form').submit(function(evt){
 
                 // Bloquer le comportement naturel du formulaire
-                // evt.preventDefault();
+                evt.preventDefault();
 
                 // Définir les variables globales du formulaire
                 var userName = $('#userName');
@@ -162,6 +162,8 @@ $(document).ready(function(){
 
                     // Envoi des données dans le fichier de traitement PHP
                     // Php répond true => continuer le traitement du formulaire
+
+
 
                         // Ajouter la valeur de userName dans la balise h2 span de la modal
                         $('#modal span').text(userName.val());

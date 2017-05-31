@@ -30,3 +30,9 @@ vendor/
 web/
     index.php :
     Clé d'entrée de notre application (SILEX : index.php / Symfony app.php).
+
+vendor/
+    Manager/
+        PDOManager.php
+        Cette classe représente la connexion à la BDD. Elle contient et nous retourne notre objet PDO grâce auquel nous pourrons effectuer des requêtes.
+        Cette classe est un Singleton (singlette). Cela signifie qu'il ne peut y avoir qu'un seul objet issu de cette classe.
