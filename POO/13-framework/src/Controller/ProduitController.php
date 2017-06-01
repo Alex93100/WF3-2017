@@ -15,7 +15,13 @@ class ProduitController extends Controller{
 
         // $this->render();
 
-        require(__DIR__ .'/../View/Produit/boutique.php');
+        $params = array(
+            'produits' => $produits,
+            'categories' => $categories,
+            'title' => 'Bontique de mon site'
+        );
+
+        return $this->render('layout.html', 'boutique.html', $params);
     }
 
 
@@ -24,8 +30,13 @@ class ProduitController extends Controller{
         $suggestions = $this-> getRepository()-> getAllSuggestions($produits['categorie'], $produits['id_produit']);
 
         // $this->render();
-        require(__DIR__ .'/../View/Produit/fiche_produit.php');
-        
+
+        $params = array(
+            'produits' => $produits,
+            'suggestions' => $suggestions,
+            'title' => 'Fiche produit -'. $produit['title']
+        );
+        return $this->render('layout.html', 'fiche_produit.html', $params);        
 
     }
 
@@ -35,7 +46,13 @@ class ProduitController extends Controller{
 
         // $this->render();
 
-        require(__DIR__ . '/../View/Produit/categorie.php');
+        $params = array(
+            'produits' => $produits,
+            'categories' => $categories,
+            'title' => 'Catégorie -'. $categorie
+        );
+
+        return $this->render('layout.html', 'categorie.html', $params);
         
         
     }

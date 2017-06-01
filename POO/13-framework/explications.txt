@@ -58,3 +58,12 @@ vendor/
         Controller/
             ProduitController.php :
             Cette classe hérite du controleur général de l'application et permet de déclacher toutes les actions spécifique à l'entité produit.
+
+    View/
+        Produit/
+        fiche_produit.php, boutique.php, categorie.php
+
+
+        layout.html :
+        Le layout représente la page générale, le template de base.
+        Il peut y avoir plusieurs layout s'il y a plusieurs structures de pages dans notre application (home, contact, mentions légales, inscription...)

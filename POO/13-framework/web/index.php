@@ -18,10 +18,15 @@ if(isset($_GET['controller']) && !empty($_GET['controller']) && isset($_GET['act
                 $id = (int) $_GET['id'];
                 $a-> $action($id);
             }
+            elseif (isset($_GET['categorie'])) {
+                $cat = (string) $_GET['categorie'];
+                $a-> $action($cat);
+            }
             else{
                 $a-> $action();
             }
         }
+        // page 404
     }
 }
 else{

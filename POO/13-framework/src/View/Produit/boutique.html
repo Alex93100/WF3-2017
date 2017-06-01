@@ -49,7 +49,7 @@
 					<a href="?categorie=all" class="list-group-item" >Toutes les catégories</a>
 
 					<?php foreach($categories as $categorie) : ?>
-						<a href="" class="list-group-item"><?= $categorie['categorie'] ?></a>
+						<a href="?controller=produit&action=categorie&categorie=<?= $categorie['categorie'] ?>" class="list-group-item"><?= $categorie['categorie'] ?></a>
 					<?php endforeach;  ?>
 				</div>
 			</div>
