@@ -3,6 +3,34 @@
 session_start();
 require_once(__DIR__ . '/../vendor/autoload.php');
 
+if(isset($_GET['controller']) && !empty($_GET['controller']) && isset($_GET['action']) && !empty($_GET['action'])){
+
+    $controller = 'Controller\\' . ucfirst($_GET['controller']) . 'Controller';
+
+    if(file_exists(__DIR__ . '/../src/Controller/' . ucfirst($_GET['controller']). 'Controller.php')){
+
+        $a = new $controller;
+        $action = strtolower($_GET['action']);
+
+        if(method_exists($a, $action)){
+
+            if(isset($_GET['id'])){
+                $id = (int) $_GET['id'];
+                $a-> $action($id);
+            }
+            else{
+                $a-> $action();
+            }
+        }
+    }
+}
+else{
+    $a = new Controller\ProduitController;
+    $a->afficheAll();
+    
+}
+
+
 // TEST 1 : Entity Produit
 // $produit = new Entity\Produit;
 // $produit-> setTitre('Mon produit');
@@ -61,8 +89,8 @@ require_once(__DIR__ . '/../vendor/autoload.php');
 
 
 // TEST 5 : ProduitController
-$pc = new Controller\ProduitController;
+// $pc = new Controller\ProduitController;
 
 // $pc->afficheAll();
 // $pc->affiche(5);
-$pc->categorie('robe');
+// $pc->categorie('robe');

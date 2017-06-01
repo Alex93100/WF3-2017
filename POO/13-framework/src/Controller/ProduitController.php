@@ -15,13 +15,17 @@ class ProduitController extends Controller{
 
         // $this->render();
 
+        require(__DIR__ .'/../View/Produit/boutique.php');
     }
+
 
     public function affiche($id){
         $produits = $this-> getRepository()-> getProduitById($id);
         $suggestions = $this-> getRepository()-> getAllSuggestions($produits['categorie'], $produits['id_produit']);
 
         // $this->render();
+        require(__DIR__ .'/../View/Produit/fiche_produit.php');
+        
 
     }
 
@@ -30,6 +34,9 @@ class ProduitController extends Controller{
         $categories = $this-> getRepository()-> getAllCategories();
 
         // $this->render();
+
+        require(__DIR__ . '/../View/Produit/categorie.php');
+        
         
     }
 
