@@ -42,5 +42,7 @@ vendor/
         Si une entité à besoin de requêtes spécifique (exemple : jointure) dans ce cas les requêtes seront codées directement dans le repository en question.
     
     Repository/
-        ProduitRepository.php
-        
+        ProduitRepository.php :
+
+        Ce fichier contiendra toutes les fonctions liée à l'entité produit, demandera à EntityRepository de faire certaines requêtes.
+        Et si l'entitéé a besoin de requêtes spécifique, elles seront codées ici.
