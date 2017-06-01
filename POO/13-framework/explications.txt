@@ -40,3 +40,7 @@ vendor/
         EntityRepository.php :
         Un repository centralise tout ce qui touche à la bdd et la récuération des entités. Concrètement il ne doit pas y avoir de requête SQL ailleurs que dans un repository.
         Si une entité à besoin de requêtes spécifique (exemple : jointure) dans ce cas les requêtes seront codées directement dans le repository en question.
+    
+    Repository/
+        ProduitRepository.php
+        
