@@ -46,15 +46,23 @@ require_once(__DIR__ . '/../vendor/autoload.php');
 
 
 // TEST 4 : ProduitRepository
-$pr = new Repository\ProduitRepository;
+// $pr = new Repository\ProduitRepository;
 
-// $produits = $pr-> getAllProduits();
-// $produits = $pr-> getProduitById(5);
-// $produits = $pr-> DeleteProduitById(5);
-// $produits = $pr-> getAllProduitsByCategorie('robe');
-// $produits = $pr-> getAllCategories();
-// $produits = $pr-> getAllSuggestions('pull', 5);
+// // $produits = $pr-> getAllProduits();
+// // $produits = $pr-> getProduitById(5);
+// // $produits = $pr-> DeleteProduitById(5);
+// // $produits = $pr-> getAllProduitsByCategorie('robe');
+// // $produits = $pr-> getAllCategories();
+// // $produits = $pr-> getAllSuggestions('pull', 5);
 
-echo '<pre>';
-print_r($produits);
-echo '</pre>';
+// echo '<pre>';
+// print_r($produits);
+// echo '</pre>';
+
+
+// TEST 5 : ProduitController
+$pc = new Controller\ProduitController;
+
+// $pc->afficheAll();
+// $pc->affiche(5);
+$pc->categorie('robe');

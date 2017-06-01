@@ -46,3 +46,15 @@ vendor/
 
         Ce fichier contiendra toutes les fonctions liée à l'entité produit, demandera à EntityRepository de faire certaines requêtes.
         Et si l'entitéé a besoin de requêtes spécifique, elles seront codées ici.
+
+    Controller/
+        Controller.php
+        C'est le controleur général de l'application. Il a deux missions:
+
+            1/ Récupérer le repository correspondant à l'entité dans laquelle je suis: getRepository()
+            2/ Affiche la vue correspondant à l'action : render()
+
+    src/
+        Controller/
+            ProduitController.php :
+            Cette classe hérite du controleur général de l'application et permet de déclacher toutes les actions spécifique à l'entité produit.
