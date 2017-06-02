@@ -29,7 +29,11 @@ class ViewRenderer {
     
     public function render($view, $parameters = []){
         extract($parameters);
+        ob_start();
         include $this->viewDir . $view;
+        $pageContentForLayout = ob_get_clean();
+        
+        include $this->layoutPath;
     }
     
     public function getViewDir() {

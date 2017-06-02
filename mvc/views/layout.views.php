@@ -20,6 +20,6 @@
     
     </head>
   <body>
-
+      <?= $pageContentForLayout ?>
   </body>
 </html>
