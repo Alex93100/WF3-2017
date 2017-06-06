@@ -1,0 +1,121 @@
+{% extends "layout.html.twig" %}
+
+{% block content %}
+    {# Affiche une variable #}
+    <p>{{myvar}}</p>
+    
+    {# définir une variable dans la vue #}
+    {% set othervar = 1 %}
+    <p>{{othervar}}</p>
+    
+    {# tilde (~) pour concaténer #}
+    <p>{{myvar ~ othervar}}</p>
+    
+    {% set vrai = true %}
+    
+    {# condition #}
+    {% if vrai %}
+        <p>vrai</p>
+    {% endif %}
+    
+    {# même opérateurs de comparaison qu'en PHP #}
+    {% if othervar == 1 %}
+        <p>othervar vaut 1</p>
+    {% endif %}
+    
+    {% if othervar == 1 and vrai %}
+        <p>ET logique</p>
+    {% endif %}
+    
+    {# not pour ! #}
+    {% if not vrai %}
+        <p>pas vrai</p>
+    {% else %}
+        <p>vrai</p>
+    {% endif %}
+    
+    {% set tab = ['a', 'b', 'c'] %}
+    
+    {# boucle for #}
+    {% for letter in tab %}
+        {{ letter ~ ', '}}
+    {% endfor %}
+    
+    {% set tab2 = [] %}
+    
+    {% for value in tab2 %}
+        {{value}}
+    {% else %}
+        <p>Aucune valeur dans le tableau</p>
+    {% endfor %}
+    
+    
+    {% set tab3 = ['a', 'b', 'c', 'd', 'e'] %}
+    
+    {% for letter in tab3 %}
+        {% if loop.first %}
+            <p style="color:blue">{{letter}}</p>
+        {% elseif loop.last %}
+            <p style="color:red">{{letter}}</p>
+        {% else %}
+            <p>{{letter}}</p>
+        {% endif %}
+    {% endfor %}
+    
+    {% set arr = {'a' : 1, 'b' : 2} %}
+    
+    {% for key, value in arr %}
+        {{ key }} : {{ value }}<br>
+    {% endfor %}
+    
+    {# appel d'une fonction #}
+    {{dump(arr)}}
+    {% if tab2 is empty %}
+        <p>tab2 est vide</p>
+    {% endif %}
+    
+    {# even et odd pour tester pair/impair #}
+    {% if othervar is odd %}
+        <p>othervar est impair</p>
+    {% endif %}
+    
+    {% set neuf = 9 %}
+    
+    {% if neuf is divisible by(3) %}
+        <p>Neuf est divisible par 3</p>
+    {% endif %}
+    
+    {% if unknowvar is not defined %}
+        <p>unknowvar n'existe pas</p>
+    {% endif %}
+    
+    {% set lines = "line1\nline2" %}
+     
+    {# pipe (|) pour appliquer un filtre #}
+    <p>{{ lines|nl2br}}</p>
+    
+    {# filtre de formatage de date, fonctionne avec des objets DateTime #}
+    <p>{{ "now"|date('d/m/Y')}}</p>
+
+    {# inclusion d'un autre fichier #}
+    {% include 'included.html.twig' %}
+    
+    {# le point pour accéder à un élément d'un tableau #}
+    <p>{{arr.a}}</p>
+    
+    {% set str = '<p>test</p>'%}
+    {{str}} {# Le HTML est échappé #}
+    {{str|raw}} {# le HTML n'est pas échappé #}
+
+    
+    {# https://twig.sensiolabs.org/doc/2.x/  pour la liste complète #}
+    
+    {# path(nomDeLaRoute) retourne l'url de la route #}
+    <p><a href="{{path('homepage')}}">Home</a></p>
+    <p><a href="{{path('hello_world', {name: 'Alexandre'})}}">Hello Alexandre</a></p>
+    
+    {# même chose en URL absolue #}
+    <p><a href="{{url('homepage')}}">Home</a></p>
+
+
+{% endblock %}
