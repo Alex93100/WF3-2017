@@ -53,6 +53,10 @@ $app
     ->get('/users', 'first.controller:usersAction')
     ->bind('users');
 
+$app
+    ->get('/user/{userId}', 'first.controller:userAction')
+    ->bind('user');
+
 $app->error(function (\Exception $e, Request $request, $code) use ($app) {
     if ($app['debug']) {
         return;

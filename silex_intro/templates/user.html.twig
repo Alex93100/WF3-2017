@@ -1,0 +1,21 @@
+{% extends "layout.html.twig" %}
+
+{% block content %}
+    <table class="table">
+        <tr>
+            <th>Id</th>
+            <th>FirstName</th>
+            <th>Lastname</th>
+            <th>Email</th>
+            <th>Adresse</th>
+        </tr>
+            <tr>
+                <td>{{user.id}}</td>
+                <td>{{user.firstname}}</td>
+                <th>{{user.lastname}}</td>
+                <td>{{user.email}}</td>
+                <td>{{user.address}}</td>
+            </tr>
+
+    </table>
+{% endblock %} 
