@@ -1,12 +1,18 @@
 <?php
 
+use Controller\IndexController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
-use Symfony\Component\HttpFoundation\JsonResponse;
-use Symfony\Component\HttpFoundation\RedirectResponse;
-use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 
 //Request::setTrustedProxies(array('127.0.0.1'));
+
+$app['index.controller'] = function() use($app){
+    return new IndexController($app);
+};
+
+$app 
+    ->get('/', 'index.controller:indexAction')
+    ->bind('homepage');
 
 $app->get('/', function () use ($app) {
     return $app['twig']->render('index.html.twig', array());
@@ -14,7 +20,12 @@ $app->get('/', function () use ($app) {
 ->bind('homepage')
 ;
 
-$app->error(function (\Exception $e, Request $request, $code) use ($app) {
+$app 
+    ->get('/rubriques', 'index.controller:categoriesAction')
+    ->bind('categories');
+
+
+$app->error(function (Exception $e, Request $request, $code) use ($app) {
     if ($app['debug']) {
         return;
     }
