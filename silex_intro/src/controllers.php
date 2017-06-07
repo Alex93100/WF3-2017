@@ -9,14 +9,12 @@ use Symfony\Component\HttpFoundation\Response;
 $app->get('/', function () use ($app) {
     return $app['twig']->render('index.html.twig', array());
 })
-->bind('homepage')
-;
+->bind('homepage');
 
 $app->get('/hello', function() use ($app){
     return $app['twig']->render('hello.html.twig');
 })
-->bind('hello')
-;
+->bind('hello');
 /*
  * name est une variable dans l'url,
  * passée à la fonction anonyme qui sert de contrôleur
@@ -25,14 +23,12 @@ $app->get('/hello', function() use ($app){
 $app->get('/hello/{name}', function($name) use ($app){
     return $app['twig']->render('hello_world.html.twig',['name'=> $name]);
 })
-->bind('hello_world')
-;
+->bind('hello_world');
 
 $app->get('/twig', function() use ($app){
     return $app['twig']->render('twig.html.twig', ['myvar'=>'Ma variable ']);
 })
-->bind('twig')
-;
+->bind('twig');
 
 // déclaration du contrôleur en service dans l'application
 $app['first.controller'] = function(){
