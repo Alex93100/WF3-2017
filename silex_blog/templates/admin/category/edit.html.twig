@@ -1,0 +1,19 @@
+{% extends "layout.html.twig" %}
+
+{% block title 'Admin rubriques' %}
+
+{% block content %}
+    <h2>Edfition rubrique</h2>
+    
+    <form method="post">
+        <div class="form-group">
+            <label for="nom">Nom</label>
+            <input type="text" name="name" value="{{ category.name }}" class="form-control"> 
+        </div>
+        <button type="submit" class="btn btn-primary">
+            Enregistrer
+        </button>
+        <a href="{{ path('admin_categories') }}" class="btn btn-default">Annuler</a>
+    </form>
+
+{% endblock %}

@@ -1,23 +1,48 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        
+ <html lang="fr">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+   
         <title>{% block title '' %} - Blog</title>
+     
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-        <link href="{{ asset('css/main.css') }}" rel="stylesheet" type="text/css" />
+        <link href="{{ asset('css/main.css') }}" rel="stylesheet" type="text/css" /> {# asset est une fonction préinstallée (grace au skeleton)#}
+
     </head>
     <body>
+        <nav class="navbar navbar-inverse">
+            <div class="container">
+                <a class="navbar-brand">Menu admin</a>
+                <ul class="nav navbar-nav">
+                    <li>
+                        <a href="{{ path('admin_categories') }}">Rubriques</a>
+                    </li>
+                   
+                </ul>
+
+            </div>
+        </nav>
         <nav class="navbar navbar-default">
             <div class="container">
-                <a class="navbar-brand" href="{{path('homepage')}}">Blog</a>
+                <a class="navbar-brand" href="{{ path('homepage') }}">Blog</a>
             </div>
         </nav>
         <div class="container">
-        {% block content %}{% endblock %}
+            {% for label, flashes in global.session.flashbag.all %} {# correspond à foreach as label => flashes #}
+                {% for flash in flashes %}
+                    {% if label == 'error' %}
+                        {%set label = 'danger' %}
+                    {% endif %}
+                        <div class="alert alert-{{ label}}">{{ flash }}</div>
+                {% endfor %}
+            {% endfor %}
+            {% block content %}{% endblock %}
         </div>
+        
         {% block javascripts %}
             <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
             <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
