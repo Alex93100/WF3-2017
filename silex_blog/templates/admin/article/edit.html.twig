@@ -21,6 +21,17 @@
             <label for="Resumer">Résumer</label>
             <textarea name="short_content" class="form-control">{{article.shortContent}}</textarea>
         </div>
+        
+        <div class="form-group">
+            <label class="control-label">Rubriques</label>
+            <select name="category" class="form-control">
+                <option value="">Choisissez une rubrique</option>
+                {% for category in categories %}
+                    <option value="{{category.id}}" {% if category.id == article.categoryId %}selected{% endif %}>{{category.name}}</option>
+                {% endfor %}
+                
+            </select>
+        </div>
         <button type="submit" class="btn btn-primary">
             Enregistrer
         </button>

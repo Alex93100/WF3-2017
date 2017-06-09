@@ -2,21 +2,24 @@
 namespace Repository;
 
 use Entity\Article;
+use Entity\Category;
 
 class ArticleRepository extends RepositoryAbstract {
 
     public function findAll(){
         
-        $dbArticles = $this -> db -> fetchAll('SELECT * FROM article');
+        $query = <<<EOS
+SELECT a.*, c.name
+FROM article a
+JOIN category c ON a.category_id = c.id
+EOS;
+
+        $dbArticles = $this -> db -> fetchAll($query);
         $articles = [];
         
         foreach ($dbArticles as $dbArticle) {
-            $article = new Article(); // $article est un objet instance de la classe Entity article
-            $article
-                ->setId($dbArticle['id'])
-                ->setTitle($dbArticle['title'])
-                ->setContent($dbArticle['content'])
-                ->setShortContent($dbArticle['short_content']);
+            
+            $article = $this->buildArticleFromArray($dbArticle);
             
             $articles[] = $article;
         }
@@ -48,7 +51,8 @@ class ArticleRepository extends RepositoryAbstract {
             'article', // nom de la table
             ['title' => $article->getTitle(),
             'content' => $article->getContent(),
-            'short_content' => $article->getShortContent()
+            'short_content' => $article->getShortContent(),
+            'category_id' => $article->getCategoryId(),
             ], //valeurs
             ['id' => $article->getId()] // clause WHERE
         );
@@ -61,17 +65,37 @@ class ArticleRepository extends RepositoryAbstract {
         
     }
     
-    public function find($id){
-        $dbArticle = $this -> db -> fetchAssoc(
-            'SELECT * FROM article WHERE id= :id',[':id' => $id]
-        );
-        
-        $article = new Article();
-        $article 
+    private function buildArticleFromArray(array $dbArticle){
+        $category = new Category();
+            
+        $category
+                ->setId($dbArticle['category_id'])
+                ->setName($dbArticle['name']);
+
+        $article = new Article(); // $article est un objet instance de la classe Entity article
+        $article
             ->setId($dbArticle['id'])
             ->setTitle($dbArticle['title'])
-        ;
+            ->setContent($dbArticle['content'])
+            ->setShortContent($dbArticle['short_content'])
+            ->setCategory($category);
+        return $article;
+
+    }
+    
+    public function find($id){
         
+        $query = <<<EOS
+SELECT a.*, c.name
+FROM article a
+JOIN category c ON a.category_id = c.id
+WHERE a.id = :id
+EOS;
+        
+        $dbArticle = $this -> db -> fetchAssoc(
+            $query, [':id' => $id]);
+        
+        $article = $this->buildArticleFromArray($dbArticle);
         return $article;
     }
 }

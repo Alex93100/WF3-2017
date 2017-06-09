@@ -11,6 +11,7 @@
             <th>Titre</th>
             <th>Contenu</th>            
             <th>Résumer</th>
+            <th>Rubriques</th>
             <th width="200px"></th>
         </tr>
         {% for article in articles %}
@@ -19,7 +20,7 @@
                 <td>{{ article.title }}</td>
                 <td>{{ article.content }}</td>
                 <td>{{ article.shortContent }}</td>
-
+                <td>{{ article.categoryName }}</td>
                 <td>
                     <a href="{{ path('admin_article_edit', { id: article.id }) }}" class="btn btn-primary">
                         Modifier

@@ -24,6 +24,11 @@ class Article {
     private $shortContent;
     
     /*
+     * @var string
+     */
+    private $category;
+    
+    /*
      * @return int
      */
     public function getId() {
@@ -70,6 +75,32 @@ class Article {
         $this->shortContent = $shortContent;
         return $this;
     }
+    /*
+     * @return Category
+     */
+    public function getCategory() {
+        return $this->category;
+    }
+
+    public function setCategory(Category $category) {
+        $this->category = $category;
+        return $this;
+    }
+    
+    public function getCategoryId(){
+        if(!is_null($this->category)){
+            return $this->category->getId();
+        }
+        return null;
+    }
+    
+    public function getCategoryName(){
+        if(!is_null($this->category)){
+            return $this->category->getName();
+        }
+        return '';
+    }
+
 }
 
 
