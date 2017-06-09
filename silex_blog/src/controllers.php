@@ -1,6 +1,7 @@
 <?php
 
 use Controller\IndexController;
+use Controller\Admin\ArticleController;
 use Controller\Admin\CategoryController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
@@ -13,13 +14,11 @@ $app['index.controller'] = function () use ($app) {
 
 $app
     ->get('/', 'index.controller:indexAction')  
-    ->bind('homepage')
-;
+    ->bind('homepage');
 
 $app
     ->get('/rubriques', 'index.controller:categoriesAction')  
-    ->bind('categories')
-;
+    ->bind('categories');
 
 $app['admin.category.controller'] = function () use ($app) {
     return new CategoryController($app);
@@ -27,19 +26,16 @@ $app['admin.category.controller'] = function () use ($app) {
 
 $app
     ->get('admin/rubriques', 'admin.category.controller:listAction')  
-    ->bind('admin_categories')
-;
+    ->bind('admin_categories');
 
 $app
     ->match('admin/rubriques/edition/{id}', 'admin.category.controller:editAction') //match accepte plusieurs méthodes, nomtamment get et post
     ->value('id', null) // valeur par défaut (null) pour le paramètre (id) de la route
-    ->bind('admin_category_edit')
-;
+    ->bind('admin_category_edit');
 
 $app
     ->match('admin/rubriques/suppression/{id}', 'admin.category.controller:deleteAction') //match accepte plusieurs méthodes, nomtamment get et post
-    ->bind('admin_category_delete')
-;
+    ->bind('admin_category_delete');
 
 
 /*
@@ -53,6 +49,24 @@ $app
  * - on remplit la méthode listAction du contrôleur en utilisant ArticleRepository
  * - on crée la vue qui affiche les articles dans un tableau html
  */
+
+$app['admin.article.controller'] = function () use ($app) {
+    return new ArticleController($app);
+};
+
+$app
+    ->get('admin/articles', 'admin.article.controller:listAction')  
+    ->bind('admin_articles');
+
+$app
+    ->match('admin/articles/edition/{id}', 'admin.article.controller:editAction') //match accepte plusieurs méthodes, nomtamment get et post
+    ->value('id', null) // valeur par défaut (null) pour le paramètre (id) de la route
+    ->assert('id', '\d+')
+    ->bind('admin_article_edit');
+
+$app
+    ->match('admin/articles/suppression/{id}', 'admin.article.controller:deleteAction') //match accepte plusieurs méthodes, nomtamment get et post
+    ->bind('admin_article_delete');
 
 $app->error(function (Exception $e, Request $request, $code) use ($app) {
     if ($app['debug']) {

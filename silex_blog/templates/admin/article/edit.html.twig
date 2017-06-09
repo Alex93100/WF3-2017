@@ -1,0 +1,30 @@
+{% extends "layout.html.twig" %}
+
+{% block title 'Admin articles' %}
+
+{% block content %}
+    <h2>Edition article</h2>
+    
+    <form method="post">
+        <div class="form-group">
+            <label for="Titre">Titre</label>
+            <input type="text" name="title" value="{{ article.title }}" class="form-control"> 
+        </div>
+        
+         <div class="form-group">
+            <label for="Contenu">Contenu</label>
+            <textarea name="content" class="form-control">{{article.content}}</textarea>
+
+        </div>
+        
+         <div class="form-group">
+            <label for="Resumer">Résumer</label>
+            <textarea name="short_content" class="form-control">{{article.shortContent}}</textarea>
+        </div>
+        <button type="submit" class="btn btn-primary">
+            Enregistrer
+        </button>
+        <a href="{{ path('admin_articles') }}" class="btn btn-default">Annuler</a>
+    </form>
+
+{% endblock %}

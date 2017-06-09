@@ -1,6 +1,7 @@
 <?php
 
 use Repository\CategoryRepository;
+use Repository\ArticleRepository;
 use Silex\Application;
 use Silex\Provider\AssetServiceProvider;
 use Silex\Provider\DoctrineServiceProvider;
@@ -39,5 +40,9 @@ $app->register(new SessionServiceProvider());
 
 $app['category.repository'] = function () use ($app){
     return new CategoryRepository($app['db']);
+};
+
+$app['article.repository'] = function () use ($app){
+    return new ArticleRepository($app['db']);
 };
 return $app;
