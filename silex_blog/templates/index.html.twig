@@ -1,5 +1,12 @@
 {% extends "layout.html.twig" %}
 
 {% block content %}
-    Welcome to your new Silex Application!
+    {% for article in articles %}
+        <h3>{{article.title}}<small>{{article.categoryName}}</small></h3>
+        <p><b>{{article.shortContent}}</b></p>
+        <p>{{article.content}}</p>
+        {% if not loop.last %}
+            <hr>
+        {% endif %}
+    {% endfor %}
 {% endblock %}

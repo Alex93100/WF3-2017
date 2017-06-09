@@ -98,4 +98,26 @@ EOS;
         $article = $this->buildArticleFromArray($dbArticle);
         return $article;
     }
+    
+    public function findByCategory(Category $category){
+        
+         $query = <<<EOS
+SELECT a.*, c.name
+FROM article a
+JOIN category c ON a.category_id = c.id
+WHERE c.id = :id
+EOS;
+        
+        $dbArticles = $this -> db -> fetchAll($query);
+        $articles = [];
+        
+        foreach ($dbArticles as $dbArticle) {
+            
+            $article = $this->buildArticleFromArray($dbArticle);
+            
+            $articles[] = $article;
+        }
+        return $articles;
+    }
 }
+

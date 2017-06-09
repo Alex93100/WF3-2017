@@ -29,6 +29,11 @@ $app
     ->bind('admin_categories');
 
 $app
+    ->get('/rubriques/{id}', 'index.controller:categorieAction')
+    ->assert('id', '\d+')
+    ->bind('categories');
+
+$app
     ->match('admin/rubriques/edition/{id}', 'admin.category.controller:editAction') //match accepte plusieurs méthodes, nomtamment get et post
     ->value('id', null) // valeur par défaut (null) pour le paramètre (id) de la route
     ->bind('admin_category_edit');
