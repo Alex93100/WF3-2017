@@ -31,7 +31,7 @@ $app
 $app
     ->get('/rubriques/{id}', 'index.controller:categorieAction')
     ->assert('id', '\d+')
-    ->bind('categories');
+    ->bind('category');
 
 $app
     ->match('admin/rubriques/edition/{id}', 'admin.category.controller:editAction') //match accepte plusieurs méthodes, nomtamment get et post

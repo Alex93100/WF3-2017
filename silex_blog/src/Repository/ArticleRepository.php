@@ -92,7 +92,7 @@ JOIN category c ON a.category_id = c.id
 WHERE a.id = :id
 EOS;
         
-        $dbArticle = $this -> db -> fetchAssoc(
+        $dbArticle = $this->db->fetchAssoc(
             $query, [':id' => $id]);
         
         $article = $this->buildArticleFromArray($dbArticle);
@@ -108,7 +108,7 @@ JOIN category c ON a.category_id = c.id
 WHERE c.id = :id
 EOS;
         
-        $dbArticles = $this -> db -> fetchAll($query);
+        $dbArticles = $this->db->fetchAll($query, [':id' => $category->getId()]);
         $articles = [];
         
         foreach ($dbArticles as $dbArticle) {

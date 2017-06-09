@@ -1,5 +1,5 @@
 <ul class="nav navbar-nav">
 {% for category in categories %}
-        <li><a href="">{{category.name}}</a></li>
+        <li><a href="{{path('category', {id:category.id})}}">{{category.name}}</a></li>
 {% endfor %}
 </ul>
