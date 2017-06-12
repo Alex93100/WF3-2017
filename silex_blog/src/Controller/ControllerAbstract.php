@@ -68,7 +68,7 @@ abstract class ControllerAbstract { // classe qui ne sert qu'à être héritée
 
     }
     
-    public function addflashMessage($message, $type = 'success'){
+    public function addFlashMessage($message, $type = 'success'){
         $this->session->getFlashBag()->add($type, $message); 
     }
 }

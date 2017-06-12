@@ -44,6 +44,10 @@ $app
     ->match('utilisateur/inscription', 'user.controller:registerAction')
     ->bind ('register');
 
+$app
+    ->match('utilisateur/connexion', 'user.controller:loginAction')
+    ->bind ('login');
+
 /* Admin */
 
 $app

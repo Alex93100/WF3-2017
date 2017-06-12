@@ -58,6 +58,6 @@ $app['user.repository'] = function () use ($app){
 /* Services */
 
 $app['user.manager'] = function () use ($app){
-    return new UserManager();
+    return new UserManager($app['session']);
 };
 return $app;
