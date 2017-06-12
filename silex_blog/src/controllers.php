@@ -1,6 +1,7 @@
 <?php
 
 use Controller\IndexController;
+use Controller\UserController;
 use Controller\Admin\ArticleController;
 use Controller\Admin\CategoryController;
 use Symfony\Component\HttpFoundation\Request;
@@ -32,6 +33,18 @@ $app
     ->get('/rubriques/{id}', 'index.controller:categorieAction')
     ->assert('id', '\d+')
     ->bind('category');
+
+/* Utilisateur */
+
+$app['user.controller'] = function () use ($app) {
+    return new UserController($app);
+};
+
+$app
+    ->match('utilisateur/inscription', 'user.controller:registerAction')
+    ->bind ('register');
+
+/* Admin */
 
 $app
     ->match('admin/rubriques/edition/{id}', 'admin.category.controller:editAction') //match accepte plusieurs méthodes, nomtamment get et post

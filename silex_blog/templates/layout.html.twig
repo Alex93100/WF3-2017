@@ -34,8 +34,14 @@
                 <a class="navbar-brand" href="{{ path('homepage') }}">Blog</a>
                 {# on affiche le rendu de la route categories #}
                 {{render(url('categories'))}}
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a href="{{ path('register') }}">Créer un compte</a>
+                    </li>
+                </ul>
             </div>
         </nav>
+            
         <div class="container">
             {% for label, flashes in global.session.flashbag.all %} {# correspond à foreach as label => flashes #}
                 {% for flash in flashes %}
