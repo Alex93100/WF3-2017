@@ -11,6 +11,7 @@ use Silex\Provider\HttpFragmentServiceProvider;
 use Silex\Provider\ServiceControllerServiceProvider;
 use Silex\Provider\SessionServiceProvider;
 use Silex\Provider\TwigServiceProvider;
+use Silex\Provider\ValidatorServiceProvider;
 
 $app = new Application();
 $app->register(new ServiceControllerServiceProvider());
@@ -41,6 +42,7 @@ $app->register(
 );
 
 $app->register(new SessionServiceProvider());
+$app->register(new ValidatorServiceProvider());
 
 
 /* Repository */

@@ -69,7 +69,7 @@
                     {% if label == 'error' %}
                         {%set label = 'danger' %}
                     {% endif %}
-                        <div class="alert alert-{{ label}}">{{ flash }}</div>
+                        <div class="alert alert-{{ label }}">{{ flash|raw }}</div>
                 {% endfor %}
             {% endfor %}
             {% block content %}{% endblock %}
