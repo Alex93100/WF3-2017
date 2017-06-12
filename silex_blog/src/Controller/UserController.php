@@ -42,4 +42,9 @@ class UserController extends ControllerAbstract{
         }
         return $this->render('login.html.twig', ['email'=>$email]);
     }
+    
+    public function logoutAction(){
+        $this->app['user.manager']->logout();
+        return $this->redirectRoute('homepage');
+    }
 }

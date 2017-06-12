@@ -60,6 +60,14 @@ class User {
     public function getRole() {
         return $this->role;
     }
+    
+    public function getFullname(){
+        return $this->firstname . ' ' . $this->lastname;
+    }
+    
+    public function isAdmin(){
+        return $this->role== 'admin';
+    }
 
     public function setId($id) {
         $this->id = $id;

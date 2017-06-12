@@ -52,4 +52,47 @@ class UserManager {
         
         $this->session->set('user', $user);
     }
+    
+
+    public function logout(){
+        
+        $this->session->remove('user');
+    }
+    
+    
+    /**
+     * 
+     * @return bool
+     */
+    public function isUserConnected(){
+        
+        return $this->session->has('user');
+    }
+    
+    /**
+     * 
+     * @return User|null
+     */
+    public function getUser(){
+        if ($this->isUserConnected()){
+            return $this->session->get('user');
+
+        }
+    }
+    
+    /**
+     * 
+     * @return string
+     */
+    public function getUsername(){
+        if ($this->isUserConnected()){
+            return $this->session->get('user')->getFullname();
+
+        }
+        return '';
+    }
+    
+    public function isAdmin(){
+        return $this->isUserConnected() && $this->session->get('user')->isAdmin();
+    }
 }

@@ -14,33 +14,51 @@
 
     </head>
     <body>
-        <nav class="navbar navbar-inverse">
-            <div class="container">
-                <a class="navbar-brand">Menu admin</a>
-                <ul class="nav navbar-nav">
-                    <li>
-                        <a href="{{ path('admin_categories') }}">Rubriques</a>
-                    </li>
-                    <li>
-                        <a href="{{ path('admin_articles') }}">Articles</a>
-                    </li>
-                   
-                </ul>
+        {% if user_manager.admin %}
+            <nav class="navbar navbar-inverse">
+                <div class="container">
+                    <a class="navbar-brand">Menu admin</a>
+                    <ul class="nav navbar-nav">
+                        <li>
+                            <a href="{{ path('admin_categories') }}">Rubriques</a>
+                        </li>
+                        <li>
+                            <a href="{{ path('admin_articles') }}">Articles</a>
+                        </li>
 
-            </div>
-        </nav>
+                    </ul>
+
+                </div>
+            </nav>
+        {% endif %}
         <nav class="navbar navbar-default">
             <div class="container">
                 <a class="navbar-brand" href="{{ path('homepage') }}">Blog</a>
                 {# on affiche le rendu de la route categories #}
                 {{render(url('categories'))}}
                 <ul class="nav navbar-nav navbar-right">
-                    <li>
-                        <a href="{{ path('register') }}">Créer un compte</a>
-                    </li>
-                    <li>
-                        <a href="{{ path('login') }}">Connexion</a>
-                    </li>
+                    
+                    {#
+                        Twig va chercher soit
+                            UserManager::getUserConnected()
+                            UserManager::isUserConnected()
+                            UserManager::hasUserConnected()
+                    #}
+                    {% if user_manager.userConnected %}
+                        <li>
+                            <a>{{user_manager.username}}</a>
+                        </li>
+                        <li>
+                            <a href="{{ path('logout') }}">Déconnexion</a>
+                        </li>
+                    {% else %}
+                        <li>
+                            <a href="{{ path('register') }}">Créer un compte</a>
+                        </li>
+                        <li>
+                            <a href="{{ path('login') }}">Connexion</a>
+                        </li>
+                    {% endif %}
                 </ul>
             </div>
         </nav>

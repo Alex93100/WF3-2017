@@ -26,10 +26,6 @@ $app['admin.category.controller'] = function () use ($app) {
 };
 
 $app
-    ->get('admin/rubriques', 'admin.category.controller:listAction')  
-    ->bind('admin_categories');
-
-$app
     ->get('/rubriques/{id}', 'index.controller:categorieAction')
     ->assert('id', '\d+')
     ->bind('category');
@@ -48,15 +44,40 @@ $app
     ->match('utilisateur/connexion', 'user.controller:loginAction')
     ->bind ('login');
 
+$app
+    ->get('utilisateur/deconnexion', 'user.controller:logoutAction')
+    ->bind ('logout');
+
 /* Admin */
 
-$app
-    ->match('admin/rubriques/edition/{id}', 'admin.category.controller:editAction') //match accepte plusieurs méthodes, nomtamment get et post
+$app['admin.category.controller'] = function()use($app){
+  return new CategoryController($app);
+};
+// Créer un sous-ensemble de routes
+$admin = $app['controllers_factory'];
+
+// permet de faire un traitement avant l'accès à la route
+$admin->before(function() use ($app){ 
+    if(!$app['user.manager']->isAdmin()){ // si un admin n'est pas connecté
+        $app->abort(403, 'Accès refusé'); // HTTP 403 Forbidden
+    }
+});
+
+
+// Créer un sous-ensemble de routes
+$app->mount('/admin', $admin);
+
+$admin
+    ->get('/rubriques', 'admin.category.controller:listAction')  
+    ->bind('admin_categories');
+
+$admin
+    ->match('/rubriques/edition/{id}', 'admin.category.controller:editAction') //match accepte plusieurs méthodes, nomtamment get et post
     ->value('id', null) // valeur par défaut (null) pour le paramètre (id) de la route
     ->bind('admin_category_edit');
 
-$app
-    ->match('admin/rubriques/suppression/{id}', 'admin.category.controller:deleteAction') //match accepte plusieurs méthodes, nomtamment get et post
+$admin
+    ->match('/rubriques/suppression/{id}', 'admin.category.controller:deleteAction') //match accepte plusieurs méthodes, nomtamment get et post
     ->bind('admin_category_delete');
 
 
@@ -76,18 +97,18 @@ $app['admin.article.controller'] = function () use ($app) {
     return new ArticleController($app);
 };
 
-$app
-    ->get('admin/articles', 'admin.article.controller:listAction')  
+$admin
+    ->get('/articles', 'admin.article.controller:listAction')  
     ->bind('admin_articles');
 
-$app
-    ->match('admin/articles/edition/{id}', 'admin.article.controller:editAction') //match accepte plusieurs méthodes, nomtamment get et post
+$admin
+    ->match('/articles/edition/{id}', 'admin.article.controller:editAction') //match accepte plusieurs méthodes, nomtamment get et post
     ->value('id', null) // valeur par défaut (null) pour le paramètre (id) de la route
     ->assert('id', '\d+')
     ->bind('admin_article_edit');
 
-$app
-    ->match('admin/articles/suppression/{id}', 'admin.article.controller:deleteAction') //match accepte plusieurs méthodes, nomtamment get et post
+$admin
+    ->match('/articles/suppression/{id}', 'admin.article.controller:deleteAction') //match accepte plusieurs méthodes, nomtamment get et post
     ->bind('admin_article_delete');
 
 $app->error(function (Exception $e, Request $request, $code) use ($app) {

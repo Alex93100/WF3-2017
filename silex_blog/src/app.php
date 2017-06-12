@@ -17,8 +17,10 @@ $app->register(new ServiceControllerServiceProvider());
 $app->register(new AssetServiceProvider());
 $app->register(new TwigServiceProvider());
 $app->register(new HttpFragmentServiceProvider());
-$app['twig'] = $app->extend('twig', function ($twig, $app) {
-    // add custom globals, filters, tags, ...
+$app['twig'] = $app->extend('twig', function (Twig_Environment $twig, Application $app) {
+    
+// pour avoir accès au service UserManager dans les templates
+    $twig->addGlobal('user_manager', $app['user.manager']);
 
     return $twig;
 });
