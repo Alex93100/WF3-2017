@@ -10,19 +10,19 @@ foreach($class as $key => $value) {
 	print "$key => $value";
 }
 
-$resultat = $pdo->prepare("INSERT INTO exo_4(nom, prenom, email, password, type)VALUES(:nom, :prenom, :email, :password, :type)");
+// Insertion dans la bse de donnée (Ne fonctionne pas)
+$resultat = $pdo->prepare("INSERT INTO exo_4(author, title, year, datecreated)VALUES(:author, :title, :year, :datecreated)");
 
-$resultat->bindParam(':nom', $_POST['nom'], PDO::PARAM_STR);
-$resultat->bindParam(':prenom', $_POST['prenom'], PDO::PARAM_STR);
-$resultat->bindParam(':email', $_POST['email'], PDO::PARAM_STR);
-$resultat->bindParam(':password', $_POST['password'], PDO::PARAM_STR);
-$resultat->bindParam(':type', $_POST['type'], PDO::PARAM_STR);
+$resultat->bindParam(':author', $_POST['author'], PDO::PARAM_STR);
+$resultat->bindParam(':title', $_POST['title'], PDO::PARAM_STR);
+$resultat->bindParam(':year', $_POST['year'], PDO::PARAM_INT);
+$resultat->bindParam(':datecreated', $_POST['datecreated'], PDO::PARAM_INT);
 $req = $resultat->execute();
 
 if($req){
 	echo 'L\'ajout a bien été fais';
 }
 else{
-	echo 'Une erreur est survenue lors de l\'enregistrement l\'ajout n\'a pas pu etre effectué';
+	echo 'Une erreur est survenue lors de l\'ajout les livre n\'ont pas pu etre effectué';
 }
         

@@ -18,19 +18,19 @@
         }
     
         if(strlen($_POST['prenom']) < 5 || strlen($_POST['prenom']) > 30){
-            $message .= '<article>Le nom de l\'acteur doit comporter au moins 5 caractères</article>';
+            $message .= '<article>Le prenom de doit comporter au moins 5 caractères</article>';
         }
 
         if(!filter_var($_POST['email'], FILTER_VALIDATE_EMAIL)){
-            $message .= '<article>Le nom du directeur doit comporter au moins 5 caractères</article>';
+            $message .= '<article>L\'email est invalide</article>';
         }
 
         if(strlen($_POST['password']) < 5 || strlen($_POST['password']) > 30){
-            $message .= '<article>Le nom de l\'acteur doit comporter au moins 5 caractères</article>';
+            $message .= '<article>Le mot de passe doit comporter au moins 5 caractères</article>';
         }
 
         if($_POST['type'] != 'eleve' && $_POST['type'] != 'formateur'){
-            $message .= '<article>Le champs éleve ouformateur n\'est pas correcte</article>';
+            $message .= '<article>Le champs eleve ou formateur n\'est pas correcte</article>';
         } 
 
         if(empty($message)){
@@ -59,7 +59,12 @@
 
 echo $message;
 
-// Redirection login.html
+// Redirection selon le type indiqué formateur ou eleve
 
-header('Location: login.html');   
+if($_POST['type'] === 'formateur'){
+    header('Location: http://www.wf3.fr/lecole/lequipe­pedagogique');
+}
+else{
+    header('Location: http://wf3.apolearn.com/');
+}
 ?>

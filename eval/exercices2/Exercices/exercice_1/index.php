@@ -3,6 +3,7 @@
 require_once 'connect.php';
 
 $order = '';
+$errors = array();
 
 if(isset($_GET['order']) && isset($_GET['column'])){
 
@@ -69,6 +70,7 @@ if(!empty($_POST)){
 	if($queryUsers->execute()){	
 		$users = $queryUsers-->fetchAll();
 	}
+}
 ?>
 
 
@@ -120,13 +122,17 @@ if(!empty($_POST)){
 							</tr>
 						</thead>
 						<tbody>
-							<?php foreach($users as $user):?>
+							
+							<?php 
+							$users = '1';
+							foreach($users as $user):?>
 								<tr>
 									<td><?php echo $user['gender'];?></td>
 									<td><?php echo $user['firstname'];?></td>
 									<td><?php echo $user['lastname'];?></td>
 									<td><?php echo $user['email'];?></td>
 									<td><?php echo DateTime::createFromFormat('Y-m-d', $user['birthdate'])->diff(new DateTime('now'))->y;?> ans</td>
+									<td><?php echo $user['city'];?></td>									
 								</tr>
 							<?php endforeach; ?>
 						</tbody>
